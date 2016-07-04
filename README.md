@@ -48,6 +48,6 @@ OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.
 -
 <b><i>!!! IMPORTANTE !!!</i></b>
 
-* <b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:/Arquivo de Teste/</i></b>
+* <b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:\Testes-Automatizados\\</i></b>
 
 -

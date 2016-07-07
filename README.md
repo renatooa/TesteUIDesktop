@@ -1,5 +1,5 @@
 # TesteUIDesktop
-Repositório dos scripts de testes automatizados criado com AutoIt.
+Repositório de scripts de teste UI desktop feitos com AutoIt.
 
 # Padronizações Para Escrita dos Scripts
 

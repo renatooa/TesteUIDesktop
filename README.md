@@ -1,7 +1,7 @@
-# Testes-Automatizados
+# TesteUIDesktop
 Repositório dos scripts de testes automatizados criado com AutoIt.
 
-# Padronizações Para Escritas dos Scripts
+# Padronizações Para Escrita dos Scripts
 
 ***************************************
 <b><i>PADRONIZAÇÃO DOS NOMES DOS ARQUIVOS</i></b>

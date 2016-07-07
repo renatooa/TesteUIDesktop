@@ -1,4 +1,4 @@
-# TesteUIDesktop
+# <img src="https://chocolatey.org/content/packageimages/autoit.3.3.14.2.png"/> TesteUIDesktop
 Repositório de scripts de teste UI desktop feitos com AutoIt.
 
 # Padronizações Para Escrita dos Scripts

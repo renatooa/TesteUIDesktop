@@ -4,7 +4,7 @@ Repositório de scripts de teste UI desktop feitos com AutoIt.
 # Padronizações Para Escrita dos Scripts
 
 ***************************************
-<b><i>PADRONIZAÇÃO DOS NOMES DOS ARQUIVOS</i></b>
+<b><i>PADRONIZAÇÃO DO NOME DOS ARQUIVOS</i></b>
 ***************************************
 	
 * Arquivos de Teste ==> TA_[Nome do Arquivo].au3

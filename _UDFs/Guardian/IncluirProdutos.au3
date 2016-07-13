@@ -15,7 +15,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #include-once
 #include <Debug.au3>
 #include <MsgBoxConstants.au3>
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesGuardian.au3"
+#include "..\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 

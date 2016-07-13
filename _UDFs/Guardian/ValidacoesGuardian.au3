@@ -10,7 +10,7 @@
 #Region ### INCLUDES / OPS
 
 #include-once
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\AbstractValidacaoGuardian.au3"
+#include "AbstractValidacaoGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 

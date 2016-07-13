@@ -20,8 +20,8 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #include <Debug.au3>
 #include <MsgBoxConstants.au3>
 
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesAuxiliares.au3"
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesGuardian.au3"
+#include "..\..\..\_UDFs\IncludesAuxiliares.au3"
+#include "..\..\..\_UDFs\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -62,12 +62,12 @@ Send("{TAB 5}{ENTER}")
 
 ; Loop para imprimir os modelos disponiveis
 For $iContador = 1 To 10 Step +1
-	
+
 	Send($BTN_IMPRIMIR)
 	$iResultadoWinModelos = WinWaitActive("", $sTextoTelaDeModelos)
 
 	If ($iResultadoWinModelos) Then
-		
+
 		If ($iContador == 1) Then
 			Send("{TAB}{ENTER}")
 		Else
@@ -79,7 +79,7 @@ For $iContador = 1 To 10 Step +1
 
 		$bValida = True
 		While ($bValida)
-			
+
 			$iResultadoWinReport = WinActivate($sTituloTelaReport)
 
 			If ($iResultadoWinReport) Then
@@ -87,7 +87,7 @@ For $iContador = 1 To 10 Step +1
 			Else
 				MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
 			EndIf
-			
+
 		WEnd
 
 		If ($iResultadoWinReport) Then

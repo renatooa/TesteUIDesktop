@@ -11,16 +11,16 @@
 
 	#include-once
 	
-	#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\ConstantesBotoesGuardian.au3"
-	#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\ConstantesTextosGuardian.au3"
-	#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\IncluirProdutos.au3"
-	#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\ValidacoesGuardian.au3"
+	#include "Guardian\ConstantesBotoesGuardian.au3"
+	#include "Guardian\ConstantesTextosGuardian.au3"
+	#include "Guardian\IncluirProdutos.au3"
+	#include "Guardian\ValidacoesGuardian.au3"
 
 	#Region ### INCLUDES DE OPÇÕES DE MENU
 
-		#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\OpcoesMenuCadastros.au3"
-		#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\OpcoesMenuCompras.au3"
-		#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\Guardian\OpcoesMenuVendas.au3"
+		#include "Guardian\OpcoesMenuCadastros.au3"
+		#include "Guardian\OpcoesMenuCompras.au3"
+		#include "Guardian\OpcoesMenuVendas.au3"
 
 	#EndRegion ### INCLUDES DE OPÇÕES DE MENU
 

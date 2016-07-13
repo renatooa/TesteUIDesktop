@@ -10,7 +10,7 @@
 #Region ### INCLUDES / OPS
 
 #include-once
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesAuxiliares.au3"
+#include "..\IncludesAuxiliares.au3"
 #include <MsgBoxConstants.au3>
 
 #include <ButtonConstants.au3>

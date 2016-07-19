@@ -61,6 +61,7 @@ While 1
 			If ( $indexItemSelecionado > -1 ) Then
 				_MsgBox($MB_ICONINFORMATION, $textoItemSelecionado & " GERADO", "COPIADO PARA A ÁREA DE TRANSFERÊNCIA!" & @CR & @CR & _
 					"(" & ClipGet() & ")", 1000)
+				Exit
 			EndIf
 
 	EndSwitch

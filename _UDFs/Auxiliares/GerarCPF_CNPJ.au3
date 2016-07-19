@@ -136,6 +136,8 @@ Func GerarCPF()
 
 	$v_numeroCPF = $v_numeroCPF & $v_cpfPrimeiroDigito & $v_cpfSegundoDigito
 
+	ClipPut($v_numeroCPF) ; Adicionado 19/07/2016
+
 	Return $v_numeroCPF
 
 EndFunc   ;==>GerarCPF
@@ -241,6 +243,8 @@ Func GerarCNPJ()
 	WEnd
 
 	$v_numeroCNPJ = $v_numeroCNPJ & $v_cnpjPrimeiroDigito & $v_cnpjSegundoDigito
+
+	ClipPut($v_numeroCNPJ) ; Adicionado 19/07/2016
 
 	Return $v_numeroCNPJ
 

@@ -1,4 +1,4 @@
-#include "D:\Arquivo de Teste\Testes-Automatizados\_temp\func\mysql_2.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_temp\func\mysql_2.au3"
 
 $sUsername = "root"
 $sPassword = "@kalunga123"

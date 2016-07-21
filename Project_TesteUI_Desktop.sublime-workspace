@@ -1,0 +1,1241 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fo",
+				"ForToStepNext"
+			],
+			[
+				"for",
+				"ForInNext"
+			],
+			[
+				"Spli",
+				"StringSplit()"
+			],
+			[
+				"_GUICtrlComboBox_GetCu",
+				"_GUICtrlComboBox_GetCurSel()"
+			],
+			[
+				"_GUICtrlComboBox_GetEdit",
+				"_GUICtrlComboBox_GetEditText()"
+			],
+			[
+				"_GUICtrlComboBox_",
+				"_GUICtrlComboBox_GetEditSel()"
+			],
+			[
+				"_GUICtrlComboBox_item",
+				"_GUICtrlComboBoxEx_GetItem()"
+			],
+			[
+				"_GUICtrlComboBox",
+				"_GUICtrlComboBox_GetList()"
+			],
+			[
+				"GUIcombobo",
+				"_GUICtrlComboBox_SelectString()"
+			],
+			[
+				"GUIGet",
+				"_GUICtrlComboBox_GetLBText()"
+			],
+			[
+				"MB",
+				"MB_ICONERROR Flag MsgBox Constant Name"
+			],
+			[
+				"MB_ICON",
+				"MB_ICONINFORMATION Flag MsgBox Constant Name"
+			],
+			[
+				"inclu",
+				"include <MsgBoxConstants.au3>	#include <MsgBoxConstants.au3>"
+			],
+			[
+				"Clip",
+				"ClipPut()"
+			],
+			[
+				"ba",
+				"base_path〔variable〕"
+			],
+			[
+				"base",
+				"base_path"
+			],
+			[
+				"sta",
+				"status_code"
+			],
+			[
+				"doc",
+				"DocXMLRPCServer"
+			],
+			[
+				"def",
+				"def	Function"
+			],
+			[
+				"file",
+				"file_json〔variable〕"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"c",
+				"custo"
+			],
+			[
+				"col",
+				"col-md-4"
+			],
+			[
+				"con",
+				"convite_nome〔variable〕"
+			],
+			[
+				"convi",
+				"convites"
+			],
+			[
+				"forma",
+				"format	format"
+			],
+			[
+				"Wi",
+				"WinActivate()"
+			],
+			[
+				"Win",
+				"WinExists()"
+			],
+			[
+				"per",
+				"$pergunta〔variable〕"
+			],
+			[
+				"repla",
+				"StringReplace()"
+			],
+			[
+				"dir",
+				"ScriptDir	@ScriptDir"
+			],
+			[
+				"path",
+				"HomePath	@HomePath"
+			],
+			[
+				"Console",
+				"ConsoleWrite()"
+			],
+			[
+				"MBI",
+				"MB_ICONINFORMATION Flag MsgBox Constant Name"
+			],
+			[
+				"MB_Icon",
+				"MB_ICONWARNING Flag MsgBox Constant Name"
+			],
+			[
+				"WinWa",
+				"WinWait()"
+			],
+			[
+				"CR",
+				"CRLF	@CRLF"
+			],
+			[
+				"Tab",
+				"TAB Send Key List"
+			],
+			[
+				"En",
+				"ENTER Send Key List"
+			],
+			[
+				"y",
+				"YEAR	@YEAR"
+			],
+			[
+				"TAB",
+				"TAB Send Key List"
+			],
+			[
+				"_Noe",
+				"_NowDate()"
+			],
+			[
+				"MO",
+				"MouseClick()"
+			],
+			[
+				"bResul",
+				"bResultadoCodigoNaoCadastrado"
+			],
+			[
+				"Conso",
+				"ConsoleWrite()"
+			],
+			[
+				"do",
+				"Do...Until"
+			],
+			[
+				"iBotaoIncluirItemEixo",
+				"iBotaoIncluirItemEixoX"
+			],
+			[
+				"tba",
+				"TAB Send Key List"
+			],
+			[
+				"Mo",
+				"MouseClick()"
+			],
+			[
+				"For",
+				"ForToStepNext"
+			],
+			[
+				"Lo",
+				"Local"
+			],
+			[
+				"TAb",
+				"TAB Send Key List"
+			],
+			[
+				"Do",
+				"Do...Until"
+			],
+			[
+				"conso",
+				"ConsoleWrite()"
+			],
+			[
+				"StringU",
+				"StringUpper()"
+			],
+			[
+				"GuiCtrl",
+				"GUICtrlRead()"
+			],
+			[
+				"Sw_",
+				"SW_SHOW	@SW_SHOW"
+			],
+			[
+				"sw",
+				"SW_HIDE	@SW_HIDE"
+			],
+			[
+				"SW",
+				"SW_HIDE	@SW_HIDE"
+			],
+			[
+				"GuiSe",
+				"GUISetState()"
+			],
+			[
+				"_N",
+				"_NowDate()"
+			],
+			[
+				"Cons",
+				"ConsoleWrite()"
+			],
+			[
+				"stringIs",
+				"StringIsInt()"
+			],
+			[
+				"Is",
+				"IsNumber()"
+			],
+			[
+				"Verifica",
+				"VerificaAlteraResolucao"
+			],
+			[
+				"AbreVen",
+				"AbreVendasDAV"
+			],
+			[
+				"AbreVendasFaturamento",
+				"AbreVendasFaturamentoPorCarga"
+			],
+			[
+				"en",
+				"ENTER Send Key List"
+			],
+			[
+				"ID",
+				"IDCANCEL Flag MsgBox Constant Name"
+			],
+			[
+				"id",
+				"IDOK Flag MsgBox Constant Name"
+			],
+			[
+				"Id",
+				"IDOK Flag MsgBox Constant Name"
+			],
+			[
+				"Fo",
+				"ForToStepNext"
+			],
+			[
+				"d",
+				"_Word_DocTableWrite()"
+			],
+			[
+				"tab",
+				"TAB Send Key List"
+			],
+			[
+				"Space",
+				"SPACE SendKeyList"
+			],
+			[
+				"deskto",
+				"DesktopHeight	@DesktopHeight"
+			],
+			[
+				"vol",
+				"VOLUME_MUTE SendKeyList	#VOLUME_MUTE SendKeyList"
+			],
+			[
+				"bre",
+				"BREAK SendKeyList	#BREAK SendKeyList"
+			],
+			[
+				"Br",
+				"BROWSER_BACK SendKeyList	#BROWSER_BACK SendKeyList"
+			],
+			[
+				"EN",
+				"ENTER SendKeyList	#ENTER SendKeyList"
+			],
+			[
+				"as",
+				"ASC	#ASC"
+			],
+			[
+				"AC",
+				"Compiler_AU3Check_Dat = 	#Compiler_AU3Check_Dat = "
+			],
+			[
+				"Asc",
+				"ACS_AUTOPLAY	$ACS_AUTOPLAY"
+			],
+			[
+				"asc",
+				"ASC #asd"
+			],
+			[
+				"AS",
+				"ASC #asd"
+			],
+			[
+				"sys",
+				"system〔function〕"
+			],
+			[
+				"f",
+				"F1"
+			],
+			[
+				"r",
+				"run"
+			],
+			[
+				"num",
+				"NUMPAD4"
+			],
+			[
+				"e",
+				"ENTER}	{ENTER}"
+			],
+			[
+				"Sl",
+				"_WinAPI_ShellSetSettings()"
+			],
+			[
+				"SendKe",
+				" Opt('SendKeyDelay', 5)	;~ Opt('SendKeyDelay', 5)"
+			],
+			[
+				"_wo",
+				"_Word_Quit()"
+			],
+			[
+				"If",
+				"_Iif()"
+			],
+			[
+				"incl",
+				"include <MsgBoxConstants.au3>	#include <MsgBoxConstants.au3>"
+			],
+			[
+				"ms",
+				"MsgBox()"
+			],
+			[
+				"in",
+				"InputBox()"
+			],
+			[
+				"em",
+				"empty"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"hea",
+				"header"
+			],
+			[
+				"var",
+				"var_dump〔function〕"
+			],
+			[
+				"gette",
+				"gettext"
+			],
+			[
+				"ut",
+				"utf8_encode"
+			],
+			[
+				"encode",
+				"utf8_encode"
+			],
+			[
+				"u",
+				"utf8_encode"
+			],
+			[
+				"di",
+				"disabled	Attr"
+			],
+			[
+				"ti",
+				"title	Attr"
+			],
+			[
+				"to",
+				"$totalDeContatos〔variable〕"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"Gera",
+				"GerarRelatorioController"
+			],
+			[
+				"cla",
+				"class	PHP: class declaration"
+			],
+			[
+				"inc",
+				"include〔keyword〕"
+			],
+			[
+				"li",
+				"linka	link - alternate"
+			],
+			[
+				"tra",
+				"text-transform"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"mag",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"head",
+				"header〔function〕"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"fa",
+				"$favorito〔variable〕"
+			],
+			[
+				"ch",
+				"checked	Attr"
+			],
+			[
+				"isn",
+				"is_null"
+			],
+			[
+				"pri",
+				"private"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"top",
+				"margin-top"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/AutoItScript/AutoIt.sublime-build",
+					""
+				],
+				[
+					"Packages/AutoItScript/AutoIt.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/AutoItScript/AutoIt.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 242.0,
+		"last_filter": "instal",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"termin",
+				"Terminal: Open"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"upee",
+				"Convert Case: Upper Case"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pty",
+				"Build With: Python"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"python",
+				"Python Docstrings: Unfold"
+			],
+			[
+				"docs",
+				"Python Docstrings: Fold"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pytho",
+				"Build With: Python"
+			],
+			[
+				"con",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"pyt",
+				"Build With: Python"
+			],
+			[
+				"plai",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"conve",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"war",
+				"Word Wrap: Toggle"
+			],
+			[
+				"py",
+				"Build With: Python"
+			],
+			[
+				"min",
+				"View: Toggle Minimap"
+			],
+			[
+				"in",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mi",
+				"View: Toggle Minimap"
+			],
+			[
+				"conver",
+				"Convert Case: Upper Case"
+			],
+			[
+				"debu",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"autoi",
+				"Build With: AutoIt"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"inclu",
+				"AutoIt - IncludeHelper"
+			],
+			[
+				"import",
+				"SublimeCodeIntel: Dump Import Directories"
+			],
+			[
+				"goto",
+				"Goto Documentation"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"autoit",
+				"Build With: AutoIt"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"c",
+				"Set Syntax: C#"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xde",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"vi",
+				"View In Browser"
+			],
+			[
+				"html",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"ide",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"indetan",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"i",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"doc",
+				"Set Syntax: Rd (R Documentation)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"UPP",
+				"Convert Case: Upper Case"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"rem",
+				"Emmet: Remove Tag"
+			],
+			[
+				"inde",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"map",
+				"View: Toggle Minimap"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"iden",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"rename",
+				"Emmet: Rename Tag"
+			],
+			[
+				"viw",
+				"View In Browser"
+			],
+			[
+				"emm",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"emmetsett",
+				"Emmet: Previous Edit Point"
+			],
+			[
+				"emmet",
+				"Set Syntax: Emmet"
+			],
+			[
+				"inta",
+				"Package Control: Install Package"
+			],
+			[
+				"emmet c",
+				"Emmet: Select Next Item"
+			],
+			[
+				"instla",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Testes-Automatizados/TesteUIDesktop"
+	],
+	"file_history":
+	[
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/GetCodigoProdutos.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Fiscal/NF Saída/TA_Inclusão de Nota Fiscal de Saída.au3",
+		"/D/Testes-Automatizados/TesteDeCarga/SGDM/Teste de Carga SGDM Servidor/locustfile.py",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesAuxiliares.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_1.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_2.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/Teste UDF MySql_1.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/Teste UDF MySql_2.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/TryCatch.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir DAV.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/AppGeradorCPFeCNPJ.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/GetCPF_CNPJ.au3",
+		"/C/Users/User/AppData/Local/Temp/test.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/_Msgbox.au3",
+		"/C/Users/User/Desktop/a.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/Vidu.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/teste.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/teste.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada COM NF.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada SEM NF.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Incluir Ordem de Compra.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Alterar Ordem de Compra.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Administração/Usuário/TA_Alterar Cadastro Usuário.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuVendas.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCompras.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCadastros.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ValidacoesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/IncluirProdutos.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesTextosGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesBotoesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/HotKeys.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/MudarResolucao.au3",
+		"/C/Users/User/Desktop/py/mincemeat.py",
+		"/C/Space/SGDMServidor/apache-tomcat-8.0.36/webapps/SGDMServidor/WEB-INF/classes/META-INF/persistence.xml",
+		"/C/Space/spaceweb/apache-tomcat-7.0.41/webapps/SGDMServidor/WEB-INF/classes/META-INF/persistence.xml",
+		"/C/Space/Guardian-SGDM/syson.ini",
+		"/D/Arquivo de Teste/FERRAMENTAS/Appium/Exemplo/Appium_CSharp/Appium_CSharp/Program.cs",
+		"/D/Arquivo de Teste/adm.txt",
+		"/C/wamp64/www/site_imobiliaria/wp-content/themes/buildpress/index.php",
+		"/C/wamp64/www/site_imobiliaria/wp-config.php",
+		"/C/Users/User/Desktop/locustfile.py",
+		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/modelos/cores.txt",
+		"/D/Arquivo de Teste/Testes-Automatizados/SGDM/Teste de Carga SGDM Servidor/dados.json",
+		"/D/Arquivo de Teste/Testes-Automatizados/SGDM/Teste de Carga SGDM Servidor/locustfile.py",
+		"/C/Users/User/Google Drive/Exemplos Estudos/Alura/Python I - Programando com a linguagem/Aula13/models.py",
+		"/C/Users/User/Google Drive/Exemplos Estudos/Alura/Python I - Programando com a linguagem/Aula7.py",
+		"/C/Users/User/Desktop/teste.py",
+		"/D/Arquivo de Teste/FERRAMENTAS/Locust/locustfile.py",
+		"/C/wamp64/www/teste/index.html",
+		"/D/Arquivo de Teste/FERRAMENTAS/Locust/locustfile - Copia.py",
+		"/C/wamp64/www/site_imobiliaria/wp-content/themes/buildpress/single.php",
+		"/C/wamp64/www/wordpress/wp-config.php",
+		"/C/wamp64/www/testmysql.php",
+		"/C/Apollo11_503E/MonitorApollo/logintcupomParc.txt",
+		"/C/Space/spaceweb/viking_monitor/syson.ini",
+		"/C/Apollo11_503E/MonitorApollo/logintcupom.txt",
+		"/C/Apollo11_503E/ListaPaf.txt",
+		"/C/Apollo11_503E/LOGUPDATE.TXT",
+		"/C/Apollo11_503E/BemaFI32.ini",
+		"/C/Apollo11_503E/Floja.ini",
+		"/C/apollo11/CLIENTE.TXT",
+		"/C/Apollo11_503G/MonitorApollo/syson.ini",
+		"/C/Apollo11_503G/MonitorApollo/logintcupomParc.txt",
+		"/C/Apollo11_503G/Floja.ini",
+		"/C/Apollo11_503G/BemaFI32.ini",
+		"/C/Apollo11_503F/MonitorApollo/logintcupomParc.txt",
+		"/C/Apollo11_503F/MonitorApollo/logintcupom.txt",
+		"/C/Apollo11_503F/MonitorApollo/syson.ini",
+		"/C/Apollo11_503F/Floja.ini",
+		"/C/Apollo11_503F/BemaFI32.ini",
+		"/C/Apollo11_503E/MonitorApollo/syson.ini",
+		"/C/Apollo11_503D/Floja.ini",
+		"/C/Apollo11_503D/MonitorApollo/logintcupom.txt",
+		"/C/Apollo11_503D/MonitorApollo/syson.ini",
+		"/C/Apollo11_503D/BemaFI32.ini",
+		"/D/Arquivo de Teste/XML/NFE/EMBOL3-editado-_31140510199449000184550010000142701000151917.xml",
+		"/C/Users/User/Desktop/TabelaPreco.xls",
+		"/G/SerialNo.txt",
+		"/C/Users/User/Documents/GitHub/Android/HajaLuz/Imagens/Resolução S3mini.txt",
+		"/C/mysuite/analitico_para_analise_vendas_custo_maior_que_venda.TXT",
+		"/C/Users/User/Desktop/R.TXT",
+		"/C/Users/User/Desktop/testep.py",
+		"/C/Users/User/Documents/GitHub/Android/Correndo/Correndo/Resources/layout/Main.axml",
+		"/C/Users/User/Documents/GitHub/Android/Correndo/Correndo/MainActivity.cs",
+		"/D/Arquivo de Teste/FERRAMENTAS/periodo build  jenkins",
+		"/D/Arquivo de Teste/XML/NFE/Arcos_MVA - 31140510199449000184550010000142701000151917.xml",
+		"/C/Users/User/Documents/GitHub/Android/HajaLuz/HajaLuz/Model/Flash.cs",
+		"/C/Users/User/Documents/GitHub/Android/HajaLuz/HajaLuz/Activity/MainActivity.cs",
+		"/C/Users/User/Documents/GitHub/Android/HajaLuz/icone/Resolução S3mini.txt",
+		"/D/Arquivo de Teste/XML/NFE/Santa Rosa_35121097837181002190550010008452471875265050.xml",
+		"/D/Arquivo de Teste/XML/NFE/Santa Rosa_31121166475765000196550010000023661015034040-procNfe.xml",
+		"/D/Arquivo de Teste/XML/NFE/Santa Rosa_31121166475765000196550010000023661015034040-procNfe - Copia.xml",
+		"/D/Arquivo de Teste/XML/NFE/Parceria_31140115527906002937550010000705191699498819-BIOSEV 70519.xml",
+		"/D/Arquivo de Teste/XML/NFE/NFe31150823797376000174550000019903201852668742_procNFe.xml",
+		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - xml_da_nf_003_coml_milho_bonifi_31160424532469000130550010000000031136074038procnfe.xml",
+		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - 31160428053619006114550010000859431664680572procnfe.xml",
+		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - 000000000371101000619021.xml",
+		"/D/Arquivo de Teste/XML/NFE/Arcos_31140510199449000184550010000142701000151917 - Copia.xml",
+		"/D/Arquivo de Teste/XML/NFE/Arcos_35140702144885000128550030000048821000048822.XML",
+		"/D/Arquivo de Teste/XML/NFE/ARCOS - 1_35160303940481000103550010000038791000224992.xml",
+		"/D/Arquivo de Teste/XML/NFE/ARCOS - 2_35160303940481000103550010000038801000265959_1.xml",
+		"/D/Arquivo de Teste/XML/NFE/Estoril_31130903096756000174550010001249321423588533-nfe.xml",
+		"/D/NFL/PASSO A PASSO PARAMETRIZAÇÃO.txt",
+		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/html.html",
+		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/LISTA UF",
+		"/D/Arquivo de Teste/FERRAMENTAS/SonarQube 5.5_+_Sonar Scanner 2.6_+_ Jenkins 1.64/StartSonar.bat",
+		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/b.bat",
+		"/C/Space/Guardian-1/syson.ini",
+		"/D/NFS-e/DLL's/Capicom2/instala.bat",
+		"/D/PROGRAMAS/Conexões/.bat",
+		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/t.css",
+		"/C/wamp64/www/site_imobiliaria/wp-includes/template.php",
+		"/C/wamp64/www/site_imobiliaria/wp-includes/template-loader.php",
+		"/C/wamp64/www/site_imobiliaria/wp-load.php",
+		"/C/wamp64/www/site_imobiliaria/wp-blog-header.php",
+		"/C/wamp64/www/site_imobiliaria/wp-content/plugins/ultimate-wp-query-search-filter/ultimate-wpqsf.php",
+		"/C/wamp64/www/site_imobiliaria/wp-content/plugins/ultimate-wp-query-search-filter/html/searchform.php",
+		"/C/wamp64/www/site_imobiliaria/wp-content/plugins/ultimate-wp-query-search-filter/functions.php",
+		"/E/html.html",
+		"/C/wamp64/bin/apache/apache2.4.17/conf/httpd.conf",
+		"/C/wamp64/alias/site_imobiliario.conf",
+		"/C/Users/User/Documents/GitHub/site-luiz/wp-content/plugins/filter-custom-fields-taxonomies-light/admin/edit.php",
+		"/C/Users/User/Documents/GitHub/site-luiz/wp-content/plugins/filter-custom-fields-taxonomies-light/templates/template-filter.php"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Query",
+			"query",
+			"s",
+			"_MB_OK_TEXT",
+			"r",
+			"json",
+			"content_type",
+			"senhadevmysql123",
+			"root",
+			"192.168.0.6",
+			"mva",
+			"st",
+			"mva",
+			"search",
+			"results",
+			"result",
+			"---------------------------",
+			"parcelastef_ven",
+			"cofi",
+			"pis",
+			"mg53",
+			"mg23",
+			"mg53",
+			"mg50",
+			"C197",
+			"MG50",
+			"MG23",
+			"1920",
+			"E110",
+			"Débito para",
+			"C197",
+			"C195",
+			"C197",
+			"c195",
+			"manut",
+			"Caused by",
+			"sTextoTela",
+			"s",
+			"$s",
+			"\"\")\n",
+			"i",
+			"I",
+			"i",
+			"iResultadoWin",
+			"r",
+			"x",
+			"iCliquesParaBaixo",
+			"comments",
+			"300",
+			"ProdutoBloque",
+			"iResultCodigoNaoCadastrado",
+			"iBotaoGravarEixoY",
+			"iBotaoIncluirEixoX",
+			"iBotaoGravarEixoX",
+			"Send",
+			"tab",
+			"bValidaCodigoFornecedor",
+			"bValida",
+			"i",
+			"var",
+			"txtCodigo",
+			"iCodigo",
+			"v_codigoCliente",
+			"eCad",
+			"Cad",
+			"comment.block.cs.autoit",
+			"region",
+			"func",
+			"region",
+			"i",
+			"SendKeyList",
+			"\": \"#",
+			"$",
+			"Send()",
+			"Send",
+			"r\": \"",
+			"\", \"",
+			", \"",
+			"\\\"",
+			"tidyoutputskipfirstline",
+			"tidyoutput",
+			"tidyprocess",
+			"tidycmd",
+			"TidyCmd",
+			"tidycmd",
+			"TidyExePath",
+			"autoittidy",
+			"autoitincludehelper",
+			"MsgBox",
+			"alt+t",
+			"ctrl+shift+b",
+			"}\n",
+			"btnSalvar",
+			"exibirToast",
+			"dir",
+			"dirs",
+			"str",
+			"Header",
+			"public",
+			"timezo",
+			"fran",
+			"fr-",
+			"time",
+			"date",
+			"titulo",
+			"div_ca",
+			"div_consulta",
+			"div_cada",
+			"3",
+			");\n",
+			".row",
+			".content",
+			"content",
+			"contents",
+			"';\n",
+			"80",
+			"LoadModule rewrite_module ",
+			"']))\n",
+			"directory",
+			"';\n",
+			"();\n",
+			"date"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"senharootmysql123",
+			"dev",
+			"Send Key List",
+			"\": \"",
+			"\\\\$",
+			"r\": \"#",
+			" SendKeyList\", \"",
+			" SendKeyList, \"",
+			"",
+			"AutoitInfo"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 200.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 94.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Project_TesteUI_Desktop.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"fp",
+				"helpers\\fpdf\\fpdf.php"
+			],
+			[
+				"",
+				"ConexaoBD.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

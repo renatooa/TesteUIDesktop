@@ -16,7 +16,7 @@
 	Author(s):        cdkid
 #ce
 
-Func _MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer, $sDriver = "{MySQL ODBC 3.51 Driver}", $iPort=3306)
+Func _MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer = "localhost", $sDriver = "{MySQL ODBC 5.1 Driver}", $iPort=3306)
 	Local $v = StringMid($sDriver, 2, StringLen($sDriver) - 2)
 	Local $key = "HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers", $val = RegRead($key, $v)
 	If @error or $val = "" Then

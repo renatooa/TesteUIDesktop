@@ -17,5 +17,6 @@
 	#include "Auxiliares\Validacoes.au3"
 	#include "Auxiliares\MudarResolucao.au3"
 	#include "Auxiliares\HotKeys.au3"
+	#include "Auxiliares\mysql_1.au3"
 
 #EndRegion ###	INCLUDES

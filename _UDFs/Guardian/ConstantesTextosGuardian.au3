@@ -72,7 +72,8 @@ Const $NOME_SPACE_GUARDIAN = "Space Guardian"
 
 #Region ### TEXTOS E TITULOS TELAS MENU VENDAS 
 
-	Const $TEXTO_DAV = "Consulta de Pedidos - Documento Auxiliar de vendas"
+	Const $TEXTO_CONSULTA_DAV = "Consulta de Pedidos - Documento Auxiliar de vendas"
+	Const $TEXTO_DAV = "Documento Auxiliar de Venda"	
 	Const $TEXTO_DEVOLUCAO_VENDA = "Consulta de Pedidos - Devoluções de vendas"
 	Const $TEXTO_OUTRAS_SAIDAS = "Consulta de Pedidos - Outras Saidas"	
 	Const $TEXTO_FATURAMENTO_INDIVIDUAL = "Consulta Notas Fiscais de Saída"

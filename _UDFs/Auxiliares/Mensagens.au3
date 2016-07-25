@@ -21,6 +21,14 @@
 
 #EndRegion ### INCLUDES / OPS
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+=
+=	ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
+=	GetSolicitaCodigo($sTextoMensagem = "INFORME UM CÓDIGO DE...")
+=	GetSolicitaNaturezaOperacao($sTextoMensagem = "informe uma natureza de operação")
+=
+#ce ===============================================================================================================================
+
 #Region ### VARIAVEIS
 
 #EndRegion ### VARIAVEIS
@@ -31,7 +39,10 @@ Func ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 
 	Local Const $sMensagemExibida = "ESTÁ ROTINA IRÁ EXECUTAR O SEGUINTE TESTE " & @CR & @CR & _
 			$sTestesExecutados & @CR & _
-			$sInformacoesAdicionais
+			$sInformacoesAdicionais & @CR & _
+			"---------------------------------------" & @CR & _
+			"Pressione CTRL+SHIFT+Q para " & @CR & _
+			"finalizar o teste a qualquer momento"
 
 	; Exibe MsgBox
 	$iBotaoClicado = MsgBox($MB_ICONINFORMATION + $MB_OKCANCEL, "Rotina de Teste Automatizado", $sMensagemExibida)

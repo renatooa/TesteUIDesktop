@@ -19,6 +19,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #EndRegion ###	INCLUDES / OPS
 
+
 #Region ### VARIAVEIS
 
 Local Const $sAtalhoExpandirMenuCompras = "!c{RIGHT}"

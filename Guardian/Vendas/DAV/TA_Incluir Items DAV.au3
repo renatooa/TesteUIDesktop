@@ -28,56 +28,45 @@ Opt("SendKeyDelay", 100)            ; Alterna o tamanho da pausa breve entre o e
 #EndRegion ### INCLUDES / OPS
 
 #Region ### VARIAVEIS
+#cs ===============================================================================================================================
+	$sTituloDaTelaPrincipalDoSistema -> Informar o valor obtido pelo Autoit Window Info do campo 'title'.
+	$sNomeDoSistema -> Nome do sistema a ser testado pelo script.
+#ce ===============================================================================================================================
+Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
+Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 
+$iQtdeDeProdutos = 50
 $sUsername = "root"
 $sPassword = "@kalunga123"
 $sDatabase = "dental"
-
-$str = ""
-$resultado = ""
+$sHost = "localhost"
 
 #EndRegion ### VARIAVEIS
 
 #Region ### EXECUÇÃO DO SCRIPT
 
-GetArrayCodigoProdutosParaVenda()
+VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ; Função da UDF SistemaExiste.au3
 
+VerificaAlteraResolucao() ; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
+
+ExibeMensagemPadrao("Inclusão de Itens no DAV", "OBS.: A rotina efetua apenas a inclusão dos itens!") ; Exibe mensagem informativa -> (função na UDF Mensagens.au3)
+
+WinActivate($sTituloDaTelaPrincipalDoSistema)
+
+;________________________________________________________________________________________________________________
+
+If ( WinExists("", $TEXTO_DAV) ) Then
+	IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost)
+Else
+	MsgBox($MB_ICONWARNING, "Atenção", "Tela de Inclusão não localizada" & @CR & @CR & _
+	"O script de teste será finalizada")
+	Exit
+EndIf
+
+
+VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
 
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
 #Region ### FUNÇÕES
-
-
-Func GetArrayCodigoProdutosParaVenda()
-
-	$mySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase)
-
-	$select = "Select pro_codigo From produto"
-
-	$resultado = _Query($mySqlConn, $select)
-
-	if(IsObj($resultado)) Then
-
-		With $resultado
-			While Not .EOF
-				$str = $str & .Fields("pro_codigo").Value & "|"
-				.MoveNext
-			WEnd
-		EndWith
-
-	EndIf
-
-	; TESTE
-	$aStr = StringSplit($str, "|")
-	$str = ""	
-	For $i = 1 To 10 Step +1
-		$str = $str & $aStr[$i]	& @CR	
-	Next
-	ConsoleWrite("TOTAL DE PRODUTOS -> " & $aStr[0] & @CR & $str)
-	; EndTeste
-
-	Return $aStr
-
-EndFunc
-
 #EndRegion ### FUNÇÕES

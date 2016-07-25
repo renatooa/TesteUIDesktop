@@ -23,6 +23,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 =
 =	IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)
 =	IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)
+=	IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost)
 =
 #ce ===============================================================================================================================
 
@@ -154,6 +155,76 @@ Func IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)
 		#ce ===============================================================================================================================
 
 	;Next
+
+EndFunc
+
+Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost)
+
+	Local Const $iCampoQtdeEixoX = 450
+	Local Const $iCampoQtdeEixoY = 308
+
+	Local Const $iBotaoGravarItemEixoX = 1023
+	Local Const $iBotaoGravarItemEixoY = 459
+
+	Local Const $iBotaoIncluirItemEixoX = 1023
+	Local Const $iBotaoIncluirItemEixoY = 396
+
+	Local Const $iBotaoCancelarItemEixoX = 1023
+	Local Const $iBotaoCancelarItemEixoY = 480
+
+	Local $aCodigoProdutosParaVenda = GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
+	Local $iTotalDeProdutos = UBound($aCodigoProdutosParaVenda) - 1
+
+	If ( $iQtdeDeProdutos > $iTotalDeProdutos ) Then
+	
+		MsgBox($MB_ICONWARNING, "Atenção", "Quantidade informada maior que a " & @CR & _
+			"quantidade de produtos disponiveis para venda(" & $iTotalDeProdutos & ")" & @CR & @CR & _
+			"O script de teste será finalizada")
+		Exit
+	
+	EndIf
+
+	MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
+
+	For $i = 1 To $iQtdeDeProdutos Step +1
+		
+		Do
+
+			;MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
+			
+			$iCodigoProduto = $aCodigoProdutosParaVenda[$i]			
+			Send($iCodigoProduto & "{ENTER}")
+			;Sleep(100)
+			Send("{ENTER}")
+
+			$bResultadoCodigoNaoCadastrado = TelaCodigoNaoCadastradoExiste() ; Função da UDF ValidacoesGuardian.au3
+			$bResultadoProdutoBloqueado = TelaProdutoBloqueadoExiste() ; Função da UDF ValidacoesGuardian.au3
+
+			If ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado) Then
+				
+				Send("^a{DEL}")
+				MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
+				
+			EndIf
+			
+		Until Not ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado)
+
+		; Clique no campo Quantidade
+		MouseClick("LEFT", $iCampoQtdeEixoX, $iCampoQtdeEixoY, 3)
+		Send("1{TAB}")
+		; Clique no Botão Gravar
+		MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
+
+		$bResultadoInformarCampo = TelaCampoDeveSerInformadoExiste() ; Função da UDF ValidacoesGuardian.au3
+
+		If ($bResultadoInformarCampo) Then
+			
+			MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
+			$i -= 1
+			
+		EndIf
+
+	Next
 
 EndFunc
 

@@ -21,7 +21,13 @@
 		#include "Guardian\OpcoesMenuCadastros.au3"
 		#include "Guardian\OpcoesMenuCompras.au3"
 		#include "Guardian\OpcoesMenuVendas.au3"
-
+		
 	#EndRegion ### INCLUDES DE OPÇÕES DE MENU
+
+	#Region ### INCLUDES DE MANIPULAÇÃO DE BANDO DE DADOS
+
+		#include "Guardian\ManipulaDadosBD.au3"
+
+	#EndRegion ### INCLUDES DE MANIPULAÇÃO DE BANDO DE DADOS
 
 #EndRegion ###	INCLUDES

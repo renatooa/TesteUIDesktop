@@ -36,6 +36,7 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 		$bVariavelArmazenaBool = true<br>
 		$aVariavelArray[3] = ["Item 0", "Item 1", "Item 2"]<br>
 		$vVariavelVariante = 1 OU $vVariavelVariante = "string"
+		$oVariavelArmazenaObjeto = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
 		
 OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.		
 

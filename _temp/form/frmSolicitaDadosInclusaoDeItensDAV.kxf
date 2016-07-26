@@ -228,6 +228,7 @@
 						<property name="Top" vt="Int16">141</property>
 						<property name="Width" vt="Int8">81</property>
 						<property name="Height" vt="Int8">25</property>
+						<property name="Hint" vt="String">teste</property>
 						<property name="ItemHeight" vt="Int8">13</property>
 						<property name="TabOrder" vt="Int8">9</property>
 						<property name="Text" vt="String">dental</property>

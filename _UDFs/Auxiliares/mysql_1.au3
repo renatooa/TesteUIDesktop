@@ -1,5 +1,7 @@
 #include-once
 
+#include <StringConstants.au3>
+
 #cs
 	Function Name:    _MySQLConnect
 	Description:      Initiate a connection to a MySQL database.

@@ -11,10 +11,11 @@
 
 	#include-once
 	
-	#include "Guardian\ConstantesBotoesGuardian.au3"
-	#include "Guardian\ConstantesTextosGuardian.au3"
+	#include "Guardian\Constantes\ConstantesBotoesGuardian.au3"
+	#include "Guardian\Constantes\ConstantesTextosGuardian.au3"
 	#include "Guardian\IncluirProdutos.au3"
 	#include "Guardian\ValidacoesGuardian.au3"
+	#include "Guardian\SolicitaCodigo\SolicitaCodigo.au3"
 
 	#Region ### INCLUDES DE OPÇÕES DE MENU
 

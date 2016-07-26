@@ -69,7 +69,7 @@ WinWaitActive('', "Espelho da Entrada")
 
 Do
 	
-	$sCodigoNaturezaDeOperacao = GetSolicitaNaturezaOperacao()
+	$sCodigoNaturezaDeOperacao = SolicitaNaturezaOperacao()
 	Send($sCodigoNaturezaDeOperacao & "{TAB}")
 
 Until (Not (TelaCodigoNaoCadastradoExiste() Or TelaNatOperNaoPermitidaExiste()))
@@ -81,7 +81,7 @@ Send($sModeloFiscal & "{TAB 2}")
 
 Do
 
-	$iCodigoFornecedor = GetSolicitaCodigo("INFORME UM CÓDIGO DE FORNECEDOR ..: ")
+	$iCodigoFornecedor = SolicitaCodigoFornecedor()
 	Send($iCodigoFornecedor & "{TAB}")
 
 Until (Not TelaCodigoNaoCadastradoExiste())
@@ -90,7 +90,7 @@ Send("{TAB}")
 
 Do
 
-	$iCodigoComprador = GetSolicitaCodigo("INFORME UM CÓDIGO DE COMPRADOR ..: ")
+	$iCodigoComprador = SolicitaCodigoComprador()
 	Send($iCodigoComprador & "{TAB}")
 
 Until (Not TelaCodigoNaoCadastradoExiste())

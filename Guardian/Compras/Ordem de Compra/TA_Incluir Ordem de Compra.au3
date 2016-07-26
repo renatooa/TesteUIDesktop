@@ -21,8 +21,8 @@ Opt("SendKeyDelay", 30) ; Alterna o tamanho da pausa breve entre o envio de pres
 #include <Date.au3>
 #include <MsgBoxConstants.au3>
 
-#include "..\..\..\_UDFs\IncludesAuxiliares.au3"
-#include "..\..\..\_UDFs\IncludesGuardian.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -65,15 +65,15 @@ Send($BTN_INCLUIR)
 
 Do
 
-	$iCodigoFornecedor = GetSolicitaCodigo("INFORME UM CÓDIGO DE FORNECEDOR ..: ")
-	Send($iCodigoFornecedor & "{TAB}")
+	$iCodigoFornecedor = SolicitaCodigoFornecedor()
+	Send($iCodigoFornecedor & "{ENTER}")
 
 Until (Not TelaCodigoNaoCadastradoExiste())
 
 Do
 
-	$iCodigoComprador = GetSolicitaCodigo("INFORME UM CÓDIGO DE COMPRADOR ..:")
-	Send($iCodigoComprador & "{TAB 2}")
+	$iCodigoComprador = SolicitaCodigoComprador()
+	Send($iCodigoComprador & "{ENTER 2}")
 
 Until (Not TelaCodigoNaoCadastradoExiste())
 
@@ -84,7 +84,7 @@ Send("{TAB}")
 #cs ===============================================================================================================================
 	Do
 
-		$iCodigoTransportador = GetSolicitaCodigo("INFORME UM CÓDIGO DE TRANSPORTADOR ..:")
+		$iCodigoTransportador = SolicitaCodigoTransportador()
 		Send($iCodigoTransportador & "{TAB}")
 
 	Until (Not TelaCodigoNaoCadastradoExiste())

@@ -15,7 +15,7 @@ Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
 Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
 
 #include "..\IncludesGuardian.au3"
-#include "AbstractAbreMenuGuardian.au3"
+#include "Abstract\AbstractAbreMenuGuardian.au3"
 
 #EndRegion ###	INCLUDES / OPS
 

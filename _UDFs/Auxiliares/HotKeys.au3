@@ -11,6 +11,7 @@
 
 #include-once
 #include <MsgBoxConstants.au3>
+#include "../IncludesAuxiliares.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -23,8 +24,11 @@ HotKeySet("^+q", "FinalizarScript") ; CTRL + SHIFT + Q
 #Region ### FUNÇÕES
 
 Func FinalizarScript()
-	MsgBox($MB_TOPMOST + $MB_ICONINFORMATION, "HotKeys", "Script Finalizado pelo atalho CTRL+SHIFT+Q", 5)
+
+	MsgBox($MB_TOPMOST + $MB_ICONINFORMATION, "HotKeys", "Script Finalizado pelo atalho CTRL+SHIFT+Q", 5)	
+	VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
 	Exit
+	
 EndFunc
 
 #EndRegion ### FUNÇÕES

@@ -176,32 +176,39 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
     If ($iQtdeDeProdutos > $iTotalDeProdutos) Then
         
+        $sPluralize = ( $iTotalDeProdutos == 1 ) ? "item diponível" : "itens diponiveis"
         MsgBox($MB_ICONWARNING, "Atenção", "Quantidade informada maior que a " & @CR & _
-                "quantidade de produtos disponiveis para venda(" & $iTotalDeProdutos & ")" & @CR & @CR & _
-                "O script de teste será finalizada")
-        Return
+                "quantidade de itens disponível " & @CR & _
+                "para venda (" & $iTotalDeProdutos & " " & $sPluralize & ")" & @CR & @CR & _
+                "O script de teste será finalizado")
+        Return SetError(1)
         
     EndIf
 
     MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
     $iIndex = 0
 
-    For $i = 1 To $iQtdeDeProdutos Step +1 
+    For $i = 1 To $iQtdeDeProdutos Step +1
 
         Do
             
             $iCodigoProduto = $aCodigoProdutosParaVenda[$iIndex]
             Send($iCodigoProduto & "{ENTER}")
 
+            TelaProdutoJaCadastradoNoPedidoExiste()
             TelaProdutoEmOfertaExiste()
             Send("{ENTER}")
+
+            If ( TelaProdutoNaoPossuiImagemExiste() Or TelaImagemDoProdutoExiste() ) Then
+                Send("{TAB}")
+                Send("{ENTER}")            
+            EndIf
 
             ; Função da UDF ValidacoesGuardian.au3
             $bResultadoProdutoExisteNoPedido = TelaProdutoJaCadastradoNoPedidoExiste()
 
             If ($bResultadoProdutoExisteNoPedido) Then
                 
-                ;Send("^a{DEL}")
                 MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
                 MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
                 $i -= 1
@@ -212,16 +219,16 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         Until Not ($bResultadoProdutoExisteNoPedido)
         
         ; Clique no campo Quantidade
+        Sleep(300)
         MouseClick("LEFT", $iCampoQtdeEixoX, $iCampoQtdeEixoY, 3)
         Send("1{TAB}")
-
 
         $bResultadoVendaAbaixoEstoqueMinimoExiste = TelaVendaAbaixoEstoqueMinimoExiste()
 
         ; Clique no Botão Gravar
         MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
 
-        If ( TelaNumeroMaximoDeItensExiste() ) Then        
+        If ( TelaNumeroMaximoDeItensExiste() Or TelaLimiteCreditoAtingidoExiste() ) Then        
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             Return
         EndIf

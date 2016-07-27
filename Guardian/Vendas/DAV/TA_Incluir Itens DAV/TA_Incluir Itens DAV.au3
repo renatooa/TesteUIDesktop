@@ -1,8 +1,8 @@
 #cs ===============================================================================================================================
-	Típo de Script .: (Script de Função - UDF, Script Execução de Teste, Script de Constantes, Script de Includes)
+	Típo de Script .: Script Execução de Teste
 	Descrição ......:
-	Data Inicio ....:
-	Data Termino ...:
+	Data Inicio ....: 25/07/2016
+	Data Termino ...: 27/07/2016
 	Versão .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
@@ -25,6 +25,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
+#include "frmSolicitaDadosInclusaoDeItensDAV.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -57,8 +58,11 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 ;________________________________________________________________________________________________________________
 
 ; Mostra Formulário
-#include "frmSolicitaDadosInclusaoDeItensDAV.au3"
+FrmSolicitaDadosInclusaoDeItensDAV()
 
+$iHoraEmSegundosInicio = GetHorasAtualEmSegundos()
+
+; While para capiturar ação no fomulário
 While 1
 	$nMsg = GUIGetMsg()
 	Switch $nMsg
@@ -93,6 +97,13 @@ While 1
 
 			If (WinExists("", $TEXTO_DAV) And $sDatabase <> "") Then
 				IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
+				
+				If ( Not @error ) Then
+					$iHoraEmSegundosFim = GetHorasAtualEmSegundos()
+					MsgBox($MB_ICONINFORMATION, "Fim Execução Script", "TEMPO GASTO.: " _ 
+					    & $iHoraEmSegundosFim - $iHoraEmSegundosInicio & " seg.", 10)
+				EndIf
+
 				ExitLoop
 			Else
 				MsgBox($MB_ICONWARNING, "Atenção", "Tela de Inclusão não localizada e/ou database não selecionado" & @CR & @CR & _
@@ -108,22 +119,4 @@ Exit
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
 #Region ### FUNÇÕES
-
-Func GetStringDataBases($sUsername, $sPassword, $sHost)
-
-	$sString = ""
-	GUICtrlSetData($cbxDataBase, $sString)
-
-	$aDataBases = GetDataBases($sUsername, $sPassword, $sHost)
-
-	For $vElement In GetDataBases($sUsername, $sPassword, $sHost)
-		If (VarGetType($vElement) == "String") Then
-			$sString = $sString & $vElement & "|"
-		EndIf
-	Next
-
-	Return $sString
-
-EndFunc   ;==>GetStringDataBases
-
 #EndRegion ### FUNÇÕES

@@ -32,6 +32,11 @@
     =   TelaProdutoEmOfertaExiste($sSimOuNao = "n")
     =   TelaPrecoZeradoExiste()
     =   TelaProdutoJaCadastradoNoPedidoExiste()
+    =   TelaVendaAbaixoEstoqueMinimoExiste()
+    =   TelaNumeroMaximoDeItensExiste()
+    =   TelaProdutoNaoPossuiImagemExiste()
+    =   TelaLimiteCreditoAtingidoExiste()
+    =   TelaImagemDoProdutoExiste()
     =
 #ce ===============================================================================================================================
 
@@ -153,18 +158,42 @@ EndFunc   ;==>TelaPrecoZeradoExiste
 
 Func TelaVendaAbaixoEstoqueMinimoExiste()
     
-    Local Const $TextoTelaVendaAbaixoEstoqueMinimoExiste = "Venda abaixo do Estoque Minimo"
+    Local Const $TextoTelaVendaAbaixoEstoqueMinimo = "Venda abaixo do Estoque Minimo"
 
-    Return TelaExiste($TextoTelaVendaAbaixoEstoqueMinimoExiste)
+    Return TelaExiste($TextoTelaVendaAbaixoEstoqueMinimo)
 
 EndFunc   ;==>TelaVendaAbaixoEstoqueMinimoExiste
 
 Func TelaNumeroMaximoDeItensExiste()
     
-    Local Const $TextoTelaNumeroMaximoDeItensExiste = "Número máximo de Itens Atingido"
+    Local Const $TextoTelaNumeroMaximoDeItens = "Número máximo de Itens Atingido"
 
-    Return TelaExiste($TextoTelaNumeroMaximoDeItensExiste)
+    Return TelaExiste($TextoTelaNumeroMaximoDeItens)
 
 EndFunc   ;==>TelaNumeroMaximoDeItensExiste
+
+Func TelaProdutoNaoPossuiImagemExiste()
+    
+    Local Const $TextoTelaProdutoNaoPossuiImagem = "Produto não possui Imagem"
+
+    Return TelaExiste($TextoTelaProdutoNaoPossuiImagem)
+
+EndFunc   ;==>TelaProdutoNaoPossuiImagemExiste
+
+Func TelaLimiteCreditoAtingidoExiste()
+    
+    Local Const $TextoTelaLimiteCreditoAtingido = "Limite de crédito atingido. Verifique"
+
+    Return TelaExiste($TextoTelaLimiteCreditoAtingido)
+
+EndFunc   ;==>TelaLimiteCreditoAtingidoExiste
+
+Func TelaImagemDoProdutoExiste()
+    
+    Local Const $TextoTelaImagemDoProduto = "Imagem do Produto"
+
+    Return TelaExiste($TextoTelaImagemDoProduto)
+
+EndFunc   ;==>TelaImagemDoProdutoExiste
 
 #EndRegion ### FUNÇÕES

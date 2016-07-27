@@ -36,9 +36,9 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
     $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
 
     $sSelect = "SELECT pro_codigo FROM produto " _
-             & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo " _
-             & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo " _
-             & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo " _
+             & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo AND pro_filcodigo = pfi_filcodigo " _
+             & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo AND lpd_filcodigo = pfi_filcodigo " _
+             & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo AND lpd_filcodigo = ppr_filcodigo " _
              & "WHERE pro_filcodigo = 1 AND pro_ativo = 1 " _
              & "AND pfi_estoque > 20 AND pfi_libvenda = 1 " _
              & "AND lpd_estfisico > 20 AND ppr_precovenda <> 0 " _
@@ -80,6 +80,6 @@ EndFunc   ;==>GetDataBases
 #EndRegion ### FUNÇÕES
 
 ; TESTE
-    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "dental", "localhost"))
+    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "2rl", "localhost"))
     ;_ArrayDisplay(GetDataBases("root", "@kalunga123", "localhost"))
 ; EndTeste

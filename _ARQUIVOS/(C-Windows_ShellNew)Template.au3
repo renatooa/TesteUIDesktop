@@ -1,5 +1,7 @@
 #cs ===============================================================================================================================
-	Típo de Script .: |Script de Função - UDF | Script Execução de Teste | Script de Constantes | Script de Includes|
+	Típo de Script .: | Script de Função - UDF | Script Execução de Teste 
+					  | Script de Constantes | Script de Includes|
+					  | Script de View - Formulário KodaForm
 	Descrição ......:
 	Data Inicio ....:
 	Data Termino ...:
@@ -22,8 +24,8 @@ Opt("SendKeyDelay", 100)            ; Alterna o tamanho da pausa breve entre o e
 #include <Date.au3>
 #include <MsgBoxConstants.au3>
 
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesAuxiliares.au3"
-#include "D:\Arquivo de Teste\Testes-Automatizados\_UDFs\IncludesGuardian.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -54,6 +56,7 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 
 VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
+Exit
 
 #EndRegion ### EXECUÇÃO DO SCRIPT
 

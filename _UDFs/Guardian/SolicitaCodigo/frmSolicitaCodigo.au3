@@ -1,3 +1,12 @@
+#cs ===============================================================================================================================
+    Típo de Script .: Script de View - Formulário KodaForm
+    Descrição ......: Formulário de Solicitação de Código
+    Data Inicio ....: 26/07/2016
+    Data Termino ...: 26/07/2016
+    Versão .........: 001
+    Autor(s) .......: Ronildo
+#ce ===============================================================================================================================
+
 #Region ### INCLUDES / OPS
 
 #include-once
@@ -12,7 +21,7 @@
 
 #Region ### VARIAVEIS
 
-Global $lblTexto = ""
+;Global $lblTexto = ""
 Global $txtCodigo = ""
 Global $btnOK = ""
 Global $btnCancelar = ""

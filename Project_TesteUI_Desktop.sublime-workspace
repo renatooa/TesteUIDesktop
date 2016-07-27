@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"Se",
+				"SetError()"
+			],
+			[
+				"MB",
+				"MB_ICONINFORMATION Flag MsgBox Constant Name"
+			],
+			[
+				"_No",
+				"_NowTime()"
+			],
+			[
+				"ho",
+				"HOUR	@HOUR"
+			],
+			[
+				"m",
+				"MSEC	@MSEC"
+			],
+			[
+				"Ens",
+				"ENTER Send Key List"
+			],
+			[
 				"include",
 				"include <Array.au3>	#include <Array.au3>"
 			],
@@ -22,10 +46,6 @@
 			[
 				"fo",
 				"ForInNext"
-			],
-			[
-				"MB",
-				"MB_ICONWARNING Flag MsgBox Constant Name"
 			],
 			[
 				"forma",
@@ -494,36 +514,16 @@
 			[
 				"pa",
 				"padding-bottom"
-			],
-			[
-				"padding",
-				"padding-top"
-			],
-			[
-				"he",
-				"height"
-			],
-			[
-				"fa",
-				"$favorito〔variable〕"
-			],
-			[
-				"ch",
-				"checked	Attr"
-			],
-			[
-				"isn",
-				"is_null"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
+			"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
 			"settings":
 			{
-				"buffer_size": 2798,
+				"buffer_size": 3497,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "_UDFs/Guardian/IncluirProdutos.au3",
 			"settings":
 			{
-				"buffer_size": 7467,
+				"buffer_size": 8873,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,20 +539,12 @@
 			"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
 			"settings":
 			{
-				"buffer_size": 4706,
+				"buffer_size": 4833,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
-			"settings":
-			{
-				"buffer_size": 2216,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "_UDFs/Guardian/ConstantesBotoesGuardian.au3",
+			"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 			"settings":
 			{
 				"buffer_size": 1051,
@@ -560,7 +552,7 @@
 			}
 		},
 		{
-			"file": "_UDFs/Guardian/ConstantesTextosGuardian.au3",
+			"file": "_UDFs/Guardian/Constantes/ConstantesTextosGuardian.au3",
 			"settings":
 			{
 				"buffer_size": 3701,
@@ -568,18 +560,26 @@
 			}
 		},
 		{
-			"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
+			"file": "_UDFs/Auxiliares/mysql_1.au3",
 			"settings":
 			{
-				"buffer_size": 3613,
+				"buffer_size": 18866,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "_UDFs/Auxiliares/mysql_1.au3",
+			"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
 			"settings":
 			{
-				"buffer_size": 18834,
+				"buffer_size": 3011,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
+			"settings":
+			{
+				"buffer_size": 5138,
 				"line_ending": "Windows"
 			}
 		}
@@ -607,12 +607,16 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 81.0,
-		"last_filter": "upper",
+		"height": 265.0,
+		"last_filter": "instal",
 		"selected_items":
 		[
 			[
-				"upper",
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"upp",
 				"Convert Case: Upper Case"
 			],
 			[
@@ -620,8 +624,8 @@
 				"Indentation: Convert to Spaces"
 			],
 			[
-				"instal",
-				"Package Control: Install Package"
+				"upper",
+				"Convert Case: Upper Case"
 			],
 			[
 				"termin",
@@ -690,10 +694,6 @@
 			[
 				"conve",
 				"Indentation: Convert to Spaces"
-			],
-			[
-				"upp",
-				"Convert Case: Upper Case"
 			],
 			[
 				"war",
@@ -876,13 +876,17 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 432.0
 	},
 	"console":
 	{
 		"height": 125.0,
 		"history":
 		[
+			"ls",
+			"clean",
+			"clear",
+			"cls",
 			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -899,35 +903,60 @@
 	[
 		"/D/Testes-Automatizados/TesteUIDesktop",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV"
 	],
 	"file_history":
 	[
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_1.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesAuxiliares.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/SCRIPTS SQL/SELECT_PRODUTOS_PARA_VENDA.sql",
+		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/udf_autoit_modificadas/Debug.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/SolicitaCodigo/frmSolicitaCodigo.au3",
+		"/C/Users/User/Desktop/form.au3",
+		"/C/Users/User/Desktop/test.au3",
 		"/C/Users/User/Desktop/testestes.au3",
+		"/C/Users/User/Desktop/2.au3",
+		"/C/Users/User/Desktop/1.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/SolicitaCodigo/Abstract/AbstractSolicitaCodigo.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/SolicitaCodigo/SolicitaCodigo.au3",
+		"/D/Program Files/Microvirt/MEmu/scripts/info.ini",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Incluir Ordem de Compra.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/Abstract/AbstractValidacaoGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ValidacoesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada SEM NF.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada COM NF.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesAuxiliares.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Mensagens.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Abstract/AbstractSolicitaCodigo.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesBotoesGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesTextosGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/AbstractValidacaoGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/Abstract/AbstractSolicitaCodigo.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/Abstract/AbstractAbreMenuGuardian.au3",
+		"/C/Users/User/Desktop/1 - Copia.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuVendas.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCompras.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCadastros.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/frmSolicitaCodigo.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/AbstractAbreMenuGuardian.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
+		"/C/Users/User/AppData/Roaming/Sublime Text 3/Packages/AutoItScript/AutoIt.sublime-settings",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_1.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/SCRIPTS SQL/SELECT_PRODUTOS_PARA_VENDA.sql",
 		"/C/Users/User/AppData/Local/Temp/test.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/HotKeys.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Items DAV.au3",
-		"/C/Users/User/Desktop/form.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/AbstractValidacaoGuardian.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuVendas.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada SEM NF.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCompras.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/README.md",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/AbstractAbreMenuGuardian.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ValidacoesGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/GetCodigoProdutos.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Fiscal/NF Saída/TA_Inclusão de Nota Fiscal de Saída.au3",
 		"/D/Testes-Automatizados/TesteDeCarga/SGDM/Teste de Carga SGDM Servidor/locustfile.py",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_2.au3",
@@ -943,14 +972,9 @@
 		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/Vidu.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/teste.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/teste.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada COM NF.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Incluir Ordem de Compra.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Alterar Ordem de Compra.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Administração/Usuário/TA_Alterar Cadastro Usuário.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/OpcoesMenuCadastros.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/IncluirProdutos.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesTextosGuardian.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesBotoesGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/MudarResolucao.au3",
 		"/C/Users/User/Desktop/py/mincemeat.py",
 		"/C/Space/SGDMServidor/apache-tomcat-8.0.36/webapps/SGDMServidor/WEB-INF/classes/META-INF/persistence.xml",
@@ -1017,28 +1041,11 @@
 		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - xml_da_nf_003_coml_milho_bonifi_31160424532469000130550010000000031136074038procnfe.xml",
 		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - 31160428053619006114550010000859431664680572procnfe.xml",
 		"/D/Arquivo de Teste/XML/NFE/Milho Brasil - 000000000371101000619021.xml",
-		"/D/Arquivo de Teste/XML/NFE/Arcos_31140510199449000184550010000142701000151917 - Copia.xml",
-		"/D/Arquivo de Teste/XML/NFE/Arcos_35140702144885000128550030000048821000048822.XML",
-		"/D/Arquivo de Teste/XML/NFE/ARCOS - 1_35160303940481000103550010000038791000224992.xml",
-		"/D/Arquivo de Teste/XML/NFE/ARCOS - 2_35160303940481000103550010000038801000265959_1.xml",
-		"/D/Arquivo de Teste/XML/NFE/Estoril_31130903096756000174550010001249321423588533-nfe.xml",
-		"/D/NFL/PASSO A PASSO PARAMETRIZAÇÃO.txt",
-		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/html.html",
-		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/LISTA UF",
-		"/D/Arquivo de Teste/FERRAMENTAS/SonarQube 5.5_+_Sonar Scanner 2.6_+_ Jenkins 1.64/StartSonar.bat",
-		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/b.bat",
-		"/C/Space/Guardian-1/syson.ini",
-		"/D/NFS-e/DLL's/Capicom2/instala.bat",
-		"/D/PROGRAMAS/Conexões/.bat",
-		"/C/wamp64/www/site_imobiliaria/ARQUIVOS/t.css",
-		"/C/wamp64/www/site_imobiliaria/wp-includes/template.php",
-		"/C/wamp64/www/site_imobiliaria/wp-includes/template-loader.php",
-		"/C/wamp64/www/site_imobiliaria/wp-load.php",
-		"/C/wamp64/www/site_imobiliaria/wp-blog-header.php"
+		"/D/Arquivo de Teste/XML/NFE/Arcos_31140510199449000184550010000142701000151917 - Copia.xml"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -1052,6 +1059,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"i",
+			"hs",
+			"getsoli",
 			"}\")\n",
 			"\"\n",
 			"select",
@@ -1176,10 +1186,7 @@
 			"contents",
 			"';\n",
 			"80",
-			"LoadModule rewrite_module ",
-			"']))\n",
-			"directory",
-			"';\n"
+			"LoadModule rewrite_module "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1207,36 +1214,36 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
+					"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2798,
+						"buffer_size": 3497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2723,
-								2723
+								2360,
+								2360
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 35.0,
+						"translation.y": 842.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1245,27 +1252,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7467,
+						"buffer_size": 8873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7432,
-								7432
+								7662,
+								7662
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2568.0,
+						"translation.y": 2760.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1274,15 +1282,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4706,
+						"buffer_size": 4833,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2868,
-								2868
+								4221,
+								4221
 							]
 						],
 						"settings":
@@ -1291,36 +1299,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1253.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 86.0,
+						"translation.y": 1283.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1329,12 +1308,12 @@
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
-					"buffer": 4,
-					"file": "_UDFs/Guardian/ConstantesBotoesGuardian.au3",
+					"buffer": 3,
+					"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1357,45 +1336,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "_UDFs/Guardian/ConstantesTextosGuardian.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3203,
-								3212
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 914.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
+					"buffer": 4,
+					"file": "_UDFs/Guardian/Constantes/ConstantesTextosGuardian.au3",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3613,
+						"buffer_size": 3701,
 						"regions":
 						{
 						},
@@ -1415,24 +1365,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 5,
 					"file": "_UDFs/Auxiliares/mysql_1.au3",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18834,
+						"buffer_size": 18866,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								16302,
+								16302
 							]
 						],
 						"settings":
@@ -1441,10 +1391,70 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6706.0,
+						"translation.y": 6770.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2841,
+								2841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 906.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4522,
+								4522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AutoItScript/AutoIt.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1939.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1483,7 +1493,7 @@
 		"rows":
 		[
 			0.0,
-			0.772180451128,
+			0.683458646617,
 			1.0
 		]
 	},
@@ -1517,6 +1527,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"debu",
+				"_ARQUIVOS\\udf_autoit_modificadas\\Debug.au3"
+			],
 			[
 				"fp",
 				"helpers\\fpdf\\fpdf.php"

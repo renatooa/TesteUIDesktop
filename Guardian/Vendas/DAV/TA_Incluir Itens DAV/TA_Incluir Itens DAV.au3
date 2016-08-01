@@ -60,9 +60,9 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 ; Mostra Formulário
 FrmSolicitaDadosInclusaoDeItensDAV()
 
-$iHoraEmSegundosInicio = GetHorasAtualEmSegundos()
+$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
 
-; While para capiturar ação no fomulário
+; While para capturar ação no fomulário
 While 1
 	$nMsg = GUIGetMsg()
 	Switch $nMsg
@@ -84,9 +84,9 @@ While 1
 
 			$sHost = _GUICtrlComboBox_GetEditText($cbxHostDB)
 
-			$sString = GetStringDataBases($sUsername, $sPassword, $sHost)
+			$sString = GetDataBasesInString($sUsername, $sPassword, $sHost) ; Função da UDF ManipulaDadosBD.au3
 
-			GUICtrlSetData($cbxDataBase, $sString, "dental")
+			GUICtrlSetData($cbxDataBase, $sString)
 			GUICtrlSetState($cbxSenhaDB, $GUI_DISABLE)
 			GUICtrlSetState($cbxDataBase, $GUI_ENABLE)
 
@@ -107,7 +107,7 @@ While 1
 				ExitLoop
 			Else
 				MsgBox($MB_ICONWARNING, "Atenção", "Tela de Inclusão não localizada e/ou database não selecionado" & @CR & @CR & _
-						"O script de teste será finalizada")
+						"O script de teste será finalizado")
 				ExitLoop
 			EndIf
 	EndSwitch

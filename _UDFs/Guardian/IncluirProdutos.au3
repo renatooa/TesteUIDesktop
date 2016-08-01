@@ -171,7 +171,7 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
     Local Const $iBotaoCancelarItemEixoX = 1023
     Local Const $iBotaoCancelarItemEixoY = 480
 
-    Local $aCodigoProdutosParaVenda = GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
+    Local $aCodigoProdutosParaVenda = GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF ManipulaDadosBD.au3
     Local $iTotalDeProdutos = UBound($aCodigoProdutosParaVenda) - 1
 
     If ($iQtdeDeProdutos > $iTotalDeProdutos) Then

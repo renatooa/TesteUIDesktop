@@ -52,13 +52,13 @@ Func FrmSolicitaDadosInclusaoDeItensDAV()
 	$lblHostDB = GUICtrlCreateLabel("Host DB.:", 24, 87, 59, 17)
 	GUICtrlSetFont(-1, 8, 800, 0, "MS Sans Serif")
 	$cbxHostDB = GUICtrlCreateCombo("", 96, 80, 81, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
-	GUICtrlSetData(-1, "localhost|192.168.0.6|192.168.0.14", "localhost")
+	GUICtrlSetData(-1, "localhost|192.168.0.6|192.168.0.14")
 	$lblSenhaDB = GUICtrlCreateLabel("Senha DB.:", 24, 119, 69, 17)
 	GUICtrlSetFont(-1, 8, 800, 0, "MS Sans Serif")
 	$cbxSenhaDB = GUICtrlCreateCombo("", 96, 113, 129, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
-	GUICtrlSetData(-1, "@k*********123|@s****************123", "@k*********123")
+	GUICtrlSetData(-1, "@k*********123|@s****************123")
 	GUICtrlSetTip(-1, "Selecione uma senha para carregar os databases!")
-	$cbxDataBase = GUICtrlCreateCombo("", 96, 142, 81, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+	$cbxDataBase = GUICtrlCreateCombo("", 96, 142, 129, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
 	GUICtrlSetState(-1, $GUI_DISABLE)
 	$lblDataBase = GUICtrlCreateLabel("DataBase.:", 23, 149, 67, 17)
 	GUICtrlSetFont(-1, 8, 800, 0, "MS Sans Serif")
@@ -69,22 +69,5 @@ Func FrmSolicitaDadosInclusaoDeItensDAV()
 	#EndRegion ### END Koda GUI section ###
 
 EndFunc
-
-Func GetStringDataBases($sUsername, $sPassword, $sHost)
-
-	$sString = ""
-	GUICtrlSetData($cbxDataBase, $sString)
-
-	$aDataBases = GetDataBases($sUsername, $sPassword, $sHost)
-
-	For $vElement In GetDataBases($sUsername, $sPassword, $sHost)
-		If (VarGetType($vElement) == "String") Then
-			$sString = $sString & $vElement & "|"
-		EndIf
-	Next
-
-	Return $sString
-
-EndFunc   ;==>GetStringDataBases
 
 #EndRegion ### FUNÇÕES

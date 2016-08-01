@@ -23,7 +23,8 @@
 #cs FUNÇÕES DA UDF ================================================================================================================
     =
     =   GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
-    =   GetDataBases($sUsername, $sPassword, $sHost, $sDatabase = "")
+    =   GetDataBasesInArray($sUsername, $sPassword, $sHost)
+    =   GetDataBasesInString($sUsername, $sPassword, $sHost)
     =
 #ce ===============================================================================================================================
 
@@ -45,13 +46,13 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
              & "AND ppr_prbcodigo = 1 AND pfi_inativo = 0 " _
              & "GROUP BY pro_codigo;"
 
-    $oResultQuery = _Query($oMySqlConn, $sSelect)    
+    $oResultQuery = _Query($oMySqlConn, $sSelect)
 
     If (IsObj($oResultQuery)) Then
 
         With $oResultQuery
             While Not .EOF
-                $sCodigosProdutos = $sCodigosProdutos & .Fields("pro_codigo").Value & "|"
+                $sCodigosProdutos &= .Fields("pro_codigo").Value & "|"
                 .MoveNext
             WEnd
         EndWith
@@ -67,19 +68,36 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
 
 EndFunc   ;==>GetArrayCodigoProdutosParaVenda
 
-Func GetDataBases($sUsername, $sPassword, $sHost, $sDatabase = "")
+Func GetDataBasesInArray($sUsername, $sPassword, $sHost)
 
+    Local Const $sDatabase = ""
     $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
     $aDataBases = _GetDBNames($oMySqlConn)
     _MySQLEnd($oMySqlConn)
 
     Return $aDataBases
 
-EndFunc   ;==>GetDataBases
+EndFunc   ;==>GetDataBasesInArray
+
+Func GetDataBasesInString($sUsername, $sPassword, $sHost)
+    
+    $sDataBases = ""
+    $aDataBases = GetDataBasesInArray($sUsername, $sPassword, $sHost)
+
+    For $sDataBase In $aDataBases
+        If (VarGetType($sDataBase) == "String") Then
+            $sDataBases = $sDataBases & $sDataBase & "|"
+        EndIf
+    Next
+
+    Return $sDataBases
+
+EndFunc   ;==>GetDataBasesInString
 
 #EndRegion ### FUNÇÕES
 
 ; TESTE
     ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "2rl", "localhost"))
     ;_ArrayDisplay(GetDataBases("root", "@kalunga123", "localhost"))
+    ;ConsoleWrite(GetStringDataBases("root", "@kalunga123", "localhost"))
 ; EndTeste

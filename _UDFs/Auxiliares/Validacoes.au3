@@ -15,9 +15,13 @@
 #EndRegion ###	INCLUDES / OPS
 
 #Region ### VARIAVEIS
-
-
 #EndRegion ### VARIAVEIS
+
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema, $sTextoDaTelaPrincipalDoSistema = "")
+    =
+#ce ===============================================================================================================================
 
 #Region ### FUNÇÕES
 

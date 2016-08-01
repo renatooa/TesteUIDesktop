@@ -17,6 +17,12 @@ Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
 #Region ### VARIAVEIS
 #EndRegion ### VARIAVEIS
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   GetHorasAtualEmSegundos()
+    =
+#ce ===============================================================================================================================
+
 #Region ### FUNÇÕES
 
 Func GetHorasAtualEmSegundos()

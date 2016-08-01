@@ -4,7 +4,7 @@
 	Data Inicio ....: 23/07/2015
 	Data Termino ...: 23/07/2015
 	Versão .........: 002 --> 09/12/2015
-	Autor(s) .......: Ronildo (Exemplo Copiado do Forum AutoIt Brasil)
+	Autor(s) .......: Ronildo (Função _ChangeEscreenRes() Copiada do Forum AutoIt Brasil)
 #ce ===============================================================================================================================
 
 ;				-----------	INCLUDES / OPS ----------
@@ -133,6 +133,7 @@ Func VoltaResolucaoAnterior()
 		_ChangeEscreenRes($iLarguraTelaAtual, $iAlturaTelaAtual)
 
 	EndIf
+	
 EndFunc   ;==>VoltaResolucaoAnterior
 
 ;***************************************************************

@@ -112,7 +112,7 @@ If ($iResultadoWinActive) Then
 
 EndIf
 
-; [TESTE]
+; [TEST]
 _Assert($iResultadoWinActive <> 0, false)
 
 VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)

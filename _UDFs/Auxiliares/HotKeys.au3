@@ -28,7 +28,6 @@ Func FinalizarScript()
 	MsgBox($MB_TOPMOST + $MB_ICONINFORMATION, "HotKeys", "Script Finalizado pelo atalho CTRL+SHIFT+Q", 5)	
 	VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
 	Exit
-	
 EndFunc
 
 #EndRegion ### FUNÇÕES

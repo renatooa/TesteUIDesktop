@@ -55,20 +55,19 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
             While Not .EOF
                 $sCodigosProdutos &= .Fields("pro_codigo").Value & "|"
                 .MoveNext                
-            WEnd
-            #cs
-                Remove ultimo Pipe para não gerar indice com 
-                valor em branco ao fazer o Split da string
-            #ce
-            $sCodigosProdutos &= "."
-            $sCodigosProdutos = StringReplace($sCodigosProdutos::$iLengthString, "|.", "")
+            WEnd            
         EndWith
     EndIf
     
     _MySQLEnd($oMySqlConn)
 
+    #cs
+        StringReplace remove ultimo Pipe para não gerar indice com 
+        valor em branco ao fazer o StringSplit
+    #ce
+    $sCodigosProdutos = StringReplace($sCodigosProdutos, "|", "", -1)
     $aCodigosProdutos = StringSplit($sCodigosProdutos, "|", $STR_NOCOUNT)
-    _ArrayShuffle($aCodigosProdutos)    
+    _ArrayShuffle($aCodigosProdutos) 
 
     Return $aCodigosProdutos
 
@@ -106,4 +105,4 @@ EndFunc   ;==>GetDataBasesInString
     ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "_sgdmsupdev", "localhost"))
     ;_ArrayDisplay(GetDataBases("root", "@kalunga123", "localhost"))
     ;ConsoleWrite(GetStringDataBases("root", "@kalunga123", "localhost"))
-; EndTeste
+; ENDTESTE

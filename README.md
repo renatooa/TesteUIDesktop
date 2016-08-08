@@ -27,10 +27,10 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 <b><i>PADRONIZAÇÃO DO CODIGO</i></b>
 **************************
 
-* Nomer as variaveis informando a primeira letra do tipo de dados que será armazenado na mesma.
+* Nomear as variaveis informando a primeira letra do tipo de dados que será armazenado na mesma.
  
 	Ex.:<br>
-		$sVariavelArmazenaString = ""<br>
+		$sVariavelArmazenaString = "texto"<br>
 		$iVariavelArmazenaInt = 10<br>
 		$dVariavelArmazenaDouble = 5.5<br>
 		$bVariavelArmazenaBool = true<br>

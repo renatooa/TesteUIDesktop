@@ -228,6 +228,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         ; Clique no Botão Gravar
         MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
 
+        TelaDescricaoDeProdutoDAVExiste()
+
         If ( TelaNumeroMaximoDeItensExiste() Or TelaLimiteCreditoAtingidoExiste() ) Then        
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             Return

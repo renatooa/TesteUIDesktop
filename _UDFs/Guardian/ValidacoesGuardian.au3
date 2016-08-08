@@ -37,6 +37,7 @@
     =   TelaProdutoNaoPossuiImagemExiste()
     =   TelaLimiteCreditoAtingidoExiste()
     =   TelaImagemDoProdutoExiste()
+    =   TelaDescricaoDeProdutoDAVExiste()
     =
 #ce ===============================================================================================================================
 
@@ -195,5 +196,13 @@ Func TelaImagemDoProdutoExiste()
     Return TelaExiste($TextoTelaImagemDoProduto)
 
 EndFunc   ;==>TelaImagemDoProdutoExiste
+
+Func TelaDescricaoDeProdutoDAVExiste()
+    
+    Local Const $TextoTelaDescricaoDeProdutoDAV = "Descrição de Produto para Documento Auxilia de Venda"
+
+    Return TelaExiste($TextoTelaDescricaoDeProdutoDAV, "{TAB 5}{ENTER}")
+
+EndFunc   ;==>TelaDescricaoDeProdutoDAVExiste
 
 #EndRegion ### FUNÇÕES

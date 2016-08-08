@@ -63,7 +63,7 @@ FrmSolicitaDadosInclusaoDeItensDAV()
 $iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
 
 ; While para capturar ação no fomulário
-While 1
+While True
 	$nMsg = GUIGetMsg()
 	Switch $nMsg
 		Case $GUI_EVENT_CLOSE, $btnCancelar
@@ -76,10 +76,11 @@ While 1
 			$sUsername = GUICtrlRead($txtUserDB)
 
 			$iIndexResult = _GUICtrlComboBox_GetCurSel($cbxSenhaDB)
-			If ($iIndexResult == 0) Then
-				$sPassword = "@kalunga123"
+			$sPasswordText = _GUICtrlComboBox_GetEditText($cbxSenhaDB)			
+			If ($iIndexResult == 0) Then				
+				$sPassword = StringReplace ($sPasswordText, "*********", "alunga")
 			Else
-				$sPassword = "@senharootmysql123"
+				$sPassword = StringReplace($sPasswordText, "****************", "enharootmysql")
 			EndIf
 
 			$sHost = _GUICtrlComboBox_GetEditText($cbxHostDB)

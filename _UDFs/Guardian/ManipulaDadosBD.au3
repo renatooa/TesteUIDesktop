@@ -41,6 +41,8 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
              & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo AND lpd_filcodigo = pfi_filcodigo " _
              & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo AND lpd_filcodigo = ppr_filcodigo " _
              & "WHERE pro_filcodigo = 1 AND pro_ativo = 1 " _
+             & "AND pfi_estpenconfi = 0 AND pfi_estpenentra = 0 AND pfi_estpenentre = 0 " _
+             & "AND lpd_estpenconfi = 0 AND lpd_estpenentra = 0 AND lpd_estpenentre = 0 " _
              & "AND pfi_estoque > 20 AND pfi_libvenda = 1 " _
              & "AND lpd_estfisico > 20 AND ppr_precovenda <> 0 " _
              & "AND ppr_prbcodigo = 1 AND pfi_inativo = 0 " _
@@ -49,20 +51,24 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
     $oResultQuery = _Query($oMySqlConn, $sSelect)
 
     If (IsObj($oResultQuery)) Then
-
         With $oResultQuery
             While Not .EOF
                 $sCodigosProdutos &= .Fields("pro_codigo").Value & "|"
-                .MoveNext
+                .MoveNext                
             WEnd
+            #cs
+                Remove ultimo Pipe para não gerar indice com 
+                valor em branco ao fazer o Split da string
+            #ce
+            $sCodigosProdutos &= "."
+            $sCodigosProdutos = StringReplace($sCodigosProdutos::$iLengthString, "|.", "")
         EndWith
-
-    EndIf    
-
+    EndIf
+    
     _MySQLEnd($oMySqlConn)
 
     $aCodigosProdutos = StringSplit($sCodigosProdutos, "|", $STR_NOCOUNT)
-    _ArrayShuffle($aCodigosProdutos)
+    _ArrayShuffle($aCodigosProdutos)    
 
     Return $aCodigosProdutos
 
@@ -97,7 +103,7 @@ EndFunc   ;==>GetDataBasesInString
 #EndRegion ### FUNÇÕES
 
 ; TESTE
-    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "2rl", "localhost"))
+    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "_sgdmsupdev", "localhost"))
     ;_ArrayDisplay(GetDataBases("root", "@kalunga123", "localhost"))
     ;ConsoleWrite(GetStringDataBases("root", "@kalunga123", "localhost"))
 ; EndTeste

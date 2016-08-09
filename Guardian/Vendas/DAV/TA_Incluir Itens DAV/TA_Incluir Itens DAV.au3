@@ -60,8 +60,6 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 ; Mostra Formulário
 FrmSolicitaDadosInclusaoDeItensDAV()
 
-$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
-
 ; While para capturar ação no fomulário
 While True
 	$nMsg = GUIGetMsg()
@@ -97,6 +95,8 @@ While True
 			GUISetState(@SW_HIDE)
 
 			If (WinExists("", $TEXTO_DAV) And $sDatabase <> "") Then
+				$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
+				
 				IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
 				
 				If ( Not @error ) Then

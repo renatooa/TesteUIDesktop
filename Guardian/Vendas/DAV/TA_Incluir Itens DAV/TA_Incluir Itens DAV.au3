@@ -76,7 +76,7 @@ While True
 			$iIndexResult = _GUICtrlComboBox_GetCurSel($cbxSenhaDB)
 			$sPasswordText = _GUICtrlComboBox_GetEditText($cbxSenhaDB)			
 			If ($iIndexResult == 0) Then				
-				$sPassword = StringReplace ($sPasswordText, "*********", "alunga")
+				$sPassword = StringReplace($sPasswordText, "*********", "alunga")
 			Else
 				$sPassword = StringReplace($sPasswordText, "****************", "enharootmysql")
 			EndIf

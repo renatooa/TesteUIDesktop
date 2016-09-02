@@ -99,7 +99,7 @@ For $iContador = 1 To 10 Step +1
 	Else
 		MsgBox($MB_ICONWARNING, "Falha", "Falha na execusão do script!" & @CRLF _
 				 & " Tela de seleção de modelos não localizada!")
-		Exit
+		ExitLoop
 	EndIf
 
 Next

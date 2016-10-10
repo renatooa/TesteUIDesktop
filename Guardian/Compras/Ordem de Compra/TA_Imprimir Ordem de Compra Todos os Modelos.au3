@@ -119,10 +119,10 @@ VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha si
 
 #Region ### FUNÇÕES
 
-Func ImprimirModelo($iNumeroModelo, $vSendTab)
+Func ImprimirModelo($iNumeroModelo, $sSendTab)
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
-	Send("{" & $sCliquesParaBaixo & "}{SPACE}{" & $vSendTab & "}{ENTER}")
+	Send("{" & $sCliquesParaBaixo & "}{SPACE}{" & $sSendTab & "}{ENTER}")
 
 EndFunc
 

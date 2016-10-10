@@ -61,7 +61,7 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 AbreComprasOrdemDeCompra()
 
-Send($BTN_INCLUIR)
+ClickBotaoIncluir()
 
 Do
 

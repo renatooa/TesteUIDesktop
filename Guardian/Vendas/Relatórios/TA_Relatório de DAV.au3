@@ -10,7 +10,7 @@
 
 Opt("TrayIconDebug", 1)
 
-#include "D:\Arquivo de Teste\Testes Automatizados\_temp\func\funcAbrirRelatorioDAV.au3"
+#include "D:\Testes-Automatizados\_temp\func\funcAbrirRelatorioDAV.au3"
 
 ;			 -----------  FIM INCLUDES  ----------
 

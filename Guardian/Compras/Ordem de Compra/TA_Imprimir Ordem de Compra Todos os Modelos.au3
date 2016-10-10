@@ -20,8 +20,8 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #include <Debug.au3>
 #include <MsgBoxConstants.au3>
 
-#include "..\..\..\_UDFs\IncludesAuxiliares.au3"
-#include "..\..\..\_UDFs\IncludesGuardian.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -63,17 +63,22 @@ Send("{TAB 5}{ENTER}")
 ; Loop para imprimir os modelos disponiveis
 For $iContador = 1 To 10 Step +1
 
-	Send($BTN_IMPRIMIR)
+	ClickBotaoImprimir()
+	
 	$iResultadoWinModelos = WinWaitActive("", $sTextoTelaDeModelos)
 
 	If ($iResultadoWinModelos) Then
-
+		
 		If ($iContador == 1) Then
+			; Ação realizada se for o Modelo 1
 			Send("{TAB}{ENTER}")
+		ElseIf ($iContador == 2) Then
+			; Ação realizada se for o Modelo 2
+			ImprimirModelo($iContador, "TAB 2")
+			$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & ".frx"
 		Else
-			$sCliquesParaBaixo = "DOWN " & $iContador - 1
-
-			Send("{" & $sCliquesParaBaixo & "}{SPACE}{TAB}{ENTER}")
+			; Ação realizada demais modelos
+			ImprimirModelo($iContador, "TAB")
 			$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & ".frx"
 		EndIf
 
@@ -113,4 +118,12 @@ VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha si
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
 #Region ### FUNÇÕES
+
+Func ImprimirModelo($iNumeroModelo, $vSendTab)
+
+	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
+	Send("{" & $sCliquesParaBaixo & "}{SPACE}{" & $vSendTab & "}{ENTER}")
+
+EndFunc
+
 #EndRegion ### FUNÇÕES

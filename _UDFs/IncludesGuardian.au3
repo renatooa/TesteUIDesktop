@@ -16,6 +16,7 @@
 	#include "Guardian\IncluirProdutos.au3"
 	#include "Guardian\ValidacoesGuardian.au3"
 	#include "Guardian\SolicitaCodigo\SolicitaCodigo.au3"
+	#include "Guardian\ClickBotoes.au3"
 
 	#Region ### INCLUDES DE OPÇÕES DE MENU
 

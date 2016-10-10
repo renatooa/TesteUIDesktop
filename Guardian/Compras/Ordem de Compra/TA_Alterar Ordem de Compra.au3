@@ -62,7 +62,7 @@ MouseClick("LEFT", $iColunaNumeroEixoX, $iColunaNumeroEixoY)
 Send($iCodigoOrdemDeCompra & "{ENTER}")
 Sleep(500)
 
-Send("{F3}")
+ClickBotaoAlterar()
 
 WinWaitActive("", $TEXTO_ORDEM_DE_COMPRA)
 

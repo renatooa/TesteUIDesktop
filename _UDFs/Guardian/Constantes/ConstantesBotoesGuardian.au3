@@ -30,6 +30,7 @@ Const $BTN_CP_REPROVAR = "{F8}"
 
 ; BOTOES VENDAS
 Const $BTN_VD_SEPARAR = "{F12}"
+Const $BTN_VD_ANULAR_SEPARACAO = "{F12}"
 Const $BTN_VD_STATUS = "{F9}"
 Const $BTN_VD_EXP_CUPOM = "^{F2}"
 Const $BTN_VD_NOTAS = "{F7}"

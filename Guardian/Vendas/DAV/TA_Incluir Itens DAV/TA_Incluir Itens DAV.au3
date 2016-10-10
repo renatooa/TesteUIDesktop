@@ -12,7 +12,7 @@
 Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
 Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
 ;Opt("SendKeyDownDelay",1)          ; Altera o tempo que uma tecla é mantida pressionada antes de ser liberada durante um pressionamento de tecla.
-;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script DEVE ser pausa'do brevemente após uma operação bem-sucedida com janela.
+;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script deve ser pausado brevemente após uma operação bem-sucedida com janela.
 ;Opt("MouseClickDelay", 10)         ; Altera o tempo entre os cliques do mouse.
 ;Opt("MouseClickDownDelay", 10)     ; Altera o tempo que o botão é mantido pressionado antes da liberação.
 ;Opt("MouseClickDragDelay", 250)    ; Altera o tamanho da pausa breve no início e no final de uma operação arrastar do mouse.

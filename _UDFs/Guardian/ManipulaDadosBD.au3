@@ -30,17 +30,16 @@
 
 #Region ### FUNÇÕES
 
-Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost)
+Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
 
     $sCodigosProdutos = ""
-
-    $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
+    $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)    
 
     $sSelect = "SELECT pro_codigo FROM produto " _
              & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo AND pro_filcodigo = pfi_filcodigo " _
              & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo AND lpd_filcodigo = pfi_filcodigo " _
              & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo AND lpd_filcodigo = ppr_filcodigo " _
-             & "WHERE pro_filcodigo = 1 AND pro_ativo = 1 " _
+             & "WHERE pro_filcodigo = " & $sCodigoFilialSelect & " AND pro_ativo = 1 " _
              & "AND pfi_estpenconfi = 0 AND pfi_estpenentra = 0 AND pfi_estpenentre = 0 " _
              & "AND lpd_estpenconfi = 0 AND lpd_estpenentra = 0 AND lpd_estpenentre = 0 " _
              & "AND pfi_estoque > 20 AND pfi_libvenda = 1 " _

@@ -42,8 +42,8 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost,
              & "WHERE pro_filcodigo = " & $sCodigoFilialSelect & " AND pro_ativo = 1 " _
              & "AND pfi_estpenconfi = 0 AND pfi_estpenentra = 0 AND pfi_estpenentre = 0 " _
              & "AND lpd_estpenconfi = 0 AND lpd_estpenentra = 0 AND lpd_estpenentre = 0 " _
-             & "AND pfi_estoque > 20 AND pfi_libvenda = 1 " _
-             & "AND lpd_estfisico > 20 AND ppr_precovenda <> 0 " _
+             & "AND pfi_estoque > 10 AND pfi_libvenda = 1 " _
+             & "AND lpd_estfisico > 10 AND ppr_precovenda <> 0 " _
              & "AND ppr_prbcodigo = 1 AND pfi_inativo = 0 " _
              & "GROUP BY pro_codigo;"
 

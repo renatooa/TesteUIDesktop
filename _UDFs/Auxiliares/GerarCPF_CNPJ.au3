@@ -11,6 +11,7 @@
 
 Opt("TrayIconDebug", 1)
 #include-once
+#include <StringConstants.au3>
 
 ;			 -----------  FIM INCLUDES / OPS ----------
 
@@ -58,7 +59,7 @@ Global $i_cnpj = 0
 
 ;************************* FUNÇÕES *****************************
 
-Func GerarCPF()
+Func GerarCPF($pontos = false)
 
 	;----------------------------------------------
 	; 				PRIMEIRO DIGITO
@@ -136,7 +137,23 @@ Func GerarCPF()
 
 	$v_numeroCPF = $v_numeroCPF & $v_cpfPrimeiroDigito & $v_cpfSegundoDigito
 
-	ClipPut($v_numeroCPF) ; Adicionado 19/07/2016
+	; 27/10/2016
+	; Validação adicionada para gerar CPF com pontuação
+	If ( $pontos ) Then
+
+		$n = StringSplit($v_numeroCPF, "", $STR_NOCOUNT)
+		$numeroCPFComPontuacao = _
+			$n[0]&$n[1]&$n[2]&"."&$n[3]&$n[4]&$n[5]&"."&$n[6]&$n[7]&$n[8]&"-"&$n[9]&$n[10]
+
+		ClipPut($numeroCPFComPontuacao)
+		Return $numeroCPFComPontuacao
+	
+	Else
+
+		ClipPut($v_numeroCPF) ; Adicionado 19/07/2016
+		Return $v_numeroCPF
+	
+	EndIf
 
 	Return $v_numeroCPF
 
@@ -146,7 +163,7 @@ EndFunc   ;==>GerarCPF
 ;**************************************************************************************************************************
 
 
-Func GerarCNPJ()
+Func GerarCNPJ($pontos = false)
 
 	;----------------------------------------------
 	; 				PRIMEIRO DIGITO
@@ -158,7 +175,18 @@ Func GerarCNPJ()
 
 		Global $v_cnpjDigitoAleatorio = Random(0, 9, 1)
 
-		$v_arrayDozeDigitos[$v_indicearrayDozeDigitos] = $v_cnpjDigitoAleatorio
+		; 27/10/2016
+		; Validação adicionada para gerar CNPJ com mil contra (0001)
+		If ($v_indicearrayDozeDigitos < 8) Then
+		
+			$v_arrayDozeDigitos[$v_indicearrayDozeDigitos] = $v_cnpjDigitoAleatorio
+
+		Else
+
+			$v_arrayDozeDigitos[$v_indicearrayDozeDigitos] = ( $v_indicearrayDozeDigitos <> 11 ) ? 0 : 1
+
+		EndIf
+
 
 		$v_arrayResultadoDozeDigitos[$v_indicearrayDozeDigitos] = $v_arrayDozeDigitos[$v_indicearrayDozeDigitos] * $v_pesoPrimeiroDigitoCnpj
 
@@ -244,10 +272,29 @@ Func GerarCNPJ()
 
 	$v_numeroCNPJ = $v_numeroCNPJ & $v_cnpjPrimeiroDigito & $v_cnpjSegundoDigito
 
-	ClipPut($v_numeroCNPJ) ; Adicionado 19/07/2016
+	; 27/10/2016
+	; Validação adicionada para gerar CNPJ com pontuação
+	If ( $pontos ) Then
 
-	Return $v_numeroCNPJ
+		$n = StringSplit($v_numeroCNPJ, "", $STR_NOCOUNT)
+		$numeroCNPJComPontuacao = _
+			$n[0]&$n[1]&"."&$n[2]&$n[3]&$n[4]&"."&$n[5]&$n[6]&$n[7] _
+			&"/"&$n[8]&$n[9]&$n[10]&$n[11]&"-"&$n[12]&$n[13]
+
+		ClipPut($numeroCNPJComPontuacao)
+		Return $numeroCNPJComPontuacao
+	
+	Else
+
+		ClipPut($v_numeroCNPJ) ; Adicionado 19/07/2016
+		Return $v_numeroCNPJ
+	
+	EndIf
 
 EndFunc   ;==>GerarCNPJ
+
+
+ConsoleWrite(GerarCPF(true) & @CRLF)
+ConsoleWrite(GerarCPF())
 
 ;F_Fim *************************************************** F_Fim

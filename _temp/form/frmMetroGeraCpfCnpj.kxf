@@ -3,8 +3,8 @@
 	<properties>
 		<property name="Left" vt="Int16">284</property>
 		<property name="Top" vt="Int16">138</property>
-		<property name="Width" vt="Int16">409</property>
-		<property name="Height" vt="Int16">176</property>
+		<property name="Width" vt="Int16">356</property>
+		<property name="Height" vt="Int16">262</property>
 		<property name="Caption" vt="String">frmMetroGeraCpfCnpj</property>
 		<property name="Color" vt="Ident">clPurple</property>
 		<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -35,7 +35,7 @@
 			<properties>
 				<property name="Left" vt="Int8">0</property>
 				<property name="Top" vt="Int8">0</property>
-				<property name="Width" vt="Int16">348</property>
+				<property name="Width" vt="Int16">292</property>
 				<property name="Height" vt="Int8">35</property>
 				<property name="AutoSize" vt="False">False</property>
 				<property name="Color" vt="Ident">clMaroon</property>
@@ -50,8 +50,8 @@
 		</object>
 		<object type="TALabel" name="lblTitle">
 			<properties>
-				<property name="Left" vt="Int8">16</property>
-				<property name="Top" vt="Int8">48</property>
+				<property name="Left" vt="Int8">62</property>
+				<property name="Top" vt="Int8">38</property>
 				<property name="Width" vt="Int16">216</property>
 				<property name="Height" vt="Int8">32</property>
 				<property name="AutoSize" vt="False">False</property>
@@ -72,8 +72,8 @@
 		</object>
 		<object type="TALabel" name="lblPrompt">
 			<properties>
-				<property name="Left" vt="Int8">16</property>
-				<property name="Top" vt="Int8">104</property>
+				<property name="Left" vt="Int8">33</property>
+				<property name="Top" vt="Int16">129</property>
 				<property name="Width" vt="Int16">197</property>
 				<property name="Height" vt="Int8">24</property>
 				<property name="Caption" vt="UTF8String">Selecione a opção desejada :</property>
@@ -93,8 +93,8 @@
 		</object>
 		<object type="TACombo" name="cbxCpfCnpj">
 			<properties>
-				<property name="Left" vt="Int16">224</property>
-				<property name="Top" vt="Int8">96</property>
+				<property name="Left" vt="Int16">241</property>
+				<property name="Top" vt="Int8">119</property>
 				<property name="Width" vt="Int8">70</property>
 				<property name="Height" vt="Int8">25</property>
 				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -121,7 +121,7 @@
 		</object>
 		<object type="TALabel" name="lblFechar">
 			<properties>
-				<property name="Left" vt="Int16">346</property>
+				<property name="Left" vt="Int16">292</property>
 				<property name="Top" vt="Int8">0</property>
 				<property name="Width" vt="Int8">47</property>
 				<property name="Height" vt="Int8">35</property>
@@ -146,17 +146,88 @@
 		</object>
 		<object type="TAButton" name="btnGerar">
 			<properties>
-				<property name="Left" vt="Int16">304</property>
-				<property name="Top" vt="Int8">96</property>
-				<property name="Width" vt="Int8">75</property>
-				<property name="Height" vt="Int8">29</property>
+				<property name="Left" vt="Int8">17</property>
+				<property name="Top" vt="Int16">167</property>
+				<property name="Width" vt="Int16">307</property>
+				<property name="Height" vt="Int8">45</property>
 				<property name="Cursor" vt="Ident">crHandPoint</property>
-				<property name="Caption" vt="String">Gerar</property>
+				<property name="Caption" vt="String">GERAR</property>
+				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+				<property name="Font.Color" vt="Ident">clWindow</property>
+				<property name="Font.Height" vt="Int8">-20</property>
+				<property name="Font.Name" vt="String">Segoe UI</property>
+				<property name="Font.Style" vt="Set"/>
+				<property name="ParentFont" vt="False">False</property>
 				<property name="TabOrder" vt="Int8">3</property>
 				<property name="Color" vt="Ident">clPurple</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
 				<property name="CtrlExStyle" vt="Int8">0</property>
 				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TALabel" name="lblGerarPontuacao">
+			<properties>
+				<property name="Left" vt="Int8">32</property>
+				<property name="Top" vt="Int8">89</property>
+				<property name="Width" vt="Int16">155</property>
+				<property name="Height" vt="Int8">24</property>
+				<property name="Caption" vt="UTF8String">Gerar com pontuação?</property>
+				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+				<property name="Font.Color" vt="Ident">clHighlightText</property>
+				<property name="Font.Height" vt="Int8">-15</property>
+				<property name="Font.Name" vt="String">Segoe UI</property>
+				<property name="Font.Style" vt="Set"/>
+				<property name="ParentFont" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">6</property>
+				<property name="HaveVariable" vt="False">False</property>
+				<property name="CtrlStyle" vt="Int32">1342308608</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set"/>
+			</properties>
+			<components/>
+		</object>
+		<object type="TARadio" name="rbtSim">
+			<properties>
+				<property name="Left" vt="Int16">196</property>
+				<property name="Top" vt="Int8">91</property>
+				<property name="Width" vt="Int8">49</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="String">SIM</property>
+				<property name="Color" vt="Ident">clInactiveBorder</property>
+				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+				<property name="Font.Color" vt="Ident">clHighlightText</property>
+				<property name="Font.Height" vt="Int8">-15</property>
+				<property name="Font.Name" vt="String">Segoe UI</property>
+				<property name="Font.Style" vt="Set"/>
+				<property name="ParentColor" vt="False">False</property>
+				<property name="ParentFont" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">7</property>
+				<property name="CtrlStyle" vt="Int32">1342242825</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TARadio" name="rbtNao">
+			<properties>
+				<property name="Left" vt="Int16">249</property>
+				<property name="Top" vt="Int8">91</property>
+				<property name="Width" vt="Int8">57</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="UTF8String">NÃO</property>
+				<property name="Checked" vt="True">True</property>
+				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+				<property name="Font.Color" vt="Ident">clHighlightText</property>
+				<property name="Font.Height" vt="Int8">-15</property>
+				<property name="Font.Name" vt="String">Segoe UI</property>
+				<property name="Font.Style" vt="Set"/>
+				<property name="ParentFont" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">8</property>
+				<property name="TabStop" vt="True">True</property>
+				<property name="CtrlStyle" vt="Int32">1342242825</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
 			</properties>
 			<components/>
 		</object>

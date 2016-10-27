@@ -9,38 +9,30 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 #Region ### START Koda GUI section ### Form=D:\Testes-Automatizados\TesteUIDesktop\_temp\form\frmMetroGeraCpfCnpj.kxf
-$Form1 = GUICreate("frmMetroGeraCpfCnpj", 339, 224, -1, -1, BitOR($WS_SYSMENU,$WS_POPUP,$DS_MODALFRAME), BitOR($WS_EX_TOOLWINDOW, 0))
+$Form1 = GUICreate("frmMetroGeraCpfCnpj", 394, 138, -1, -1, BitOR($WS_SYSMENU,$WS_POPUP,$DS_MODALFRAME), BitOR($WS_EX_TOOLWINDOW, 0))
 GUISetFont(11, 400, 0, "Segoe UI")
 GUISetBkColor(0x475577)
-$lblByRNS = GUICtrlCreateLabel("By RNS", 310, 212, 50, 24)
-GUICtrlSetFont(-1, 6, 800, 0, "Segoe UI")
-GUICtrlSetColor(-1, 0xFFFFFF)
-$lblTitle = GUICtrlCreateLabel("Gerador de CPF e CNPJ", 62, 38, 216, 32)
+$lblTitle = GUICtrlCreateLabel(StringUpper("Gerador de CPF e CNPJ"), 16, 48, 250, 32)
 GUICtrlSetFont(-1, 15, 800, 0, "Segoe UI Semibold")
 GUICtrlSetColor(-1, 0xFFFFFF)
-$lblPrompt = GUICtrlCreateLabel("Selecione a opção desejada :", 33, 129, 197, 24)
+$lblPrompt = GUICtrlCreateLabel("Selecione a opção desejada :", 16, 100, 197, 24)
 GUICtrlSetColor(-1, 0xFFFFFF)
-$cbxCpfCnpj = GUICtrlCreateCombo("", 241, 119, 70, 25)
+$lblByRNS = GUICtrlCreateLabel("By RNS", 365, 125, 50, 24)
+GUICtrlSetFont(-1, 6, 800, 0, "Segoe UI")
+GUICtrlSetColor(-1, 0xFFFFFF)
+$cbxCpfCnpj = GUICtrlCreateCombo("", 215, 96, 70, 25)
 GUICtrlSetData(-1, "CPF|CNPJ", "CPF")
-$btnGerar = GUICtrlCreateButton("GERAR", 17, 167, 307, 45)
+$btnGerar = GUICtrlCreateButton(StringUpper("Gerar"), 304, 95, 75, 30)
 GUICtrlSetCursor (-1, 0)
-GUICtrlSetFont(-1, 15, 400, 0, "Segoe UI")
 GUICtrlSetColor(-1, 0xFFFFFF)
 GUICtrlSetBkColor(-1, 0x28324E)
-$lblHeader = GUICtrlCreateLabel("", 0, 0, 292, 35)
+$lblHeader = GUICtrlCreateLabel("", 0, 0, 348, 35)
 GUICtrlSetBkColor(-1, 0x28324E)
-$lblFechar = GUICtrlCreateLabel("X", 292, 0, 47, 35, $SS_CENTER)
+$lblFechar = GUICtrlCreateLabel("X", 347, 0, 47, 35, $SS_CENTER)
 GUICtrlSetFont(-1, 16, 800, 0, "Segoe UI")
 GUICtrlSetColor(-1, 0xFFFFFF)
 GUICtrlSetBkColor(-1, 0x28324E)
 GUICtrlSetCursor (-1, 0)
-$lblGerarPontuacao = GUICtrlCreateLabel("Gerar com pontuação?", 32, 89, 155, 24)
-GUICtrlSetColor(-1, 0xFFFFFF)
-$rbtSim = GUICtrlCreateRadio("SIM", 196, 91, 49, 17)
-GUICtrlSetColor(-1, 0xFFFFFF)
-$rbtNao = GUICtrlCreateRadio("NÃO", 249, 91, 57, 17)
-GUICtrlSetState(-1, $GUI_CHECKED)
-GUICtrlSetColor(-1, 0xFFFFFF)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
@@ -54,23 +46,21 @@ While 1
 			$indexItemSelecionado = _GUICtrlComboBox_GetCurSel($cbxCpfCnpj)
 			$textoItemSelecionado = _GUICtrlComboBox_GetEditText($cbxCpfCnpj)
 
-			$r = BitAND(GUICtrlRead($rbtSim), $GUI_CHECKED) = $GUI_CHECKED
-
-			Switch ($indexItemSelecionado)
+			Switch ( $indexItemSelecionado )
 				Case 0
 					GerarCPF()
 				Case 1
 					GerarCNPJ()
 				Case Else
-					If (Not @error) Then
-						_MsgBox($MB_ICONERROR, "ALERTA", "OPÇÃO INVÁLIDA!", 2000)
+					If ( Not @error ) Then
+						_MsgBox($MB_ICONERROR, "ALERTA", "OPÇÃO INVÁLIDA!", 2000)		
 						$result = 3
 					EndIf
 			EndSwitch
 
-			If ($indexItemSelecionado > -1) Then
+			If ( $indexItemSelecionado > -1 ) Then
 				_MsgBox($MB_ICONINFORMATION, $textoItemSelecionado & " GERADO", "COPIADO PARA A ÁREA DE TRANSFERÊNCIA!" & @CR & @CR & _
-						"(" & ClipGet() & ")", 1000)
+					"(" & ClipGet() & ")", 1000)
 				Exit
 			EndIf
 

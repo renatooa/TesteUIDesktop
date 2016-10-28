@@ -2,11 +2,11 @@
 <object type="TAForm" name="Form1">
 	<properties>
 		<property name="Left" vt="Int16">284</property>
-		<property name="Top" vt="Int16">138</property>
+		<property name="Top" vt="Int16">137</property>
 		<property name="Width" vt="Int16">356</property>
-		<property name="Height" vt="Int16">262</property>
+		<property name="Height" vt="Int16">263</property>
 		<property name="Caption" vt="String">frmMetroGeraCpfCnpj</property>
-		<property name="Color" vt="Ident">clPurple</property>
+		<property name="Color" vt="Int32">4674935</property>		
 		<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
 		<property name="Font.Color" vt="Ident">clWindowText</property>
 		<property name="Font.Height" vt="Int8">-15</property>
@@ -159,7 +159,7 @@
 				<property name="Font.Style" vt="Set"/>
 				<property name="ParentFont" vt="False">False</property>
 				<property name="TabOrder" vt="Int8">3</property>
-				<property name="Color" vt="Ident">clPurple</property>
+				<property name="Color" vt="Ident">clMaroon</property>
 				<property name="CtrlStyle" vt="Int32">1342373888</property>
 				<property name="CtrlExStyle" vt="Int8">0</property>
 				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
@@ -187,28 +187,6 @@
 			</properties>
 			<components/>
 		</object>
-		<object type="TARadio" name="rbtSim">
-			<properties>
-				<property name="Left" vt="Int16">196</property>
-				<property name="Top" vt="Int8">91</property>
-				<property name="Width" vt="Int8">49</property>
-				<property name="Height" vt="Int8">17</property>
-				<property name="Caption" vt="String">SIM</property>
-				<property name="Color" vt="Ident">clInactiveBorder</property>
-				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
-				<property name="Font.Color" vt="Ident">clHighlightText</property>
-				<property name="Font.Height" vt="Int8">-15</property>
-				<property name="Font.Name" vt="String">Segoe UI</property>
-				<property name="Font.Style" vt="Set"/>
-				<property name="ParentColor" vt="False">False</property>
-				<property name="ParentFont" vt="False">False</property>
-				<property name="TabOrder" vt="Int8">7</property>
-				<property name="CtrlStyle" vt="Int32">1342242825</property>
-				<property name="CtrlExStyle" vt="Int8">0</property>
-				<property name="Resizing" vt="Set">DockHeight</property>
-			</properties>
-			<components/>
-		</object>
 		<object type="TARadio" name="rbtNao">
 			<properties>
 				<property name="Left" vt="Int16">249</property>
@@ -217,14 +195,38 @@
 				<property name="Height" vt="Int8">17</property>
 				<property name="Caption" vt="UTF8String">NÃO</property>
 				<property name="Checked" vt="True">True</property>
+				<property name="Color" vt="Ident">clWhite</property>
 				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
 				<property name="Font.Color" vt="Ident">clHighlightText</property>
 				<property name="Font.Height" vt="Int8">-15</property>
 				<property name="Font.Name" vt="String">Segoe UI</property>
 				<property name="Font.Style" vt="Set"/>
+				<property name="ParentColor" vt="False">False</property>
 				<property name="ParentFont" vt="False">False</property>
 				<property name="TabOrder" vt="Int8">8</property>
 				<property name="TabStop" vt="True">True</property>
+				<property name="CtrlStyle" vt="Int32">1342242825</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="Resizing" vt="Set">DockHeight</property>
+			</properties>
+			<components/>
+		</object>
+		<object type="TARadio" name="rbtSim">
+			<properties>
+				<property name="Left" vt="Int16">196</property>
+				<property name="Top" vt="Int8">91</property>
+				<property name="Width" vt="Int8">49</property>
+				<property name="Height" vt="Int8">17</property>
+				<property name="Caption" vt="String">SIM</property>
+				<property name="Color" vt="Ident">clHighlightText</property>
+				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+				<property name="Font.Color" vt="Ident">clHighlightText</property>
+				<property name="Font.Height" vt="Int8">-15</property>
+				<property name="Font.Name" vt="String">Segoe UI</property>
+				<property name="Font.Style" vt="Set"/>
+				<property name="ParentColor" vt="False">False</property>
+				<property name="ParentFont" vt="False">False</property>
+				<property name="TabOrder" vt="Int8">7</property>
 				<property name="CtrlStyle" vt="Int32">1342242825</property>
 				<property name="CtrlExStyle" vt="Int8">0</property>
 				<property name="Resizing" vt="Set">DockHeight</property>

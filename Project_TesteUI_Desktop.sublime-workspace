@@ -529,29 +529,11 @@
 			}
 		},
 		{
-			"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
-			"settings":
-			{
-				"buffer_size": 3322,
-				"encoding": "Western (Windows 1252)",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
 			"settings":
 			{
-				"buffer_size": 2811,
+				"buffer_size": 2844,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
-			"settings":
-			{
-				"buffer_size": 7065,
-				"encoding": "Western (Windows 1252)",
 				"line_ending": "Windows"
 			}
 		},
@@ -975,29 +957,26 @@
 	[
 		"/D/Testes-Automatizados/TesteUIDesktop",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp",
-		"/D/Testes-Automatizados/TesteUIDesktop/_temp/form",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/form/icon",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Cadastros",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Cadastros/Cliente",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/Relatórios"
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares"
 	],
 	"file_history":
 	[
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/form/frmMetroGeraCpfCnpj.kxf",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/_Msgbox.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/MudarResolucao.au3",
 		"/C/Users/User/AppData/Local/Temp/test.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/func/funcGeraCPF_CNPJ.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/Abstract/AbstractValidacaoGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/func/funcMudarResolucao.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/IncludesGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
 		"/C/Users/User/Documents/GitHub/HajaLuz/Design/Resolução S3mini.txt",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/IncluirProdutos.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Alterar Ordem de Compra.au3",
@@ -1039,7 +1018,6 @@
 		"/D/NOVO/EXEC ROTINA DE TESTE/Novo executável do script 'TA_Incluir Itens DAV",
 		"/D/NOVO/EXEC ROTINA DE TESTE/Executável do script 'TA_Incluir Itens DAV.au3' an",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ManipulaDadosBD.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/MudarResolucao.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/HotKeys.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/mysql_2.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Validacoes.au3",
@@ -1082,9 +1060,7 @@
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/Teste UDF MySql_2.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/TryCatch.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/AppGeradorCPFeCNPJ.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Teste/GetCPF_CNPJ.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/_Msgbox.au3",
 		"/C/Users/User/Desktop/a.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/Vidu.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/teste.au3",
@@ -1116,9 +1092,7 @@
 		"/C/Apollo11_503E/ListaPaf.txt",
 		"/C/Apollo11_503E/LOGUPDATE.TXT",
 		"/C/Apollo11_503E/BemaFI32.ini",
-		"/C/Apollo11_503E/Floja.ini",
-		"/C/apollo11/CLIENTE.TXT",
-		"/C/Apollo11_503G/MonitorApollo/syson.ini"
+		"/C/Apollo11_503E/Floja.ini"
 	],
 	"find":
 	{
@@ -1136,6 +1110,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Global",
+			"r",
+			"$r",
 			"numeroCNPJComPontuacao",
 			"vSendTab",
 			"BTN",
@@ -1260,10 +1237,7 @@
 			"ctrl+shift+b",
 			"}\n",
 			"btnSalvar",
-			"exibirToast",
-			"dir",
-			"dirs",
-			"str"
+			"exibirToast"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1293,7 +1267,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1309,8 +1283,8 @@
 						"selection":
 						[
 							[
-								1561,
-								1561
+								1157,
+								1157
 							]
 						],
 						"settings":
@@ -1319,56 +1293,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 91.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/frmSolicitaDadosInclusaoDeItensDAV.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3322,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 706.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2811,
+						"buffer_size": 2844,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2289,
-								2300
+								295,
+								295
 							]
 						],
 						"settings":
@@ -1377,43 +1322,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 219.0,
+						"translation.y": 966.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6996,
-								6996
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3947.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "_UDFs/Guardian/IncluirProdutos.au3",
 					"semi_transient": false,
 					"settings":
@@ -1436,14 +1352,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1987.0,
+						"translation.y": 3290.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
 					"file": "Guardian/Cadastros/Cliente/TA_Incluir Cliente.au3",
 					"semi_transient": false,
 					"settings":
@@ -1468,11 +1384,11 @@
 						"translation.y": 217.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
 					"semi_transient": false,
 					"settings":
@@ -1497,7 +1413,7 @@
 						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1507,7 +1423,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 7,
+					"buffer": 5,
 					"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1531,11 +1447,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 6,
 					"file": "_UDFs/Guardian/Constantes/ConstantesTextosGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1561,11 +1477,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
 					"semi_transient": false,
 					"settings":
@@ -1577,8 +1493,8 @@
 						"selection":
 						[
 							[
-								1952,
-								1929
+								472,
+								472
 							]
 						],
 						"settings":
@@ -1589,14 +1505,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 447.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "_UDFs/Auxiliares/mysql_1.au3",
 					"semi_transient": false,
 					"settings":
@@ -1622,11 +1538,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 9,
 					"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1652,11 +1568,11 @@
 						"translation.y": 2551.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 10,
 					"file": "_UDFs/Guardian/ClickBotoes.au3",
 					"semi_transient": false,
 					"settings":
@@ -1681,7 +1597,7 @@
 						"translation.y": 319.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1754,6 +1670,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"_",
+				"_ARQUIVOS\\helpers\\UDF_Msgbox\\_Msgbox.au3"
+			],
 			[
 				"frmsol",
 				"Guardian\\Vendas\\DAV\\TA_Incluir Itens DAV\\frmSolicitaDadosInclusaoDeItensDAV.au3"

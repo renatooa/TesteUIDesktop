@@ -15,7 +15,7 @@ GUISetBkColor(0x475577)
 $lblByRNS = GUICtrlCreateLabel("By RNS", 310, 212, 50, 24)
 GUICtrlSetFont(-1, 6, 800, 0, "Segoe UI")
 GUICtrlSetColor(-1, 0xFFFFFF)
-$lblTitle = GUICtrlCreateLabel("Gerador de CPF e CNPJ", 62, 38, 216, 32)
+$lblTitle = GUICtrlCreateLabel("Gerador de CPF e CNPJ", 55, 38, 235, 32)
 GUICtrlSetFont(-1, 15, 800, 0, "Segoe UI Semibold")
 GUICtrlSetColor(-1, 0xFFFFFF)
 $lblPrompt = GUICtrlCreateLabel("Selecione a opção desejada :", 33, 129, 197, 24)
@@ -53,14 +53,16 @@ While 1
 		Case $btnGerar
 			$indexItemSelecionado = _GUICtrlComboBox_GetCurSel($cbxCpfCnpj)
 			$textoItemSelecionado = _GUICtrlComboBox_GetEditText($cbxCpfCnpj)
-
-			$r = BitAND(GUICtrlRead($rbtSim), $GUI_CHECKED) = $GUI_CHECKED
+			$radio =GUICtrlRead($rbtSim)
+			$pontos = ($radio == $GUI_CHECKED) ? true : false
 
 			Switch ($indexItemSelecionado)
 				Case 0
-					GerarCPF()
+					GerarCPF($pontos)
+
 				Case 1
-					GerarCNPJ()
+					GerarCNPJ($pontos)
+
 				Case Else
 					If (Not @error) Then
 						_MsgBox($MB_ICONERROR, "ALERTA", "OPÇÃO INVÁLIDA!", 2000)

@@ -3,7 +3,7 @@
 	Descrição ......: UDF para gerar CPF e CNPJ de forma aleatória
 	Data Inicio ....: 01/09/2015
 	Data Termino ...: 02/09/2015
-	Versão .........: 001
+	Versão .........: 002
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -15,51 +15,29 @@ Opt("TrayIconDebug", 1)
 
 ;			 -----------  FIM INCLUDES / OPS ----------
 
-;************************* VARIAVEIS ***************************
-
-;-----------------
-; VARIAVEIS CPF
-;-----------------
-
-Global $v_arrayResultadoNoveDigitos[9]
-Global $v_arrayNoveDigitos[9]
-
-Global $v_resultadoDecimoDigito = 0
-Global $v_indiceArrayNoveDigitos = 0
-Global $v_indiceArrayNoveDigitos2 = 0
-
-Global $v_cpfSoma1 = 0
-Global $v_cpfSoma2 = 0
-Global $v_cpfPrimeiroDigito = 0
-Global $v_cpfSegundoDigito = 0
-Global $v_cpfDigito = ""
-Global $v_numeroCPF = ""
-Global $i_cpf = 0
-
-;-----------------
-; VARIAVEIS CNPJ
-;-----------------
-Global $v_arrayResultadoDozeDigitos[12]
-Global $v_arrayDozeDigitos[12]
-
-Global $v_resultadoDecimoTerceiroDigito = 0
-Global $v_indicearrayDozeDigitos = 0
-Global $v_indicearrayDozeDigitos2 = 0
-
-Global $v_cnpjSoma1 = 0
-Global $v_cnpjSoma2 = 0
-Global $v_cnpjPrimeiroDigito = 0
-Global $v_cnpjSegundoDigito = 0
-Global $v_cnpjDigito = ""
-Global $v_numeroCNPJ = ""
-Global $i_cnpj = 0
-
-;V_Fim *************************************************** V_Fim
-
 
 ;************************* FUNÇÕES *****************************
 
 Func GerarCPF($pontos = false)
+
+	;-----------------
+	; VARIAVEIS CPF
+	;-----------------
+
+	Local $v_arrayResultadoNoveDigitos[9]
+	Local $v_arrayNoveDigitos[9]
+
+	$v_resultadoDecimoDigito = 0
+	$v_indiceArrayNoveDigitos = 0
+	$v_indiceArrayNoveDigitos2 = 0
+
+	$v_cpfSoma1 = 0
+	$v_cpfSoma2 = 0
+	$v_cpfPrimeiroDigito = 0
+	$v_cpfSegundoDigito = 0
+	$v_cpfDigito = ""
+	$v_numeroCPF = ""
+	$i_cpf = 0
 
 	;----------------------------------------------
 	; 				PRIMEIRO DIGITO
@@ -69,7 +47,7 @@ Func GerarCPF($pontos = false)
 
 	While ($v_indiceArrayNoveDigitos <= 8) And ($v_pesoPrimeiroDigitoCpf > 1)
 
-		Global $v_cpfDigitoAleatorio = Random(0, 9, 1)
+		$v_cpfDigitoAleatorio = Random(0, 9, 1)
 
 		$v_arrayNoveDigitos[$v_indiceArrayNoveDigitos] = $v_cpfDigitoAleatorio
 
@@ -85,15 +63,10 @@ Func GerarCPF($pontos = false)
 	$v_restoDivisaoPrimeiroDigito = Mod($v_cpfSoma1, 11)
 
 	If ($v_restoDivisaoPrimeiroDigito < 2) Then
-
 		$v_cpfPrimeiroDigito = 0
-
 	Else
-
 		$v_cpfPrimeiroDigito = 11 - $v_restoDivisaoPrimeiroDigito
-
 	EndIf
-
 
 	;----------------------------------------------
 	; 				SEGUNDO DIGITO
@@ -137,7 +110,7 @@ Func GerarCPF($pontos = false)
 
 	$v_numeroCPF = $v_numeroCPF & $v_cpfPrimeiroDigito & $v_cpfSegundoDigito
 
-	; 27/10/2016
+	; 27/10/2016 - v002
 	; Validação adicionada para gerar CPF com pontuação
 	If ( $pontos ) Then
 
@@ -147,12 +120,12 @@ Func GerarCPF($pontos = false)
 
 		ClipPut($numeroCPFComPontuacao)
 		Return $numeroCPFComPontuacao
-	
+
 	Else
 
-		ClipPut($v_numeroCPF) ; Adicionado 19/07/2016
+		ClipPut($v_numeroCPF) ; Adicionado 19/07/2016 - v002
 		Return $v_numeroCPF
-	
+
 	EndIf
 
 	Return $v_numeroCPF
@@ -165,6 +138,25 @@ EndFunc   ;==>GerarCPF
 
 Func GerarCNPJ($pontos = false)
 
+	;-----------------
+	; VARIAVEIS CNPJ
+	;-----------------
+	Local $v_arrayResultadoDozeDigitos[12]
+	Local $v_arrayDozeDigitos[12]
+
+	$v_resultadoDecimoTerceiroDigito = 0
+	$v_indicearrayDozeDigitos = 0
+	$v_indicearrayDozeDigitos2 = 0
+
+	$v_cnpjSoma1 = 0
+	$v_cnpjSoma2 = 0
+	$v_cnpjPrimeiroDigito = 0
+	$v_cnpjSegundoDigito = 0
+	$v_cnpjDigito = ""
+	$v_numeroCNPJ = ""
+	$i_cnpj = 0
+
+
 	;----------------------------------------------
 	; 				PRIMEIRO DIGITO
 	;----------------------------------------------
@@ -173,18 +165,14 @@ Func GerarCNPJ($pontos = false)
 
 	While ($v_indicearrayDozeDigitos <= 11) ;And ($v_pesoPrimeiroDigitoCnpj > 1)
 
-		Global $v_cnpjDigitoAleatorio = Random(0, 9, 1)
+		$v_cnpjDigitoAleatorio = Random(0, 9, 1)
 
-		; 27/10/2016
+		; 27/10/2016 - v002
 		; Validação adicionada para gerar CNPJ com mil contra (0001)
-		If ($v_indicearrayDozeDigitos < 8) Then
-		
+		If ($v_indicearrayDozeDigitos < 8) Then		
 			$v_arrayDozeDigitos[$v_indicearrayDozeDigitos] = $v_cnpjDigitoAleatorio
-
 		Else
-
 			$v_arrayDozeDigitos[$v_indicearrayDozeDigitos] = ( $v_indicearrayDozeDigitos <> 11 ) ? 0 : 1
-
 		EndIf
 
 
@@ -210,15 +198,10 @@ Func GerarCNPJ($pontos = false)
 	$v_restoDivisaoPrimeiroDigito = Mod($v_cnpjSoma1, 11)
 
 	If ($v_restoDivisaoPrimeiroDigito < 2) Then
-
 		$v_cnpjPrimeiroDigito = 0
-
 	Else
-
 		$v_cnpjPrimeiroDigito = 11 - $v_restoDivisaoPrimeiroDigito
-
 	EndIf
-
 
 	;----------------------------------------------
 	; 				SEGUNDO DIGITO
@@ -252,13 +235,9 @@ Func GerarCNPJ($pontos = false)
 	$v_restoDivisaoSegundoDigito = Mod($v_cnpjSoma2, 11)
 
 	If ($v_restoDivisaoSegundoDigito < 2) Then
-
 		$v_cnpjSegundoDigito = 0
-
 	Else
-
 		$v_cnpjSegundoDigito = 11 - $v_restoDivisaoSegundoDigito
-
 	EndIf
 
 	While ($i_cnpj <= 11)
@@ -272,7 +251,7 @@ Func GerarCNPJ($pontos = false)
 
 	$v_numeroCNPJ = $v_numeroCNPJ & $v_cnpjPrimeiroDigito & $v_cnpjSegundoDigito
 
-	; 27/10/2016
+	; 27/10/2016 - v002
 	; Validação adicionada para gerar CNPJ com pontuação
 	If ( $pontos ) Then
 
@@ -286,15 +265,11 @@ Func GerarCNPJ($pontos = false)
 	
 	Else
 
-		ClipPut($v_numeroCNPJ) ; Adicionado 19/07/2016
+		ClipPut($v_numeroCNPJ) ; Adicionado 19/07/2016 - v002
 		Return $v_numeroCNPJ
 	
 	EndIf
 
 EndFunc   ;==>GerarCNPJ
-
-
-ConsoleWrite(GerarCPF(true) & @CRLF)
-ConsoleWrite(GerarCPF())
 
 ;F_Fim *************************************************** F_Fim

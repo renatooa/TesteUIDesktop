@@ -38,6 +38,8 @@
     =   TelaLimiteCreditoAtingidoExiste()
     =   TelaImagemDoProdutoExiste()
     =   TelaDescricaoDeProdutoDAVExiste()
+    =   TelaDesejaFecharSessaoExiste($sSendKey = "{ENTER}")
+    =   TelaInformacoesNaoEncontradasExiste()
     =
 #ce ===============================================================================================================================
 
@@ -204,5 +206,24 @@ Func TelaDescricaoDeProdutoDAVExiste()
     Return TelaExiste($TextoTelaDescricaoDeProdutoDAV, "{TAB 5}{ENTER}")
 
 EndFunc   ;==>TelaDescricaoDeProdutoDAVExiste
+
+Func TelaDesejaFecharSessaoExiste($sAcaoSendKey = "ND")
+    
+    Local Const $TextoTelaDesejaFecharSessao = "Deseja fechar a sessão"
+
+    $bResult = ( $sAcaoSendKey == "ND" ) ? TelaExiste($TextoTelaDesejaFecharSessao) : TelaExiste($TextoTelaDesejaFecharSessao, $sAcaoSendKey)
+
+    Return $bResult
+
+EndFunc   ;==>TelaDesejaFecharSessaoExiste
+
+Func TelaInformacoesNaoEncontradasExiste()
+    
+    ;Local Const $TextoTelaDescricaoDeProdutoDAV = "Informações não encontradas para impressão do relatório."
+    Local Const $TextoTelaInformacoesNaoEncontradas = "Informações não encontradas"
+
+    Return TelaExiste($TextoTelaInformacoesNaoEncontradas)
+
+EndFunc   ;==>TelaDesejaFecharSessaoExiste
 
 #EndRegion ### FUNÇÕES

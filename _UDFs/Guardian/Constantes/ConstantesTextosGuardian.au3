@@ -65,6 +65,7 @@ Const $NOME_SPACE_GUARDIAN = "Space Guardian"
 	Const $TEXTO_MANUTENCAO_DE_COMPRA = "Manutenção Ordem de Compra"
 	Const $TEXTO_CHEGADA_DE_MERCADORIA = "Chegada de Mercardoria"
 	Const $TEXTO_RECEBIMENTO_DE_MERCADORIA = "Recebimento das Mercadorias"
+	Const $TEXTO_CONTROLE_RECEBIMENTO_DE_MERCADORIA = "Recebimento De Mercadoria"
 	Const $TEXTO_CONFERENCIA_DE_MERCADORIA = "Recebimento De Mercadoria"
 	Const $TEXTO_ESPELHO_DE_ENTRADA = "Espelho Entrada"
 
@@ -80,6 +81,7 @@ Const $NOME_SPACE_GUARDIAN = "Space Guardian"
 	Const $TEXTO_FATURAMENTO_CARGA = "Notas / Carga"
 	Const $TEXTO_SEPARACAO_PEDIDOS = "Separação de Pedidos"
 	Const $TEXTO_ORCAMENTO_VENDA = "Consulta Orçamento"
+	Const $TEXTO_RELATORIO_DAV = "Relatório de Documento Auxiliar de Venda"
 
 #EndRegion ### TEXTOS E TITULOS TELAS MENU VENDAS
 

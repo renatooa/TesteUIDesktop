@@ -29,6 +29,55 @@ Local Const $sTextoTelaCadastroDeCEP = "Cadastro de CEP"
 
 #EndRegion ### VARIAVEIS
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   AbreCadastrosCliente()
+	=	AbreCadastrosFornecedor()
+	=	AbreCadastrosTransportadora()
+
+		***** TABELA DE PESSOAS *****
+	=	AbreCadastrosTabelasDePessoasCarteiraDeClientes()
+	=	AbreCadastrosTabelasDePessoasGrupoDeCliente()
+	=	AbreCadastrosTabelasDePessoasAtividade()
+	=	AbreCadastrosTabelasDePessoasClassificacaoDePessoa()
+	=	AbreCadastrosTabelasDePessoasOpcaoEspecial()
+	=	AbreCadastrosTabelasDePessoasSegmento()
+	=	AbreCadastrosTabelasDePessoasGerarAgendaDeVisitas()
+	=	AbreCadastrosTabelasDePessoasContratoDeFornecimentoDeVerbas()
+
+		***** ENDEREÇO *****
+	=	AbreCadastrosEnderecoBairro()
+	=	AbreCadastrosEnderecoCidade()
+	=	AbreCadastrosEnderecoUF()
+	=	AbreCadastrosEnderecoClassificacaoDeEndereco()
+	=	AbreCadastrosEnderecoConsultaCidadeIBGE()
+	=	AbreCadastrosEnderecoCodigoDoPais()
+	=	AbreCadastrosEnderecoAgruparCadastroDeCidades()
+	=	AbreCadastrosEnderecoCEP()
+
+		***** LOGISTICA *****
+	=	AbreCadastrosLogisticaRegiao()
+	=	AbreCadastrosLogisticaRotaDeEntrega()
+	=	AbreCadastrosLogisticaClassificacaoDoProduto()
+	=	AbreCadastrosLogisticaTipoDeVeiculo()
+	=	AbreCadastrosLogisticaMotivoNaoEntregaDeCanhotos()
+	=	AbreCadastrosLogisticaTipoDeDespesasDeFrota()
+	=	AbreCadastrosLogisticaTipoDeEntrega()
+	=	AbreCadastrosLogisticaGrupoDeEntrega()
+	=	AbreCadastrosLogisticaTurnoDeEntrega()
+	=	AbreCadastrosLogisticaEmbalagem()
+	=	AbreCadastrosLogisticaFaixasDeFretePorPeso()
+	=	AbreCadastrosLogisticaTabelaDeFreteInterestadual()
+	=	AbreCadastrosProduto()
+	=	AbreCadastrosColaborador()
+	=	AbreCadastrosVendedor()
+
+		**** FINANCEIRO *****
+	=	AbreCadastrosFinanceiroFormaDePagamento()
+	=	AbreCadastrosFinanceiroCondicaoDePagamento()
+    =
+#ce ===============================================================================================================================
+
 #Region ### FUNÇÕES
 
 Func AbreCadastrosCliente()

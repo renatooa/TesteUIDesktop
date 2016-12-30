@@ -3,6 +3,7 @@
 	Descrição ......: Efetuar a impressão de todos os modelos de ordem de compra
 	Data Inicio ....: 28/04/2016
 	Data Termino ...: 28/04/2016
+	Data Ajuste ...: 02/12/2016
 	Versão .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
@@ -10,7 +11,7 @@
 #Region ### INCLUDES / OPS
 
 Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
-Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
+Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
 ;Opt("SendKeyDownDelay",1)          ; Altera o tempo que uma tecla é mantida pressionada antes de ser liberada durante um pressionamento de tecla.
 ;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script DEVE ser pausado brevemente após uma operação bem-sucedida com janela.
 ;Opt("MouseClickDelay", 10)         ; Altera o tempo entre os cliques do mouse.
@@ -33,8 +34,10 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
 Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 
-Local $sTituloTelaReport = "Report Designer - frxordemcompra.frx"
+Local $sTituloTelaReport = "Report Designer - frxordemcompra"
 Local $sTextoTelaDeModelos = "Modelo de Ordem de Compra"
+Local $iModelo2 = 1
+Local $iModelo8 = 1
 
 ; VARIAVEIS COM EIXO X, Y UTILIZADAS NA FUNÇÃO MouseClick()
 Local Const $iMaximixarReportEixoX = 569
@@ -57,46 +60,75 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 AbreComprasOrdemDeCompra()
 
 ; Realiza pesquisa de ordem de compra por periodo
-Send("{TAB 3}01012000{TAB}0112" & @YEAR)
+Send("{TAB 3}01012000{TAB}" & @MDAY & @MON & @YEAR) 
 Send("{TAB 5}{ENTER}")
 
 ; Loop para imprimir os modelos disponiveis
 For $iContador = 1 To 10 Step +1
 
+	If ( $iModelo2 == 2 ) Then
+		$iContador = $iModelo2	
+	EndIf
+
+	If ( $iModelo8 == 8 ) Then
+		$iContador = $iModelo8	
+	EndIf
+
+	If ( $iContador <> 1 ) Then
+		$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador	
+	EndIf
+
 	ClickBotaoImprimir()
 	
 	$iResultadoWinModelos = WinWaitActive("", $sTextoTelaDeModelos)
 
-	If ($iResultadoWinModelos) Then
-		
-		If ($iContador == 1) Then
-			; Ação realizada se for o Modelo 1
-			Send("{TAB}{ENTER}")
-		ElseIf ($iContador == 2) Then
-			; Ação realizada se for o Modelo 2
-			ImprimirModelo($iContador, "TAB 2")
-			$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & ".frx"
-		Else
-			; Ação realizada demais modelos
-			ImprimirModelo($iContador, "TAB")
-			$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & ".frx"
-		EndIf
+	If ($iResultadoWinModelos) Then		
+
+		Switch ($iContador)
+			Case 1
+				; Ação realizada se for o Modelo 1
+				Send("{TAB}{ENTER}")
+			Case 2
+				; Ação realizada se for o Modelo 2
+				Switch ($iModelo2)
+					Case 1
+						ImprimirModelo($iContador, "TAB")
+						$iModelo2 = 2					
+					Case 2
+						ImprimirModelo($iContador, "TAB", "SPACE 2")
+						$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & "b"
+						$iModelo2 = 0					
+				EndSwitch
+			Case 8
+				; Ação realizada se for o Modelo 8				
+				Switch ($iModelo8)
+					Case 1
+						ImprimirModelo($iContador, "TAB")
+						$iModelo8 = 8					
+					Case 8
+						ImprimirModelo($iContador, "TAB", "SPACE 2")
+						$iModelo8 = 0					
+				EndSwitch
+			Case Else
+				; Ação realizada demais modelos
+				ImprimirModelo($iContador, "TAB")
+		EndSwitch
 
 		$bValida = True
 		While ($bValida)
-
 			$iResultadoWinReport = WinActivate($sTituloTelaReport)
+			Sleep(100)
 
 			If ($iResultadoWinReport) Then
 				$bValida = False
 			Else
 				MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
 			EndIf
-
 		WEnd
 
-		If ($iResultadoWinReport) Then
-			MsgBox($MB_ICONINFORMATION, "MODELO " & $iContador, "Modelo " & $iContador & " impresso com sucesso.", 2)
+		If ($iResultadoWinReport) Then		
+			;MsgBox($MB_ICONINFORMATION, "MODELO " & $iContador, "Modelo " & $iContador & " impresso com sucesso.", 2)
+			MsgBox($MB_ICONINFORMATION, "MODELO", "["& StringUpper($sTituloTelaReport) & "] impresso com sucesso.", 2)
 			WinActivate($sTituloTelaReport)
 			Send("{ESC}")
 			Sleep(300)
@@ -119,10 +151,10 @@ VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha si
 
 #Region ### FUNÇÕES
 
-Func ImprimirModelo($iNumeroModelo, $sSendTab)
+Func ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
-	Send("{" & $sCliquesParaBaixo & "}{SPACE}{" & $sSendTab & "}{ENTER}")
+	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}{" & $sSendTab & "}{ENTER}")
 
 EndFunc
 

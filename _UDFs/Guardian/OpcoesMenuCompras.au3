@@ -26,6 +26,19 @@ Local Const $sAtalhoExpandirMenuCompras = "!c{RIGHT}"
 
 #EndRegion ### VARIAVEIS
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   AbreComprasRequisicaoDeCompra()
+	=	AbreComprasOrdemDeCompra()
+	=	AbreComprasManutencaoOrdemDeCompra()
+	=	AbreComprasChegadaDeMercardoria()
+	=	AbreComprasRecebimentoDaMercadoria()
+	=	AbreComprasConferenciaDeRecebimento()
+	=	AbreComprasControleRecebimentoDeMercadoria()
+	=	AbreComprasEspelhoDeEntrada()
+    =
+#ce ===============================================================================================================================
+
 #Region ### FUNÇÕES
 
 Func AbreComprasRequisicaoDeCompra()

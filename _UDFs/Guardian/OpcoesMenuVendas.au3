@@ -25,6 +25,24 @@ Local Const $sAtalhoExpandirMenuVendas = "!v"
 
 #EndRegion ### VARIAVEIS
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   AbreVendasDAV()
+    =   AbreVendasDevolucaoDeVenda()
+    =   AbreVendasOutrasSaidas()
+
+    	***** FATURAMENTO *****
+	=	AbreVendasFaturamentoIndividual()
+	=	AbreVendasFaturamentoPorCarga()
+	
+	=	AbreVendasSparacaoDePedido()
+	=	AbreVendasOrcamento()
+
+		***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+	=	AbreVendasRelatoriosRelDAV()
+    =
+#ce ===============================================================================================================================
+
 #Region ### FUNÇÕES
 
 Func AbreVendasDAV()
@@ -71,5 +89,16 @@ Func AbreVendasOrcamento()
 	AbreMenu($sAtalhoExpandirMenuVendas, "OO", "{ENTER}", $TEXTO_ORCAMENTO_VENDA)
 
 EndFunc   ;==>AbreVendasOrcamento
+
+#Region ***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+
+	Func AbreVendasRelatoriosRelDAV()
+
+		AbreMenu($sAtalhoExpandirMenuVendas, "R", "{ENTER}", $TEXTO_RELATORIO_DAV)
+
+	EndFunc   ;==>AbreVendasRelatoriosRelDAV
+
+#EndRegion ***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+
 
 #EndRegion ### FUNÇÕES

@@ -40,7 +40,7 @@ Func SolicitaCodigo($sTextoMensagem = "INFORME UM CÓDIGO DE...", $sMsgCodigoVal
 			Case $GUI_EVENT_CLOSE, $btnCancelar
 				GUISetState(@SW_HIDE)
 				MsgBox($MB_ICONWARNING, "", "O script será finalizado!", 5)
-				Exit
+				ExitLoop
 
 			Case $btnOK
 				$iCodigo = GUICtrlRead($txtCodigo)

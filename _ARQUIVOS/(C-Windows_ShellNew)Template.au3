@@ -41,11 +41,11 @@ Local Const $sNomeDoSistema = "(INFORME O TITULO E NOME DO SISTEMA A SER TESTADO
 
 #Region ### EXECUÇÃO DO SCRIPT
 
-VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ; Função da UDF SistemaExiste.au3
+VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Função da UDF SistemaExiste.au3
 
-VerificaAlteraResolucao() ; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
+VerificaAlteraResolucao() ;;; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
 
-ExibeMensagemPadrao("Inclusão de Ordem de Compra", "BUG.: Reproduzir bug no momento de incluir produto") ; Exibe mensagem informativa -> (função na UDF Mensagens.au3)
+ExibeMensagemPadrao("Inclusão de Ordem de Compra", "BUG.: Reproduzir bug no momento de incluir produto") ;;; Exibe mensagem informativa -> (função na UDF Mensagens.au3)
 
 WinActivate($sTituloDaTelaPrincipalDoSistema)
 
@@ -57,7 +57,7 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 ; [TEST]
 _Assert(True, false)
 
-VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
+VoltaResolucaoAnterior() ;;; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
 Exit
 
 #EndRegion ### EXECUÇÃO DO SCRIPT

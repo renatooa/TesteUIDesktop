@@ -36,10 +36,10 @@ Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 Local $sTituloTelaReport
 Local $iModeloAtual = 1
 Local $iQtdeModelos = 27
+Local $iLoopModelo7 = 2
+Local $iLoopModelo12 = 2
 
 ;;; VARIAVEIS COM EIXO X, Y UTILIZADAS NA FUNÇÃO MouseClick()
-Local Const $iDataEmissaoEixoX = 460
-Local Const $iDataEmissaoEixoY = 189
 Local Const $iMaximixarReportEixoX = 569
 Local Const $iMaximixarReportEixoY = 61
 
@@ -60,11 +60,11 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 AbreVendasRelatoriosRelDAV()
 
 ;;; Realiza pesquisa de ordem de compra por periodo
-MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
+MouseClick("LEFT", 460, 189, 3)
 Send("01" & (@MON - 2) & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
 
-;;; Loop para imprimir os modelos disponiveis ($iQtdeModelos)
-For $iContador = 1 To $iQtdeModelos Step +1
+;;; Loop para imprimir os modelos disponiveis
+For $iContador = 5 To $iQtdeModelos Step +1
 
 	;;;[DEBUG]
 	ConsoleWrite("*************** LOOP * " & $iContador & " ***************" & @CRLF)
@@ -74,7 +74,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 		ExitLoop
 	EndIf
 
-	If ($iModeloAtual == 6) Then
+	If ( $iModeloAtual == 6) Then
 		$iContador = 5
 	EndIf
 
@@ -87,6 +87,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 
 	AcessaAbaOpcoesModelos()
 
+	;$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iContador
 	$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iModeloAtual
 
 	Switch ($iModeloAtual)
@@ -105,7 +106,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 
 		Case 7
 			;;; Ação realizada se for o Modelo 7
-			For $i = 1 To 2 Step +1
+			For $i = 1 To $iLoopModelo7 Step +1
 				
 				Switch ($i)
 					Case 1
@@ -117,12 +118,13 @@ For $iContador = 1 To $iQtdeModelos Step +1
 						RelatorioImprimiu()
 				EndSwitch
 				
-			Next
-			$iModeloAtual = 7
+			Next			
+			$iModeloAtual = 7					
 
 		Case 12
 			;;; Ação realizada se for o Modelo 12
-			For $i = 1 To 2 Step +1
+			; ImprimirModelo($iContador, "{TAB 2}")
+			For $i = 1 To $iLoopModelo12 Step +1
 				
 				Switch ($i)
 					Case 1
@@ -141,18 +143,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 
 		Case 27
 			;;; Ação realizada se for o Modelo 27
-			For $i = 1 To 2 Step +1
-				
-				Switch ($i)
-					Case 1
-						ImprimirModelo($iContador, "{TAB 2}")
-						RelatorioImprimiu()
-					Case 2
-						AcessaAbaOpcoesModelos()
-						ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB}")
-				EndSwitch
-				
-			Next
+			ImprimirModelo($iContador, "{TAB 2}")
 
 		Case Else
 			;;; Ação realizada demais modelos
@@ -164,7 +155,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 		ContinueLoop
 	EndIf
 
-	If ($iModeloAtual <> 7) Then
+	If($iModeloAtual <> 7) Then
 		RelatorioImprimiu()
 	EndIf
 
@@ -179,22 +170,17 @@ VoltaResolucaoAnterior() ;;; Altera a resolução do monitor caso a mesma tenha si
 
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
-
 #Region ### FUNÇÕES
 
 Func AcessaAbaOpcoesModelos()
-
 	Send("^b") ;CTRL + B
-
-EndFunc   ;==>AcessaAbaOpcoesModelos
+EndFunc
 
 Func ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
-	Opt("SendKeyDelay", 100)
 	Send("{TAB 3}")
 	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}" & $sSendTab & "{ENTER}")
-	Opt("SendKeyDelay", 200)
 
 EndFunc   ;==>ImprimirModelo
 
@@ -205,14 +191,30 @@ Func RelatorioImprimiu()
 		Send("{TAB 2}{ENTER}")
 	EndIf
 
-	$iResultado = QualModeloFoiImpresso()
+	$bValida = True
+	While ($bValida)
+		
+		QualModeloFoiImpresso()
 
-	If ($iResultado) Then
+		WinWaitActive("", $sTituloTelaReport)
+		$iResultadoWinReport = WinActivate($sTituloTelaReport)
+		Sleep(300)
+
+		If ($iResultadoWinReport) Then
+			$bValida = False
+		Else
+			MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
+		EndIf
+	WEnd
+
+	If ($iResultadoWinReport) Then
 		MsgBox($MB_ICONINFORMATION, "MODELO", "[" & StringUpper($sTituloTelaReport) & "] impresso com sucesso.", 1)
 		WinActivate($sTituloTelaReport)
 		Send("{ESC}")
 		Sleep(300)
 	EndIf
+
+	;Return
 
 EndFunc   ;==>RelatorioImprimiu
 
@@ -220,42 +222,24 @@ EndFunc   ;==>RelatorioImprimiu
 ;;; $iModeloAtual - $iQtdeModelos - $sTituloTelaReport.
 ;;; Função necessária pois o RadioButton do modelo 5 no Guardian fica Bloqueado.
 ;;; Desta forma a ação de TAB a partir do modelo 4 vai para o modelo 6 ou 7.
-;;;
-;;; Retorno --->> Resutldado da função WinActivate().
 Func QualModeloFoiImpresso()
+	
+	While (Not WinActive("", $sTituloTelaReport))
 
-	$bBooleano = true
-	While ($bBooleano)
-		
-		While (Not WinActive("", $sTituloTelaReport))
+		$iModeloAtual = $iModeloAtual + 1
+		$iQtdeModelos = $iQtdeModelos - 1
+		$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iModeloAtual
 
-			$iModeloAtual = $iModeloAtual + 1
-			$iQtdeModelos = $iQtdeModelos - 1
-			$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iModeloAtual
+		;;; [DEBUG]
+		ConsoleWrite("3 - ModeloAtual -> " & $iModeloAtual & @CRLF)
+		ConsoleWrite("2 - QtdeModelos(-) -> " & $iQtdeModelos & @CRLF)
 
-			;;; [DEBUG]
-			ConsoleWrite("3 - ModeloAtual -> " & $iModeloAtual & @CRLF)
-			ConsoleWrite("2 - QtdeModelos(-) -> " & $iQtdeModelos & @CRLF)
-
-		WEnd
-
-		If ($iModeloAtual == 7) Then
-			$iModeloAtual = 6
-		EndIf
-
-		WinWaitActive("", $sTituloTelaReport)
-		$iResultadoWinReport = WinActivate($sTituloTelaReport)
-		Sleep(300)
-
-		If ($iResultadoWinReport) Then
-			$bBooleano = False
-		Else
-			MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
-		EndIf
 	WEnd
 
-	Return $iResultadoWinReport
+	If ( $iModeloAtual == 7 ) Then	
+		$iModeloAtual = 6	
+	EndIf
 
-EndFunc   ;==>QualModeloFoiImpresso
+EndFunc
 
 #EndRegion ### FUNÇÕES

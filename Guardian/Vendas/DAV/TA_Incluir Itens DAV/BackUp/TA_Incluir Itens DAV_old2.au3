@@ -57,66 +57,68 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 ;________________________________________________________________________________________________________________
 
-If (WinExists("", $TEXTO_DAV)) Then
-	; Mostra Formulário
-	FrmSolicitaDadosInclusaoDeItensDAV()
+If (WinExists("", $TEXTO_DAV))
+; Mostra Formulário
+FrmSolicitaDadosInclusaoDeItensDAV()
 
-	; While para capturar ação no fomulário
-	While True
-		$nMsg = GUIGetMsg()
-		Switch $nMsg
-			Case $GUI_EVENT_CLOSE, $btnCancelar
+; While para capturar ação no fomulário
+While True
+	$nMsg = GUIGetMsg()
+	Switch $nMsg
+		Case $GUI_EVENT_CLOSE, $btnCancelar
+			ExitLoop
+
+		Case $cbxHostDB
+			GUICtrlSetState($cbxHostDB, $GUI_DISABLE)
+
+		Case $cbxSenhaDB
+			$sUsername = GUICtrlRead($txtUserDB)
+
+			$iIndexResult = _GUICtrlComboBox_GetCurSel($cbxSenhaDB)
+			$sPasswordText = _GUICtrlComboBox_GetEditText($cbxSenhaDB)			
+			If ($iIndexResult == 0) Then				
+				$sPassword = StringReplace($sPasswordText, "*********", "alunga")
+			Else
+				$sPassword = StringReplace($sPasswordText, "****************", "enharootmysql")
+			EndIf
+
+			$sHost = _GUICtrlComboBox_GetEditText($cbxHostDB)
+
+			$sString = GetDataBasesInString($sUsername, $sPassword, $sHost) ; Função da UDF ManipulaDadosBD.au3
+
+			GUICtrlSetData($cbxDataBase, $sString)
+			GUICtrlSetState($cbxSenhaDB, $GUI_DISABLE)
+			GUICtrlSetState($cbxDataBase, $GUI_ENABLE)
+
+		Case $btnOK
+			$iQtdeDeProdutos = GUICtrlRead($txtUpDownQtdeProdutos)
+			$sDatabase = _GUICtrlComboBox_GetEditText($cbxDataBase)
+			GUISetState(@SW_HIDE)
+
+			If ($sDatabase <> "") Then
+				$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
+				
+				IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
+				
+				If ( Not @error ) Then
+					$iHoraEmSegundosFim = GetHorasAtualEmSegundos()
+					MsgBox($MB_ICONINFORMATION, "Fim Execução Script", "TEMPO GASTO.: " _ 
+					    & $iHoraEmSegundosFim - $iHoraEmSegundosInicio & " seg.", 10)
+				EndIf
+
 				ExitLoop
+			Else
+				MsgBox($MB_ICONWARNING, "Atenção", "Database não selecionado!" & @CR & @CR & _
+						"O script de teste será finalizado")
+				ExitLoop
+			EndIf
+	EndSwitch
+WEnd
 
-			Case $cbxHostDB
-				GUICtrlSetState($cbxHostDB, $GUI_DISABLE)
-
-			Case $cbxSenhaDB
-				$sUsername = GUICtrlRead($txtUserDB)
-
-				$iIndexResult = _GUICtrlComboBox_GetCurSel($cbxSenhaDB)
-				$sPasswordText = _GUICtrlComboBox_GetEditText($cbxSenhaDB)
-				If ($iIndexResult == 0) Then
-					$sPassword = StringReplace($sPasswordText, "*********", "alunga")
-				Else
-					$sPassword = StringReplace($sPasswordText, "****************", "enharootmysql")
-				EndIf
-
-				$sHost = _GUICtrlComboBox_GetEditText($cbxHostDB)
-
-				$sString = GetDataBasesInString($sUsername, $sPassword, $sHost) ; Função da UDF ManipulaDadosBD.au3
-
-				GUICtrlSetData($cbxDataBase, $sString)
-				GUICtrlSetState($cbxSenhaDB, $GUI_DISABLE)
-				GUICtrlSetState($cbxDataBase, $GUI_ENABLE)
-
-			Case $btnOK
-				$iQtdeDeProdutos = GUICtrlRead($txtUpDownQtdeProdutos)
-				$sDatabase = _GUICtrlComboBox_GetEditText($cbxDataBase)
-				GUISetState(@SW_HIDE)
-
-				If ($sDatabase <> "") Then
-					$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
-					
-					IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
-					
-					If (Not @error) Then
-						$iHoraEmSegundosFim = GetHorasAtualEmSegundos()
-						MsgBox($MB_ICONINFORMATION, "Fim Execução Script", "TEMPO GASTO.: " _
-								 & $iHoraEmSegundosFim - $iHoraEmSegundosInicio & " seg.", 10)
-					EndIf
-
-					ExitLoop
-				Else
-					MsgBox($MB_ICONWARNING, "Atenção", "Database não selecionado!" & @CR & @CR & _
-							"O script de teste será finalizado")
-					ExitLoop
-				EndIf
-		EndSwitch
-	WEnd
 Else
 	MsgBox($MB_ICONWARNING, "Atenção", "Tela de Inclusão de DAV não localizada!" & @CR & @CR & _
 			"O script de teste será finalizado")
+	ExitLoop
 EndIf
 
 VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)

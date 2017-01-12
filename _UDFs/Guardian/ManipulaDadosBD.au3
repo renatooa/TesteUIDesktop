@@ -101,7 +101,7 @@ EndFunc   ;==>GetDataBasesInString
 #EndRegion ### FUNÇÕES
 
 ; TESTE
-    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("root", "@kalunga123", "_sgdmsupdev", "localhost"))
-    ;_ArrayDisplay(GetDataBases("root", "@kalunga123", "localhost"))
-    ;ConsoleWrite(GetStringDataBases("root", "@kalunga123", "localhost"))
+    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("rooteste", "@teste123", "super100", "localhost"))
+    ;_ArrayDisplay(GetDataBases("rooteste", "@teste123", "localhost"))
+    ;ConsoleWrite(GetStringDataBases("rooteste", "@teste123", "localhost"))
 ; ENDTESTE

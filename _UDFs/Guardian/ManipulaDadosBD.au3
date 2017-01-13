@@ -39,12 +39,15 @@ Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost,
              & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo AND pro_filcodigo = pfi_filcodigo " _
              & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo AND lpd_filcodigo = pfi_filcodigo " _
              & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo AND lpd_filcodigo = ppr_filcodigo " _
+             & "INNER JOIN unidadepro ON unp_procodigo = lpd_procodigo " _
              & "WHERE pro_filcodigo = " & $sCodigoFilialSelect & " AND pro_ativo = 1 " _
              & "AND pfi_estpenconfi = 0 AND pfi_estpenentra = 0 AND pfi_estpenentre = 0 " _
              & "AND lpd_estpenconfi = 0 AND lpd_estpenentra = 0 AND lpd_estpenentre = 0 " _
              & "AND pfi_estoque > 10 AND pfi_libvenda = 1 " _
              & "AND lpd_estfisico > 10 AND ppr_precovenda <> 0 " _
              & "AND ppr_prbcodigo = 1 AND pfi_inativo = 0 " _
+             & "AND unp_fraciona = 0 AND unp_fracminima = 0 " _
+             & "AND unp_qminvenda <= 1 " _
              & "GROUP BY pro_codigo;"
 
     $oResultQuery = _Query($oMySqlConn, $sSelect)
@@ -101,7 +104,7 @@ EndFunc   ;==>GetDataBasesInString
 #EndRegion ### FUNÇÕES
 
 ; TESTE
-    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("rooteste", "@teste123", "super100", "localhost"))
+    ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("rooteste", "@teste123", "madsol", "localhost"))
     ;_ArrayDisplay(GetDataBases("rooteste", "@teste123", "localhost"))
     ;ConsoleWrite(GetStringDataBases("rooteste", "@teste123", "localhost"))
 ; ENDTESTE

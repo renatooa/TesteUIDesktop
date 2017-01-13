@@ -1,7 +1,7 @@
 #cs ===============================================================================================================================
 	Típo de Script .: Script Execução de Teste
 	Descrição ......: Efetuar a abertura de cupom fiscal no Polaris com a quantidade de produtos informada
-	no InputBox apresentado no inicio da execução do script.
+					  no InputBox apresentado no inicio da execução do script.
 	Data Inicio ....: 12/01/2017
 	Data Termino ...:
 	Versão .........: 001
@@ -36,10 +36,11 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #ce ===============================================================================================================================
 Local Const $sTituloDaTelaPrincipalDoSistema = "Space Polaris"
 Local Const $sNomeDoSistema = $sTituloDaTelaPrincipalDoSistema
-Local $sUsername ;= "root"
-Local $sPassword ;= "@kalunga123"
-Local $sDatabase ;= "super100"
-Local $sHost ;= "192.168.0.14"
+Local $iQuantidadeProdutosParaIncluir
+Local $sUsername
+Local $sPassword
+Local $sDatabase
+Local $sHost
 
 #EndRegion ### VARIAVEIS
 
@@ -58,7 +59,7 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 $sConfigBD = InputBox("Configuração Conexão Banco de Dados", _
 		"Informe o USER, PASSWORD, DB_NAME e HOST separados por pipe (|).", _
-		"root|@kalunga123|super100|127.0.0.1", "", 300, 150)
+		"root | @kalunga123 | super100 | 127.0.0.1", "", 300, 150)
 
 $aDadosConexaoBD = StringSplit(StringStripWS($sConfigBD, $STR_STRIPALL), "|", $STR_NOCOUNT)
 
@@ -85,14 +86,15 @@ If (Not @error And UBound($aDadosConexaoBD) == 4) Then
 			
 			For $iIndice = 0 To $iQuantidadeProdutosParaIncluir - 1 Step +1
 
-				Send($aCodigoProdutos[$iIndice] & "{ENTER}")
-
+				Send($aCodigoProdutos[$iIndice] & "{ENTER}")				
 				Sleep(1000)
+				VerificaTelaErroExiste()
 
 				If (WinExists("Pesquisa de Produto") Or WinExists("Confirmação")) Then
 					
 					Send("{ENTER}")
 					Sleep(1000)
+					VerificaTelaErroExiste()
 					
 				EndIf
 
@@ -117,4 +119,19 @@ Exit
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
 #Region ### FUNÇÕES
+
+Func VerificaTelaErroExiste()
+	
+	If (WinExists("Erro")) Then
+	
+		Send("{ENTER}")
+		$iQuantidadeProdutosParaIncluir += 1
+		; MsgBox($MB_ICONWARNING + $MB_OK, "", "Falha na execução do script!" _
+		; 	& @CRLF & "Script será finalizado!")
+		; ExitLoop
+	
+	EndIf
+
+EndFunc
+
 #EndRegion ### FUNÇÕES

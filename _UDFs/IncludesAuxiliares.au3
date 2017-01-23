@@ -19,5 +19,6 @@
 	#include "Auxiliares\HotKeys.au3"
 	#include "Auxiliares\mysql_1.au3"
 	#include "Auxiliares\GetHoras.au3"
+	; #include "Auxiliares\AssocArrays.au3"
 
 #EndRegion ###	INCLUDES

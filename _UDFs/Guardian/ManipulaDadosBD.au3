@@ -157,6 +157,6 @@ EndFunc   ;==>GetDataBasesInString
 ; TESTE    
     ;_ArrayDisplay(GetArrayCodigoProdutosParaVenda("rooteste", "@teste123", "madsol", "localhost"))
     ;_ArrayDisplay(GetArrayCodigoEPrecoProdutosParaVenda("rooteste", "@teste123", "madsol", "localhost"))
-    ;_ArrayDisplay(GetDataBases("rooteste", "@teste123", "localhost"))
-    ;ConsoleWrite(GetStringDataBases("rooteste", "@teste123", "localhost"))
+    ;_ArrayDisplay(GetDataBasesInArray("rooteste", "@teste123", "localhost"))
+    ;ConsoleWrite(GetDataBasesInString("rooteste", "@teste123", "localhost"))
 ; ENDTESTE

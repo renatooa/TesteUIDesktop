@@ -62,9 +62,7 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 $sConfigBD = InputBox("Configuração Conexão Banco de Dados", _
 		"Informe o USER, PASSWORD, DB_NAME e HOST separados por pipe (|).", _
-		"root | @kalunga123 | super100 | 192.168.0.14", "", 300, 150)
-		;"root | @senharootmysql123 | super100 | 192.168.0.7", "", 300, 150)
-		;"root | @kalunga123 | madsol | 192.168.0.14", "", 300, 150)
+		"rooteste | @teste123 | super100 | 192.168.0.14", "", 300, 150)
 
 $aDadosConexaoBD = StringSplit(StringStripWS($sConfigBD, $STR_STRIPALL), "|", $STR_NOCOUNT)
 

@@ -532,7 +532,7 @@
 			"file": "Polaris/Abertura e Fechamento de Cupom/TA_Abrir Cupom Fiscal Polaris.au3",
 			"settings":
 			{
-				"buffer_size": 5034,
+				"buffer_size": 5036,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,16 +541,7 @@
 			"file": "Polaris/Abertura e Fechamento de Cupom/TA_Abrir e Fechar Cupom Fiscal Polaris[LOOP].au3",
 			"settings":
 			{
-				"buffer_size": 5269,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Polaris/Abertura e Fechamento de Cupom/[Refatorar]TA_Abrir e Fechar Cupom Fiscal Polaris.au3",
-			"settings":
-			{
-				"buffer_size": 2512,
+				"buffer_size": 5137,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -613,7 +604,7 @@
 			"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
 			"settings":
 			{
-				"buffer_size": 6655,
+				"buffer_size": 6664,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -982,12 +973,20 @@
 	"expanded_folders":
 	[
 		"/D/Testes-Automatizados/TesteUIDesktop",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/BackUp"
 	],
 	"file_history":
 	[
+		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/[Refatorar]TA_Abrir e Fechar Cupom Fiscal Polaris.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GetHoras.au3",
 		"/C/Space/Polaris/Polaris/BemaFI32.ini",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/BackUp/TA_Abrir e Fechar Cupom Fiscal Polaris[LOOP]_old1.au3",
 		"/C/Space/Polaris/Polaris/conf/config.xml",
@@ -1057,9 +1056,7 @@
 		"/D/NOVO/MoverArquivosUltimoBuildGuardian.bat",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/Abstract/AbstractAbreMenuGuardian.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/form/frmMetroGeraCpfCnpj.kxf",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GerarCPF_CNPJ.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_ARQUIVOS/helpers/UDF_Msgbox/_Msgbox.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/MudarResolucao.au3",
 		"/C/Users/User/AppData/Local/Temp/test.au3",
@@ -1075,7 +1072,6 @@
 		"/D/Space/WEBSERVERS/SGDM/apache-tomcat-8.0.36/conf/server.xml",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Cadastros/Produto/TA_Incluir Produto.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/tmp/BotoesTelaDAV.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/GetHoras.au3",
 		"/C/Users/User/Documents/GitHub/HajaLuz/README.MD",
 		"/C/Users/User/Documents/GitHub/HajaLuz/.gitignore",
 		"/C/Users/User/Documents/GitHub/HajaLuz/HajaLuz/HajaLuz/Assets/AboutAssets.txt",
@@ -1114,8 +1110,7 @@
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Mensagens.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Abstract/AbstractSolicitaCodigo.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesBotoesGuardian.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesTextosGuardian.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/AbstractValidacaoGuardian.au3"
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/ConstantesTextosGuardian.au3"
 	],
 	"find":
 	{
@@ -1291,7 +1286,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1317,10 +1312,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1163.0,
+						"translation.y": 1205.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1329,15 +1324,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5034,
+						"buffer_size": 5036,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5034,
-								5034
+								3063,
+								3071
 							]
 						],
 						"settings":
@@ -1349,7 +1344,7 @@
 						"translation.y": 660.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1358,15 +1353,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5269,
+						"buffer_size": 5137,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2287,
-								2287
+								3237,
+								3237
 							]
 						],
 						"settings":
@@ -1375,42 +1370,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2345.0,
+						"translation.y": 286.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "Polaris/Abertura e Fechamento de Cupom/[Refatorar]TA_Abrir e Fechar Cupom Fiscal Polaris.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2512,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1782,
-								1734
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 840.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "_UDFs/Guardian/IncluirProdutos.au3",
 					"semi_transient": false,
 					"settings":
@@ -1437,11 +1404,11 @@
 						"translation.y": 2584.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "Guardian/Vendas/Relatórios/TA_Imprimir Relatório de DAV.au3",
 					"semi_transient": false,
 					"settings":
@@ -1466,11 +1433,11 @@
 						"translation.y": 525.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
 					"semi_transient": false,
 					"settings":
@@ -1495,7 +1462,7 @@
 						"translation.y": 231.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1505,7 +1472,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1529,11 +1496,11 @@
 						"translation.y": 91.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "_UDFs/Guardian/Constantes/ConstantesTextosGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1559,11 +1526,11 @@
 						"translation.y": 64.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1589,24 +1556,24 @@
 						"translation.y": 205.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6655,
+						"buffer_size": 6664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5137,
-								5146
+								6195,
+								6195
 							]
 						],
 						"settings":
@@ -1617,14 +1584,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1405.0,
+						"translation.y": 1734.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "_UDFs/Auxiliares/mysql_1.au3",
 					"semi_transient": false,
 					"settings":
@@ -1650,11 +1617,11 @@
 						"translation.y": 496.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "_UDFs/Guardian/ClickBotoes.au3",
 					"semi_transient": false,
 					"settings":
@@ -1679,7 +1646,7 @@
 						"translation.y": 383.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1752,6 +1719,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"g",
+				"_UDFs\\Auxiliares\\GetHoras.au3"
+			],
 			[
 				"incl",
 				"_UDFs\\IncludesAuxiliares.au3"

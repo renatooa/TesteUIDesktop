@@ -38,7 +38,7 @@ Local Const $sTituloDaTelaPrincipalDoSistema = "Space Polaris"
 Local Const $sNomeDoSistema = $sTituloDaTelaPrincipalDoSistema
 Local Const $iQuantidadeProdutosParaIncluir = 10
 Local Const $iIntervaloDoLoop = 60000
-Local $dValorPago = 500
+Local $dValorPago
 Local $sUsername
 Local $sPassword
 Local $sDatabase
@@ -81,6 +81,8 @@ If (Not @error And UBound($aDadosConexaoBD) == 4) Then
 		Send("#{UP}") ; Win + Up
 		
 		While (True)
+
+			$dValorPago = 500
 			
 			For $iIndice = 0 To $iQuantidadeProdutosParaIncluir - 1 Step +1
 

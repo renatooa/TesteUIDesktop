@@ -34,6 +34,7 @@ Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pre
 Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
 Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 
+Local Const $iQtdeModelos = 11
 Local $sTituloTelaReport = "Report Designer - frxordemcompra"
 Local $sTextoTelaDeModelos = "Modelo de Ordem de Compra"
 Local $iModelo2 = 1
@@ -64,7 +65,7 @@ Send("{TAB 3}01012000{TAB}" & @MDAY & @MON & @YEAR)
 Send("{TAB 5}{ENTER}")
 
 ; Loop para imprimir os modelos disponiveis
-For $iContador = 1 To 10 Step +1
+For $iContador = 1 To $iQtdeModelos Step +1
 
 	If ( $iModelo2 == 2 ) Then
 		$iContador = $iModelo2	

@@ -48,7 +48,7 @@ Local $sHost
 
 VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ; Função da UDF SistemaExiste.au3
 
-VerificaAlteraResolucao() ; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
+;VerificaAlteraResolucao() ; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
 
 ExibeMensagemPadrao("Inclusão de Produtos no Cupom Fiscal.") ; Exibe mensagem informativa -> (função na UDF Mensagens.au3)
 
@@ -113,7 +113,7 @@ If (Not @error And UBound($aDadosConexaoBD) == 4) Then
 
 EndIf
 
-VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
+;VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha sido modificada no inicio do script -> (função da UDF MudarResolucao.au3)
 Exit
 
 #EndRegion ### EXECUÇÃO DO SCRIPT

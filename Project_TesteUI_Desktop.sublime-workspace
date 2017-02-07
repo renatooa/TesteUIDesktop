@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"winwa",
+				"WinWaitActive()"
+			],
+			[
 				"Strin",
 				"StringSplit()"
 			],
@@ -510,33 +514,11 @@
 			[
 				"incl",
 				"include <MsgBoxConstants.au3>\t#include <MsgBoxConstants.au3>"
-			],
-			[
-				"ms",
-				"MsgBox()"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
-			"settings":
-			{
-				"buffer_size": 5077,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "_UDFs/Guardian/IncluirProdutos.au3",
-			"settings":
-			{
-				"buffer_size": 9173,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
 		{
 			"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 			"settings":
@@ -938,19 +920,23 @@
 	[
 		"/D/Testes-Automatizados/TesteUIDesktop",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV",
-		"/D/Testes-Automatizados/TesteUIDesktop/Polaris"
+		"/D/Testes-Automatizados/TesteUIDesktop/Polaris",
+		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom"
 	],
 	"file_history":
 	[
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/Relatórios/TA_Imprimir Relatório de DAV.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
+		"/C/Users/User/workspace/ProjetoCommandLine/compile.bat",
 		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Guardian/IncluirProdutos.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Ordem de Compra/TA_Imprimir Ordem de Compra Todos os Modelos.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/TA_Abrir Cupom Fiscal Polaris.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/TA_Abrir e Fechar Cupom Fiscal Polaris[LOOP].au3",
+		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Vendas/Relatórios/TA_Imprimir Relatório de DAV.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/_temp/Prova de Conceito/AppGeraCpfCnpj/AppGeraCpfCnpj.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/BackUp/TA_Abrir e Fechar Cupom Fiscal Polaris[LOOP]_old1.au3",
 		"/D/Testes-Automatizados/TesteUIDesktop/Polaris/Abertura e Fechamento de Cupom/[Refatorar]TA_Abrir e Fechar Cupom Fiscal Polaris.au3",
@@ -1071,8 +1057,7 @@
 		"/C/Users/User/Desktop/1.au3",
 		"/D/Program Files/Microvirt/MEmu/scripts/info.ini",
 		"/D/Testes-Automatizados/TesteUIDesktop/Guardian/Compras/Espelho de Entrada/TA_Inclusão Espelho de Entrada COM NF.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Mensagens.au3",
-		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Abstract/AbstractSolicitaCodigo.au3"
+		"/D/Testes-Automatizados/TesteUIDesktop/_UDFs/Auxiliares/Mensagens/Mensagens.au3"
 	],
 	"find":
 	{
@@ -1090,6 +1075,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mouse",
 			"iQuantidadeDeModelos",
 			"aCodigoPrecoProdutos",
 			"aCodigoProdutos",
@@ -1216,8 +1202,7 @@
 			"comment.block.cs.autoit",
 			"region",
 			"func",
-			"region",
-			"i"
+			"region"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1248,68 +1233,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Guardian/Vendas/DAV/TA_Incluir Itens DAV/TA_Incluir Itens DAV.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1141.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "_UDFs/Guardian/IncluirProdutos.au3",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6253,
-								6284
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AutoItScript/AutoIt.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2198.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		},
 		{
@@ -1317,7 +1242,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 0,
 					"file": "_UDFs/Guardian/Constantes/ConstantesBotoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1341,11 +1266,11 @@
 						"translation.y": 91.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
 					"file": "_UDFs/Guardian/Constantes/ConstantesTextosGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1371,11 +1296,11 @@
 						"translation.y": 64.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "_UDFs/Guardian/ValidacoesGuardian.au3",
 					"semi_transient": false,
 					"settings":
@@ -1401,11 +1326,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
 					"file": "_UDFs/Guardian/ManipulaDadosBD.au3",
 					"semi_transient": false,
 					"settings":
@@ -1432,11 +1357,11 @@
 						"translation.y": 531.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "_UDFs/Auxiliares/mysql_1.au3",
 					"semi_transient": false,
 					"settings":
@@ -1459,14 +1384,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 187.0,
+						"translation.y": 103.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 5,
 					"file": "_UDFs/Guardian/ClickBotoes.au3",
 					"semi_transient": false,
 					"settings":
@@ -1491,7 +1416,7 @@
 						"translation.y": 383.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

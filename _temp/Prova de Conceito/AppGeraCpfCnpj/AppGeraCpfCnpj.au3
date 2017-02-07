@@ -20,6 +20,7 @@ GUICtrlSetFont(-1, 15, 800, 0, "Segoe UI Semibold")
 $lblPrompt = GUICtrlCreateLabel("Selecione a opção desejada :", 33, 129, 197, 24)
 $cbxCpfCnpj = GUICtrlCreateCombo("", 241, 119, 70, 25)
 GUICtrlSetData(-1, "CPF|CNPJ", "CPF")
+GUICtrlSetColor(-1, 0x000000)
 $btnGerar = GUICtrlCreateButton("GERAR", 17, 167, 307, 45)
 GUICtrlSetCursor (-1, 0)
 GUICtrlSetFont(-1, 15, 400, 0, "Segoe UI")
@@ -46,15 +47,15 @@ While 1
 		Case $btnGerar
 			$indexItemSelecionado = _GUICtrlComboBox_GetCurSel($cbxCpfCnpj)
 			$textoItemSelecionado = _GUICtrlComboBox_GetEditText($cbxCpfCnpj)
-			$radio =GUICtrlRead($rbtSim)
-			$pontos = ($radio == $GUI_CHECKED) ? true : false
+			$radio = GUICtrlRead($rbtSim)
+			$bPontos = ($radio == $GUI_CHECKED) ? true : false
 
 			Switch ($indexItemSelecionado)
 				Case 0
-					GerarCPF($pontos)
+					GerarCPF($bPontos)
 
 				Case 1
-					GerarCNPJ($pontos)
+					GerarCNPJ($bPontos)
 
 				Case Else
 					If (Not @error) Then
@@ -68,6 +69,5 @@ While 1
 						"(" & ClipGet() & ")", 1000)
 				;Exit
 			EndIf
-
 	EndSwitch
 WEnd

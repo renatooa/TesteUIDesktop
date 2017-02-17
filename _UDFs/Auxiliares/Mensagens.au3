@@ -32,10 +32,9 @@ Func ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 	Local Const $sMensagemExibida = "ESTÁ ROTINA IRÁ EXECUTAR O SEGUINTE TESTE " & @CR & @CR & _
 			$sTestesExecutados & @CR & _
 			$sInformacoesAdicionais & @CR & @CR & _
-			"------------------------------------------" & @CR & _
-			"Pressione CTRL+SHIFT+Q para finalizar " & @CR & _
-			"o teste a qualquer momento" & @CR & _
-			"------------------------------------------"
+			"---------------------------------------------------------------------------" & @CR & _
+			"Pressione CTRL+SHIFT+Q para finalizar o teste a qualquer momento." & @CR & _
+			"---------------------------------------------------------------------------"
 
 	; Exibe MsgBox
 	$iBotaoClicado = MsgBox($MB_ICONINFORMATION + $MB_OKCANCEL, "Rotina de Teste Automatizado", $sMensagemExibida)

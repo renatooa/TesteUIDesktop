@@ -5,7 +5,7 @@
 	Data Termino ...: 02/09/2015	
 	Versão .........: 003
 	Autor(s) .......: Ronildo
-	Obs.............: Realizado refatoramento da UDF na data 07/02/2017 
+	Obs.............: Realizado refatoramento da UDF na data 07/02/2017
 #ce ===============================================================================================================================
 
 ;				-----------	INCLUDES / OPS ----------

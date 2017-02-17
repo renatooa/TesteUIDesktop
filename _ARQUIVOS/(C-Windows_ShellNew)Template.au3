@@ -7,6 +7,7 @@
 	Data Termino ...:
 	Versão .........: 001
 	Autor(s) .......: Ronildo
+	Obs.............:
 #ce ===============================================================================================================================
 
 #Region ### INCLUDES / OPS
@@ -23,6 +24,8 @@ Opt("SendKeyDelay", 100)            ; Alterna o tamanho da pausa breve entre o e
 #include <Debug.au3>
 #include <Date.au3>
 #include <MsgBoxConstants.au3>
+#include <StringConstants.au3>
+#include <Array.au3>
 
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"

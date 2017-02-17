@@ -3,8 +3,9 @@
     Descrição ......: UDF Abstract com funções comuns para validações no Space Guardian
     Data Inicio ....: 12/05/2016
     Data Termino ...: ~
-    Versão .........: 001
+    Versão .........: 002
     Autor(s) .......: Ronildo
+    Obs.............: Adicionado parametro de titulo 10/02/2017
 #ce ===============================================================================================================================
 
 #Region ### INCLUDES / OPS
@@ -22,19 +23,19 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #cs FUNÇÕES DA UDF ================================================================================================================
     =
-    =   TelaExiste($sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
+    =   TelaExiste($sTituloTela, $sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
     =
 #ce ===============================================================================================================================
 
 #Region ### FUNÇÕES
 
-Func TelaExiste($sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
+Func TelaExiste($sTituloTela, $sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
 
     Sleep($iSleepDelay)    
-    $iResultado = WinExists("", $sTextoTela)
+    $iResultado = WinExists($sTituloTela, $sTextoTela)
 
     If ($iResultado) Then
-        WinActivate("", $sTextoTela)
+        WinActivate($sTituloTela, $sTextoTela)
         Send($sSendKey)
         Return True
     EndIf

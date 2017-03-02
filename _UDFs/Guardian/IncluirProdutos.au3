@@ -159,7 +159,7 @@ Func IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)
 
 EndFunc   ;==>IncluirProdutoEspelhoDeEntrada
 
-Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost, $iCodigoProduto = 0)
+Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost, $iPCodigoProduto = 0)
 
     Local Const $iCampoQtdeEixoX = 450
     Local Const $iCampoQtdeEixoY = 308
@@ -174,9 +174,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
     Local Const $iBotaoCancelarItemEixoY = 480
 
     Local $aCodigoProdutosParaVenda = [0, 0, 0, 0]
-    Local $iQuantidade = Random(1, 10, 1)
-
-    If ($iCodigoProduto == 0) Then
+    
+    If ($iPCodigoProduto == 0) Then
     
         $aCodigoProdutosParaVenda = GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF ManipulaDadosBD.au3
         Local $iTotalDeProdutos = (UBound($aCodigoProdutosParaVenda) - 1)
@@ -195,13 +194,15 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
     EndIf
 
     MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
-    $iIndex = 0
+    Local $iIndex = 0
 
     For $i = 1 To $iQtdeDeProdutos Step +1
+    
+        Local $iQuantidade = Random(1, 10, 1)
 
         Do
             ; Ternario para possibilitar informar um código de produto fixo
-            $iCodigoProduto = ($iCodigoProduto == 0) ? $aCodigoProdutosParaVenda[$iIndex] : $iCodigoProduto
+            $iCodigoProduto = ($iPCodigoProduto == 0) ? $aCodigoProdutosParaVenda[$iIndex] : $iPCodigoProduto
             Send($iCodigoProduto & "{ENTER}")
 
             TelaProdutoJaCadastradoNoPedidoExiste()
@@ -237,8 +238,14 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
         $bResultadoVendaAbaixoEstoqueMinimoExiste = TelaVendaAbaixoEstoqueMinimoExiste()
 
-        ; Clique no Botão Gravar
-        MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
+        $bResultadoTelaProdutoInexistenteExite = TelaProdutoInexistenteExite()
+
+        If ( $bResultadoTelaProdutoInexistenteExite ) Then
+            Send("1")  
+        Else
+             ; Clique no Botão Gravar
+             MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
+        EndIf       
 
         ;Sleep(2000) ;SLEEP PARA PC LENTO
         TelaDescricaoDeProdutoDAVExiste()
@@ -248,9 +255,10 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
             Return
         EndIf
 
+        ;;; Condicional para cancelar a inclusão do item é efetuar a inclusão de outro.
         If (TelaCampoDeveSerInformadoExiste() _
             Or TelaPrecoZeradoExiste() Or $bResultadoVendaAbaixoEstoqueMinimoExiste _
-            Or $bResultadoQuantidadeMenorMinimaExiste) Then
+            Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then            
             
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)

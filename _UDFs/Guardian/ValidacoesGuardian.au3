@@ -47,6 +47,7 @@
     =   TelaGravacaoConcluidaExiste($iDuracaoSleep = 500)
     =   TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)
     =   TelaExcecaoExiste($iDuracaoSleep = 1000)
+    =   TelaProdutoInexistenteExite($iDuracaoSleep = 500)
     =
 #ce ===============================================================================================================================
 
@@ -298,5 +299,14 @@ Func TelaExcecaoExiste($iDuracaoSleep = 1000)
 
     Return TelaExiste("", $TextoTelaExcecao, "O", $iDuracaoSleep)
 
-EndFunc   ;==>TelaExcecaoExiste 
+EndFunc   ;==>TelaExcecaoExiste
+
+Func TelaProdutoInexistenteExite($iDuracaoSleep = 500)
+
+    Local Const $TextoTelaProdutoInexistente = "Produto Inexistente no local selecionado"
+
+    Return TelaExiste("", $TextoTelaProdutoInexistente, "{ENTER}", $iDuracaoSleep)
+
+EndFunc   ;==>TelaProdutoInexistenteExite 
+
 #EndRegion ### FUNÇÕES

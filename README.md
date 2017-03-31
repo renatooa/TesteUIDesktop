@@ -3,14 +3,13 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 
 <hr>
 
-<h3><b><i>!!! IMPORTANTE !!!</i></b></h3>
-<b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:\Testes-Automatizados\\</i></b>
+# <b>:warning:<i>¡¡¡ IMPORTANTE !!!</i>:warning:</b>
+<b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..:</i> :file_folder:<i>D:\Testes-Automatizados\\</i></b>
 
 <hr>
 
 # Padronizações Para Escrita dos Scripts
 
-***************************************
 <b><i>PADRONIZAÇÃO DO NOME DOS ARQUIVOS</i></b>
 ***************************************
     
@@ -30,7 +29,8 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 
     Ex.: frmPerguntaCadastro.au3
 
-**************************
+#
+
 <b><i>PADRONIZAÇÃO DO CODIGO</i></b>
 **************************
 
@@ -45,9 +45,7 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
         <li>$aVariavelArray[3] = ["Item 0", "Item 1", "Item 2"]</li>
         <li>$vVariavelVariante = 1 OU $vVariavelVariante = "string"</li>
         <li>$oVariavelArmazenaObjeto = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)</li>
-    </ul>        
-        
-OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.       
+    </ul>   
 
 * Funções ==> Padrão PascalCase
 
@@ -61,6 +59,8 @@ OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.
     <ul>
         <li>Local $_sVariavelPrivada = ""</li>
         <li>_FuncaoPrivada()</li>
-    </ul>
+    </ul>      
+    
+<b>&nbsp;&nbsp;&nbsp;&nbsp; OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.</b>
 
-<hr>
+**************************

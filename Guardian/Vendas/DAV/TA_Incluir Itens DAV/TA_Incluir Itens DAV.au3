@@ -7,7 +7,7 @@
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
-#Region ### INCLUDES / OPS
+#Region ### INCLUDES / OPT'S
 
 Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
 Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
@@ -58,10 +58,10 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 ;________________________________________________________________________________________________________________
 
 If (WinExists("", $TEXTO_DAV)) Then
-	; Mostra Formulário
+	;;; Mostra Formulário
 	FrmSolicitaDadosInclusaoDeItensDAV()
 
-	; While para capturar ação no fomulário
+	;;; Loop infinito para manter o form ativo e capturar ações realizadas no mesmo
 	While True
 		$nMsg = GUIGetMsg()
 		Switch $nMsg

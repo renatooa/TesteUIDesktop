@@ -18,9 +18,18 @@ Opt("TrayIconDebug", 0)
 ;			 -----------  FIM INCLUDES / OPS ----------
 
 
+#cs FUNÇÕES DA UDF ================================================================================================================
+    =
+    =   GerarCPF($bPontos = False)
+    =   GerarCNPJ($bPontos = False)
+    =
+#ce ===============================================================================================================================
+
+
 ;************************* FUNÇÕES *****************************
 
 Func GerarCPF($bPontos = False)
+	;http://www.geradorcpf.com/algoritmo_do_cpf.htm
 
 	Local $aNoveDigitos[9]
 	Local $iSomaDigitosCpf = 0
@@ -32,20 +41,20 @@ Func GerarCPF($bPontos = False)
 	; 				PRIMEIRO DIGITO CPF
 	;----------------------------------------------
 
-	$iSomaDigitosCpf = GetSomaNoveDigitosCPF($aNoveDigitos)
+	$iSomaDigitosCpf = _GetSomaNoveDigitosCPF($aNoveDigitos)
 
-	$iCpfPrimeiroDigito = GetDigitoVerificador($iSomaDigitosCpf)
+	$iCpfPrimeiroDigito = _GetDigitoVerificador($iSomaDigitosCpf)
 
 	;----------------------------------------------
 	; 				SEGUNDO DIGITO CPF
 	;----------------------------------------------
 
-	$iSomaDigitosCpf = GetSomaNoveDigitosCPF($aNoveDigitos)
+	$iSomaDigitosCpf = _GetSomaNoveDigitosCPF($aNoveDigitos)
 
 	; Calcula e soma ao total o decimo digito.
 	$iSomaDigitosCpf += ($iCpfPrimeiroDigito * 2)
 
-	$iCpfSegundoDigito = GetDigitoVerificador($iSomaDigitosCpf)
+	$iCpfSegundoDigito = _GetDigitoVerificador($iSomaDigitosCpf)
 
 	;----------------------------------------------
 
@@ -83,6 +92,7 @@ EndFunc   ;==>GerarCPF
 
 
 Func GerarCNPJ($bPontos = False)
+	;http://www.geradorcnpj.com/algoritmo_do_cnpj.htm
 
 	Local $aDozeDigitos[12]
 	Local $iSomaDigitosCnpj = 0
@@ -94,20 +104,20 @@ Func GerarCNPJ($bPontos = False)
 	; 				PRIMEIRO DIGITO CNPJ
 	;----------------------------------------------
 
-	$iSomaDigitosCnpj = GetSomaDozeDigitosCNPJ($aDozeDigitos)
+	$iSomaDigitosCnpj = _GetSomaDozeDigitosCNPJ($aDozeDigitos)
 
-	$iCnpjPrimeiroDigito = GetDigitoVerificador($iSomaDigitosCnpj)
+	$iCnpjPrimeiroDigito = _GetDigitoVerificador($iSomaDigitosCnpj)
 
 	;----------------------------------------------
 	; 				SEGUNDO DIGITO CNPJ
 	;----------------------------------------------
 
-	$iSomaDigitosCnpj = GetSomaDozeDigitosCNPJ($aDozeDigitos)
+	$iSomaDigitosCnpj = _GetSomaDozeDigitosCNPJ($aDozeDigitos)
 
 	; Calcula e soma ao total o decimo terceiro digito.
 	$iSomaDigitosCnpj += ($iCnpjPrimeiroDigito * 2)
 
-	$iCnpjSegundoDigito = GetDigitoVerificador($iSomaDigitosCnpj)
+	$iCnpjSegundoDigito = _GetDigitoVerificador($iSomaDigitosCnpj)
 
 	;----------------------------------------------
 
@@ -143,23 +153,22 @@ EndFunc   ;==>GerarCNPJ
 
 #Region ### FUNÇÕES PRIVADAS
 
-Func GetDigitoVerificador($iSomaDigitos)
+Func _GetDigitoVerificador($iSomaDigitos)
 
 	$iRestoDivisao = Mod($iSomaDigitos, 11)
 
+	$iSomaDigitos = 0
 	If ($iRestoDivisao < 2) Then
-		$iSomaDigitos = 0
 		Return $iSomaDigitos
 	Else
-		$iSomaDigitos = 0
 		Return (11 - $iRestoDivisao)
 	EndIf
 
-EndFunc   ;==>GetDigitoVerificador
+EndFunc   ;==>_GetDigitoVerificador
 
 ; Caso o array passado como parametro esteja vazio
 ; será gerado os nove digitos do CPF aleatoriamente
-Func GetSomaNoveDigitosCPF(ByRef $aNoveDigitos)
+Func _GetSomaNoveDigitosCPF(ByRef $aNoveDigitos)
 
 	Local Const $oPrimeiroItemArray = $aNoveDigitos[0]
 	Local $iIndiceArrayNoveDigitos = 0
@@ -185,11 +194,11 @@ Func GetSomaNoveDigitosCPF(ByRef $aNoveDigitos)
 
 	Return $iSomaDigitosCpf
 
-EndFunc   ;==>GetSomaNoveDigitosCPF
+EndFunc   ;==>_GetSomaNoveDigitosCPF
 
 ; Caso o array passado como parametro esteja vazio
 ; será gerado os doze digitos do CNPJ aleatoriamente
-Func GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
+Func _GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
 
 	Local Const $oPrimeiroItemArray = $aDozeDigitos[0]
 	Local $iIndiceArrayDozeDigitos = 0
@@ -233,7 +242,7 @@ Func GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
 
 	Return $iSomaDigitosCnpj
 
-EndFunc   ;==>GetSomaDozeDigitosCNPJ
+EndFunc   ;==>_GetSomaDozeDigitosCNPJ
 
 #EndRegion ### FUNÇÕES PRIVADAS
 

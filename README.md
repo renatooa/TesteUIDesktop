@@ -3,8 +3,7 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 
 -
 
-<b><i>!!! IMPORTANTE !!!</i></b>
-
+<h3><b><i>!!! IMPORTANTE !!!</i></b></h3>
 <b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:\Testes-Automatizados\\</i></b>
 
 -
@@ -14,44 +13,54 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 ***************************************
 <b><i>PADRONIZAÇÃO DO NOME DOS ARQUIVOS</i></b>
 ***************************************
-	
+    
 * Arquivos de Teste ==> TA_[Nome do Arquivo].au3
 
-	Ex.: TA_Cadastrar Feriado.au3
-	
+    Ex.: TA_Cadastrar Feriado.au3
+    
 * Arquivos de Teste Para BUG ==> TA_BUG [Nome do Arquivo].au3
 
-	Ex.: TA_BUG Cadastro de transportador padrão para fornecedor.au3
-	
+    Ex.: TA_BUG Cadastro de transportador padrão para fornecedor.au3
+    
 * Arquivos de UDF ==> Padrão PascalCase
 
-	Ex.: AlteraResolucao.au3
-	
+    Ex.: AlteraResolucao.au3
+    
 * Arquivos de Form ==> frm[Nome do Arquivo].au3
 
-	Ex.: frmPerguntaCadastro.au3
+    Ex.: frmPerguntaCadastro.au3
 
 **************************
 <b><i>PADRONIZAÇÃO DO CODIGO</i></b>
 **************************
 
-* Nomear as variaveis informando a primeira letra do tipo de dados que será armazenado na mesma.
- 
-	Ex.:<br>
-		$sVariavelArmazenaString = "texto"<br>
-		$iVariavelArmazenaInt = 10<br>
-		$dVariavelArmazenaDouble = 5.5<br>
-		$bVariavelArmazenaBool = true<br>
-		$aVariavelArray[3] = ["Item 0", "Item 1", "Item 2"]<br>
-		$vVariavelVariante = 1 OU $vVariavelVariante = "string"<br>
-		$oVariavelArmazenaObjeto = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
-		
-OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.		
+* Nomear as variaveis informando a primeira letra do tipo de dados que a mesma armazenara.
+
+    Ex.:
+    <ul>
+        <li>$sVariavelArmazenaString = "texto"</li>
+        <li>$iVariavelArmazenaInt = 10</li>
+        <li>$dVariavelArmazenaDouble = 5.5</li>
+        <li>$bVariavelArmazenaBool = true</li>
+        <li>$aVariavelArray[3] = ["Item 0", "Item 1", "Item 2"]</li>
+        <li>$vVariavelVariante = 1 OU $vVariavelVariante = "string"</li>
+        <li>$oVariavelArmazenaObjeto = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)</li>
+    </ul>        
+        
+OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.       
 
 * Funções ==> Padrão PascalCase
 
-	Ex.:<br> 
-		Func FuncaoExemplo()		
-		EndFunc
-		
+    Ex.:<br> 
+        &nbsp;&nbsp;&nbsp;&nbsp; Func FuncaoExemplo()        
+        &nbsp;&nbsp;&nbsp;&nbsp; EndFunc
+
+* Nome de Variaveis e Funções privadas (Local) devem ser precedidos de underline (_).
+
+    Ex.:
+    <ul>
+        <li>Local $_sVariavelPrivada = ""</li>
+        <li>_FuncaoPrivada()</li>
+    </ul>
+
 -

@@ -198,7 +198,7 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
     For $i = 1 To $iQtdeDeProdutos Step +1
     
-        Local $iQuantidade = Random(1, 10, 1)
+        Local $iQuantidade = Random(1, 3, 1)
 
         Do
             ; Ternario para possibilitar informar um código de produto fixo

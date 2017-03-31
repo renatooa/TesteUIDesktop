@@ -11,7 +11,6 @@
 
 	#include-once
 	
-	; Utilizar a função GerarCPF() ou GerarCNPJ() para obter um número aleatório valido
 	#include "Auxiliares\MudarResolucao.au3"
 	#include "Auxiliares\GerarCPF_CNPJ.au3"
 	#include "Auxiliares\Mensagens.au3"

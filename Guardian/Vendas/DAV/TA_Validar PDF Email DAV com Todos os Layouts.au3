@@ -61,7 +61,7 @@ Local Const $iBotaoGravarEixoY = 659
 
 #Region ### EXECUÇÃO DO SCRIPT
 
-VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Função da UDF SistemaExiste.au3
+VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Função da UDF Validacoes.au3
 
 VerificaAlteraResolucao() ;;; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
 

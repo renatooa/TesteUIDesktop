@@ -10,7 +10,7 @@
 	Obs.............:
 #ce ===============================================================================================================================
 
-#Region ### INCLUDES / OPS
+#Region ### INCLUDES / OPT'S
 
 Opt("TrayIconDebug", 1)             ; Debug na caixa de dica do icone da bandeja.
 Opt("SendKeyDelay", 100)            ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
@@ -44,7 +44,7 @@ Local Const $sNomeDoSistema = "(INFORME O TITULO E NOME DO SISTEMA A SER TESTADO
 
 #Region ### EXECUÇÃO DO SCRIPT
 
-VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Função da UDF SistemaExiste.au3
+VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Função da UDF Validacoes.au3
 
 VerificaAlteraResolucao() ;;; Verifica a resolução atual da tela -> (função da UDF MudarResolucao.au3)
 

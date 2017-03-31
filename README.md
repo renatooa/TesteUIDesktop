@@ -3,7 +3,7 @@ Repositório de scripts de teste UI desktop feitos com <a href="https://www.auto
 
 -
 
-<h3><b><i>!!! IMPORTANTE !!!</i></b></h3>
+<b><i>!!! IMPORTANTE !!!</i></b>
 <b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:\Testes-Automatizados\\</i></b>
 
 -

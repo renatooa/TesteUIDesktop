@@ -1,12 +1,12 @@
 # <img width="64px" height="64px" src="https://chocolatey.org/content/packageimages/autoit.3.3.14.2.png"/> TesteUIDesktop
 Repositório de scripts de teste UI desktop feitos com <a href="https://www.autoitscript.com/cgi-bin/getfile.pl?../autoit3/scite/download/SciTE4AutoIt3.exe" target="_blank"><b>AutoIt</b></a>.
 
--
+<hr>
 
-<b><i>!!! IMPORTANTE !!!</i></b>
+<h3><b><i>!!! IMPORTANTE !!!</i></b></h3>
 <b><i> O REPOSITÓRIO DEVERÁ SER CLONADO NO DIRETÓRIO..: D:\Testes-Automatizados\\</i></b>
 
--
+<hr>
 
 # Padronizações Para Escrita dos Scripts
 
@@ -63,4 +63,4 @@ OBS.: Exceção para as variaveis geradas pelo 'Koda FormDesigner'.
         <li>_FuncaoPrivada()</li>
     </ul>
 
--
+<hr>

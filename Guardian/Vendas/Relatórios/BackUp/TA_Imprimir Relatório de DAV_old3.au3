@@ -1,27 +1,27 @@
 #cs ===============================================================================================================================
-	T√≠po de Script .: Script Execu√ß√£o de Teste
-	Descri√ß√£o ......: Efetuar a impress√£o de todos os modelos do Relat√≥rio de DAV
+	TÌpo de Script .: Script ExecuÁ„o de Teste
+	DescriÁ„o ......: Efetuar a impress„o de todos os modelos do RelatÛrio de DAV
 	Data Inicio ....: 05/12/2016
 	Data Termino ...: ~
-	Vers√£o .........: 001
+	Vers„o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
 #Region ### INCLUDES / OPT'S
 
-Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
-Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
-;Opt("SendKeyDownDelay",1)          ; Altera o tempo que uma tecla √© mantida pressionada antes de ser liberada durante um pressionamento de tecla.
-;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script DEVE ser pausado brevemente ap√≥s uma opera√ß√£o bem-sucedida com janela.
-;Opt("MouseClickDelay", 10)         ; Altera o tempo entre os cliques do mouse.
-;Opt("MouseClickDownDelay", 10)     ; Altera o tempo que o bot√£o √© mantido pressionado antes da libera√ß√£o.
-;Opt("MouseClickDragDelay", 250)    ; Altera o tamanho da pausa breve no in√≠cio e no final de uma opera√ß√£o arrastar do mouse.
+	Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
+	Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
+	;Opt("SendKeyDownDelay",1)          ; Altera o tempo que uma tecla È mantida pressionada antes de ser liberada durante um pressionamento de tecla.
+	;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script DEVE ser pausado brevemente apÛs uma operaÁ„o bem-sucedida com janela.
+	;Opt("MouseClickDelay", 10)         ; Altera o tempo entre os cliques do mouse.
+	;Opt("MouseClickDownDelay", 10)     ; Altera o tempo que o bot„o È mantido pressionado antes da liberaÁ„o.
+	;Opt("MouseClickDragDelay", 250)    ; Altera o tamanho da pausa breve no inÌcio e no final de uma operaÁ„o arrastar do mouse.
 
-#include <Debug.au3>
-#include <MsgBoxConstants.au3>
+	#include <Debug.au3>
+	#include <MsgBoxConstants.au3>
 
-#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
-#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
+	#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
+	#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
 
 #EndRegion ### INCLUDES / OPT'S
 
@@ -37,7 +37,7 @@ Local $sTituloTelaReport
 Local $iModeloAtual = 1
 Local $iQtdeModelos = 27
 
-;;; VARIAVEIS COM EIXO X, Y UTILIZADAS NA FUN√á√ÉO MouseClick()
+;;; VARIAVEIS COM EIXO X, Y UTILIZADAS NA FUN«√O MouseClick()
 Local Const $iDataEmissaoEixoX = 460
 Local Const $iDataEmissaoEixoY = 189
 Local Const $iMaximixarReportEixoX = 569
@@ -45,13 +45,13 @@ Local Const $iMaximixarReportEixoY = 61
 
 #EndRegion ### VARIAVEIS
 
-#Region ### EXECU√á√ÉO DO SCRIPT
+#Region ### EXECU«√O DO SCRIPT
 
-VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; Fun√ß√£o da UDF Validacoes.au3
+VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema) ;;; FunÁ„o da UDF Validacoes.au3
 
-VerificaAlteraResolucao() ;;; Verifica a resolu√ß√£o atual da tela -> (fun√ß√£o da UDF MudarResolucao.au3)
+VerificaAlteraResolucao() ;;; Verifica a resoluÁ„o atual da tela -> (funÁ„o da UDF MudarResolucao.au3)
 
-ExibeMensagemPadrao("Impress√£o do Relat√≥rio de DAV com todos os modelos") ;;; Exibe mensagem informativa -> (fun√ß√£o na UDF Mensagens.au3)
+ExibeMensagemPadrao("Impress„o do RelatÛrio de DAV com todos os modelos") ;;; Exibe mensagem informativa -> (funÁ„o na UDF Mensagens.au3)
 
 WinActivate($sTituloDaTelaPrincipalDoSistema)
 
@@ -91,29 +91,29 @@ For $iContador = 1 To $iQtdeModelos Step +1
 
 	Switch ($iModeloAtual)
 		Case 1
-			;;; A√ß√£o realizada se for o Modelo 1
+			;;; AÁ„o realizada se for o Modelo 1
 			Send("{ENTER}")
 
 		Case 2
-			;;; A√ß√£o realizada se for o Modelo 2
-			_ImprimirModelo($iContador, "{TAB 2}")
+			;;; AÁ„o realizada se for o Modelo 2
+			ImprimirModelo($iContador, "{TAB 2}")
 
 		Case 5
-			;;; A√ß√£o realizada se a variavel $iModeloAtual for == 5.
-			_ImprimirModelo($iContador, "{TAB 2}")
+			;;; AÁ„o realizada se a variavel $iModeloAtual for == 5.
+			ImprimirModelo($iContador, "{TAB 2}")
 			TelaDesejaFecharSessaoExiste("{ENTER}{LEFT}{ENTER}")
 
 		Case 7
-			;;; A√ß√£o realizada se for o Modelo 7
+			;;; AÁ„o realizada se for o Modelo 7
 			For $i = 1 To 2 Step +1
 				
 				Switch ($i)
 					Case 1
-						_ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB}")
+						ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB}")
 						_RelatorioImprimiu()
 					Case 2
 						_AcessaAbaOpcoesModelos()
-						_ImprimirModelo($iContador, "{TAB}{RIGHT 2}{SPACE}{TAB}")
+						ImprimirModelo($iContador, "{TAB}{RIGHT 2}{SPACE}{TAB}")
 						_RelatorioImprimiu()
 				EndSwitch
 				
@@ -121,42 +121,42 @@ For $iContador = 1 To $iQtdeModelos Step +1
 			$iModeloAtual = 7
 
 		Case 12
-			;;; A√ß√£o realizada se for o Modelo 12
+			;;; AÁ„o realizada se for o Modelo 12
 			For $i = 1 To 2 Step +1
 				
 				Switch ($i)
 					Case 1
-						_ImprimirModelo($iContador, "{TAB 2}")
+						ImprimirModelo($iContador, "{TAB 2}")
 						_RelatorioImprimiu()
 					Case 2
 						_AcessaAbaOpcoesModelos()
-						_ImprimirModelo($iContador, "{TAB}{DOWN}{SPACE}{TAB}")
+						ImprimirModelo($iContador, "{TAB}{DOWN}{SPACE}{TAB}")
 				EndSwitch
 				
 			Next
 
 		Case 20
-			;;; A√ß√£o realizada se for o Modelo 20
-			_ImprimirModelo($iContador, "{TAB 2}")
+			;;; AÁ„o realizada se for o Modelo 20
+			ImprimirModelo($iContador, "{TAB 2}")
 
 		Case 27
-			;;; A√ß√£o realizada se for o Modelo 27
+			;;; AÁ„o realizada se for o Modelo 27
 			For $i = 1 To 2 Step +1
 				
 				Switch ($i)
 					Case 1
-						_ImprimirModelo($iContador, "{TAB 2}")
+						ImprimirModelo($iContador, "{TAB 2}")
 						_RelatorioImprimiu()
 					Case 2
 						_AcessaAbaOpcoesModelos()
-						_ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB}")
+						ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB}")
 				EndSwitch
 				
 			Next
 
 		Case Else
-			;;; A√ß√£o realizada demais modelos
-			_ImprimirModelo($iContador, "{TAB}")
+			;;; AÁ„o realizada demais modelos
+			ImprimirModelo($iContador, "{TAB}")
 			TelaDesejaFecharSessaoExiste("{ENTER}{LEFT}{ENTER}")
 	EndSwitch
 
@@ -175,12 +175,12 @@ Next
 $iResultadoWinActive = WinActive("", $TEXTO_RELATORIO_DAV)
 _Assert($iResultadoWinActive <> 0, False)
 
-VoltaResolucaoAnterior() ;;; Altera a resolu√ß√£o do monitor caso a mesma tenha sido modificada no inicio do script -> (fun√ß√£o da UDF MudarResolucao.au3)
+VoltaResolucaoAnterior() ;;; Altera a resoluÁ„o do monitor caso a mesma tenha sido modificada no inicio do script -> (funÁ„o da UDF MudarResolucao.au3)
 
-#EndRegion ### EXECU√á√ÉO DO SCRIPT
+#EndRegion ### EXECU«√O DO SCRIPT
 
 
-#Region ### FUN√á√ïES
+#Region ### FUN«’ES
 
 Func _AcessaAbaOpcoesModelos()
 
@@ -188,7 +188,7 @@ Func _AcessaAbaOpcoesModelos()
 
 EndFunc   ;==>_AcessaAbaOpcoesModelos
 
-Func _ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
+Func ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
 	Opt("SendKeyDelay", 100)
@@ -196,11 +196,11 @@ Func _ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}" & $sSendTab & "{ENTER}")
 	Opt("SendKeyDelay", 200)
 
-EndFunc   ;==>_ImprimirModelo
+EndFunc   ;==>ImprimirModelo
 
 Func _RelatorioImprimiu()
 
-	$iResultadoWinOpcaoImpressao = WinWaitActive("", "Op√ß√µes de Impress√£o")
+	$iResultadoWinOpcaoImpressao = WinWaitActive("", "OpÁıes de Impress„o")
 	If ($iResultadoWinOpcaoImpressao) Then
 		Send("{TAB 2}{ENTER}")
 	EndIf
@@ -218,10 +218,10 @@ EndFunc   ;==>_RelatorioImprimiu
 
 ;;; Verifica qual modelo foi impresso e altera as variaveis:
 ;;; $iModeloAtual - $iQtdeModelos - $sTituloTelaReport.
-;;; Fun√ß√£o necess√°ria pois o RadioButton do modelo 5 no Guardian fica Bloqueado.
-;;; Desta forma a a√ß√£o de TAB a partir do modelo 4 vai para o modelo 6 ou 7.
+;;; FunÁ„o necess·ria pois o RadioButton do modelo 5 no Guardian fica Bloqueado.
+;;; Desta forma a aÁ„o de TAB a partir do modelo 4 vai para o modelo 6 ou 7.
 ;;;
-;;; Retorno --->> Resutldado da fun√ß√£o WinActivate().
+;;; Retorno --->> Resutldado da funÁ„o WinActivate().
 Func _QualModeloFoiImpresso()
 
 	$bBooleano = true
@@ -258,4 +258,4 @@ Func _QualModeloFoiImpresso()
 
 EndFunc   ;==>_QualModeloFoiImpresso
 
-#EndRegion ### FUN√á√ïES
+#EndRegion ### FUN«’ES

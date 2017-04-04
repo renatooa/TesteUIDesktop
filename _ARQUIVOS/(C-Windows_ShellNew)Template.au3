@@ -30,7 +30,7 @@ Opt("SendKeyDelay", 100)            ; Alterna o tamanho da pausa breve entre o e
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
 
-#EndRegion ### INCLUDES / OPS
+#EndRegion ### INCLUDES / OPT'S
 
 #Region ### VARIAVEIS
 #cs ===============================================================================================================================

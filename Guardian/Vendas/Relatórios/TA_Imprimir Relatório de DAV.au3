@@ -61,7 +61,8 @@ AbreVendasRelatoriosRelDAV()
 
 ;;; Realiza pesquisa de ordem de compra por periodo
 MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
-Send("01" & (@MON - 2) & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
+Local $_iMesInicio = ( @MON >= 12 ) ? (@MON - 2) : 0 & (@MON - 2)
+Send("01" & $_iMesInicio & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
 
 ;;; Loop para imprimir os modelos disponiveis ($iQtdeModelos)
 For $iContador = 1 To $iQtdeModelos Step +1
@@ -101,7 +102,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 		Case 5
 			;;; Ação realizada se a variavel $iModeloAtual for == 5.
 			_ImprimirModelo($iContador, "{TAB 2}")
-			TelaDesejaFecharSessaoExiste("{ENTER}{LEFT}{ENTER}")
+			TelaDesejaFecharSessaoExiste()
 
 		Case 7
 			;;; Ação realizada se for o Modelo 7
@@ -157,10 +158,10 @@ For $iContador = 1 To $iQtdeModelos Step +1
 		Case Else
 			;;; Ação realizada demais modelos
 			_ImprimirModelo($iContador, "{TAB}")
-			TelaDesejaFecharSessaoExiste("{ENTER}{LEFT}{ENTER}")
+			TelaDesejaFecharSessaoExiste()
 	EndSwitch
 
-	If ( TelaInformacoesNaoEncontradasExiste()) Then
+	If ( TelaInformacoesNaoEncontradasExiste() ) Then
 		ContinueLoop
 	EndIf
 
@@ -200,7 +201,9 @@ EndFunc   ;==>_ImprimirModelo
 
 Func _RelatorioImprimiu()
 
-	$iResultadoWinOpcaoImpressao = WinWaitActive("", "Opções de Impressão")
+	Local $_sTextoTelaOpcaoImpressao = "Opções de Impressão"
+
+	$iResultadoWinOpcaoImpressao = WinWaitActive("", $_sTextoTelaOpcaoImpressao)
 	If ($iResultadoWinOpcaoImpressao) Then
 		Send("{TAB 2}{ENTER}")
 	EndIf

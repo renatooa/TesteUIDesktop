@@ -93,10 +93,10 @@ For $iContador = 1 To $iQtdeModelos Step +1
 				; Ação realizada se for o Modelo 2
 				Switch ($iModelo2)
 					Case 1
-						ImprimirModelo($iContador, "TAB")
+						_ImprimirModelo($iContador, "TAB")
 						$iModelo2 = 2					
 					Case 2
-						ImprimirModelo($iContador, "TAB", "SPACE 2")
+						_ImprimirModelo($iContador, "TAB", "SPACE 2")
 						$sTituloTelaReport = "Report Designer - frxordemcompra" & $iContador & "b"
 						$iModelo2 = 0					
 				EndSwitch
@@ -104,15 +104,15 @@ For $iContador = 1 To $iQtdeModelos Step +1
 				; Ação realizada se for o Modelo 8				
 				Switch ($iModelo8)
 					Case 1
-						ImprimirModelo($iContador, "TAB")
+						_ImprimirModelo($iContador, "TAB")
 						$iModelo8 = 8					
 					Case 8
-						ImprimirModelo($iContador, "TAB", "SPACE 2")
+						_ImprimirModelo($iContador, "TAB", "SPACE 2")
 						$iModelo8 = 0					
 				EndSwitch
 			Case Else
 				; Ação realizada demais modelos
-				ImprimirModelo($iContador, "TAB")
+				_ImprimirModelo($iContador, "TAB")
 		EndSwitch
 
 		$bValida = True
@@ -152,7 +152,7 @@ VoltaResolucaoAnterior() ; Altera a resolução do monitor caso a mesma tenha si
 
 #Region ### FUNÇÕES
 
-Func ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
+Func _ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
 	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}{" & $sSendTab & "}{ENTER}")

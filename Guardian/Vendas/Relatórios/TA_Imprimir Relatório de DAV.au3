@@ -10,7 +10,9 @@
 #Region ### INCLUDES / OPT'S
 
 Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
-Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
+
+Local $_iSendKeyDelay = 200
+Opt("SendKeyDelay", $_iSendKeyDelay) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
 ;Opt("SendKeyDownDelay",1)          ; Altera o tempo que uma tecla é mantida pressionada antes de ser liberada durante um pressionamento de tecla.
 ;Opt("WinWaitDelay", 200)           ; Altera quanto tempo um script DEVE ser pausado brevemente após uma operação bem-sucedida com janela.
 ;Opt("MouseClickDelay", 10)         ; Altera o tempo entre os cliques do mouse.
@@ -192,10 +194,10 @@ EndFunc   ;==>_AcessaAbaOpcoesModelos
 Func _ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
 	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo - 1
-	Opt("SendKeyDelay", 100)
+	Opt("SendKeyDelay", 80) ;;; Diminui o delay da função de Send() para selecionar o modelo mais rápido.
 	Send("{TAB 3}")
 	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}" & $sSendTab & "{ENTER}")
-	Opt("SendKeyDelay", 200)
+	Opt("SendKeyDelay", $_iSendKeyDelay) ;;; Volta o delay ao normal
 
 EndFunc   ;==>_ImprimirModelo
 

@@ -9,10 +9,8 @@
 	=   _MySQLEnd($oConnectionObj)
 	=   _AddRecord($oConnectionObj, $sTable, $vRow, $vValue = "")
 	=   _DeleteRecord ($oConnectionObj, $sTable, $sColumn, $vRecordVal, $iLimit = 1)
-	=   _CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = "INTEGER", $sNotNull = "yes",
-	$keyautoinc = "yes", $sType = "InnoDB")
-	=   _CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = "no", $sDataType = "VARCHAR(45)",
-	$sAutoInc = "no", $sUnsigned = "no", $vDefault = '')
+	=   _CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = "INTEGER", $sNotNull = "yes", $keyautoinc = "yes", $sType = "InnoDB")
+	=   _CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = "no", $sDataType = "VARCHAR(45)", $sAutoInc = "no", $sUnsigned = "no", $vDefault = '')
 	=   _DropCol($oConnectionObj, $sTable, $sColumn)
 	=   _DropTbl($oConnectionObj, $sTable)
 	=   _CountRecords($oConnectionObj, $sTable, $sColumn, $vValue = '')
@@ -27,6 +25,7 @@
 	=   _MySQLUpdate($oConnectionObj, $sTable, $aFieldsAndValues, $sWhereArgs)
 	=
 #ce ===============================================================================================================================
+
 
 #cs
 	Function Name:    _MySQLConnect
@@ -43,7 +42,6 @@
 	MySQL ODBC Driver not installed.
 	Author(s):        cdkid
 #ce
-
 Func _MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer = "localhost", $sDriver = "{MySQL ODBC 5.1 Driver}", $iPort = 3306)
 	Local $v = StringMid($sDriver, 2, StringLen($sDriver) - 2)
 	Local $key = "HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers", $val = RegRead($key, $v)
@@ -61,6 +59,7 @@ Func _MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer = "localhost", $
 	EndIf
 EndFunc   ;==>_MySQLConnect
 
+
 #cs
 	Function name: _Query
 	Description:     Send a query to the database
@@ -69,8 +68,6 @@ EndFunc   ;==>_MySQLConnect
 	Requirement(s):Autoit3 with COM support
 	Author(s):        cdid
 #ce
-
-
 Func _Query($oConnectionObj, $sQuery)
 	If IsObj($oConnectionObj) Then
 		Return $oConnectionObj.execute($sQuery)
@@ -82,6 +79,7 @@ Func _Query($oConnectionObj, $sQuery)
 
 EndFunc   ;==>_Query
 
+
 #cs
 	Function name: _MySQLEnd
 	Description:      Closes the database connection (see notes!)
@@ -90,7 +88,6 @@ EndFunc   ;==>_Query
 	Return Value(s):On success returns 1. On failure returns 0 and sets @error to 1
 	Author(s):         cdkid
 #ce
-
 Func _MySQLEnd($oConnectionObj)
 	If IsObj($oConnectionObj) Then
 		$oConnectionObj.close
@@ -100,6 +97,7 @@ Func _MySQLEnd($oConnectionObj)
 		Return 0
 	EndIf
 EndFunc   ;==>_MySQLEnd
+
 
 #cs
 	Function name: _AddRecord
@@ -112,7 +110,6 @@ EndFunc   ;==>_MySQLEnd
 	Return value(s): On success returns 1. If the connectionobj is not an object returns 0 and sets @error to 2. If there is any other error returns 0 and sets @error to 1.
 	Author(s): cdkid
 #ce
-
 Func _AddRecord($oConnectionObj, $sTable, $vRow, $vValue = "")
 	If IsObj($oConnectionObj) Then
 		$query = "INSERT INTO " & $sTable & " ("
@@ -183,7 +180,6 @@ EndFunc   ;==>_AddRecord
 	Return Value(s): On success returns 1. If there $oConnectionObj is not an object returns 0 and sets @error to 1. If there are any other errors returns 0 and sets @error to 2
 	Requirement(s): Autoit 3 with COM support
 #ce
-
 Func _DeleteRecord($oConnectionObj, $sTable, $sColumn, $vRecordVal, $iLimit = 1)
 	If IsObj($oConnectionObj) And Not IsInt($vRecordVal) Then
 		$oConnectionObj.execute("DELETE FROM " & $sTable & " WHERE " & $sColumn & " = '" & $vRecordVal & "' LIMIT " & $iLimit & ";")
@@ -201,6 +197,7 @@ Func _DeleteRecord($oConnectionObj, $sTable, $sColumn, $vRecordVal, $iLimit = 1)
 	EndIf
 EndFunc   ;==>_DeleteRecord
 
+
 #cs
 	Function name: _CreateTable()
 	Description: Creates a table
@@ -212,7 +209,6 @@ EndFunc   ;==>_DeleteRecord
 	Return value(s): on success returns 1 on failure sets @error to 1 and returns 0
 	Author: cdkid
 #ce
-
 Func _CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = "INTEGER", $sNotNull = "yes", $keyautoinc = "yes", $sType = "InnoDB")
 	If IsObj($oConnectionObj) And Not @error Then
 		$str = "CREATE TABLE " & $sTbl & " " & "(" & $sPrimeKey & " " & $keytype & " UNSIGNED"
@@ -236,6 +232,7 @@ Func _CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = "INTEGER", $sNo
 
 EndFunc   ;==>_CreateTable
 
+
 #cs
 	Function Name: _CreateColumn
 	Description: Creates a column in the given table
@@ -247,7 +244,6 @@ EndFunc   ;==>_CreateTable
 	default('')
 	Author: cdkid
 #ce
-
 Func _CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = "no", $sDataType = "VARCHAR(45)", $sAutoInc = "no", $sUnsigned = "no", $vDefault = '')
 	If IsObj($oConnectionObj) And Not @error Then
 		$str = "ALTER TABLE `" & $sTable & "` ADD COLUMN `" & $sColumn & "` " & $sDataType & " "
@@ -270,6 +266,7 @@ Func _CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = "no", $sDat
 
 EndFunc   ;==>_CreateColumn
 
+
 #cs
 	Function Name: _DropCol()
 	Description: Delete a column from the given table
@@ -278,7 +275,6 @@ EndFunc   ;==>_CreateColumn
 	$sColumn - THe name of the column to delete
 	Author: cdkid
 #ce
-
 Func _DropCol($oConnectionObj, $sTable, $sColumn)
 	If IsObj($oConnectionObj) & Not @error Then
 		$oConnectionObj.execute("ALTER TABLE " & $sTable & " DROP COLUMN " & $sColumn & ";")
@@ -289,6 +285,7 @@ Func _DropCol($oConnectionObj, $sTable, $sColumn)
 	EndIf
 EndFunc   ;==>_DropCol
 
+
 #cs
 	Function Name: _DropTbl()
 	Description: Deletes a table from the database
@@ -296,7 +293,6 @@ EndFunc   ;==>_DropCol
 	Parameters: $oConnectionObj - As returned by _MySQLConnect. $sTable - The name of the table to delete
 	Author: cdkid
 #ce
-
 Func _DropTbl($oConnectionObj, $sTable)
 	If IsObj($oConnectionObj) And Not @error Then
 		$oConnectionObj.execute("DROP TABLE " & $sTable & ";")
@@ -340,6 +336,7 @@ Func _CountRecords($oConnectionObj, $sTable, $sColumn, $vValue = '')
 	EndIf
 EndFunc   ;==>_CountRecords
 
+
 #cs
 	Function name: _CountTables
 	Description: Counts the number of tables in the database
@@ -347,7 +344,6 @@ EndFunc   ;==>_CountRecords
 	Return value(s): if error - returns 0 and sets @error to 1. on success returns the number of tables in the database
 	Author: cdkid
 #ce
-
 Func _CountTables($oConnectionObj)
 	If IsObj($oConnectionObj) Then
 		$quer = $oConnectionObj.execute("SHOW TABLES;")
@@ -366,6 +362,7 @@ Func _CountTables($oConnectionObj)
 	EndIf
 
 EndFunc   ;==>_CountTables
+
 
 #cs
 	Function name: _GetColNames
@@ -407,7 +404,6 @@ EndFunc   ;==>_GetColNames
 	on failure - returns 0 and sets @error to 1
 	Author: cdkid
 #ce
-
 Func _GetTblNames($oConnectionObj)
 	If IsObj($oConnectionObj) Then
 		Dim $ret[1]
@@ -424,6 +420,7 @@ Func _GetTblNames($oConnectionObj)
 	EndIf
 EndFunc   ;==>_GetTblNames
 
+
 #cs
 	Function name: _GetColVals
 	Description: Gets all of the values of a specified column in a specified table
@@ -433,7 +430,6 @@ EndFunc   ;==>_GetTblNames
 	On failure sets @error to 1 and returns 0
 	Author: cdkid
 #ce
-
 Func _GetColVals($oConnectionObj, $sTable, $sColumn)
 	If IsObj($oConnectionObj) Then
 		Dim $ret[1]
@@ -449,6 +445,7 @@ Func _GetColVals($oConnectionObj, $sTable, $sColumn)
 		Return $ret
 	EndIf
 EndFunc   ;==>_GetColVals
+
 
 #cs
 	Function name: _GetColCount
@@ -475,6 +472,7 @@ Func _GetColCount($oConnectionObj, $sTable)
 	EndIf
 
 EndFunc   ;==>_GetColCount
+
 
 #cs
 	Function name: _GetColType
@@ -504,6 +502,7 @@ Func _GetColType($oConnectionObj, $sTable, $sColumn)
 	EndIf
 EndFunc   ;==>_GetColType
 
+
 #cs
 	Function: _GetDBNames
 	Description: Get a count and list of all databases on current server.
@@ -530,6 +529,7 @@ Func _GetDBNames($conobj)
 		Return -1
 	EndIf
 EndFunc   ;==>_GetDBNames
+
 
 #cs
 	Function: _ChangeCon
@@ -560,7 +560,6 @@ EndFunc   ;==>_GetDBNames
 	On failure, -1 and sets @error to 1
 	Author: cdkid
 #ce
-
 Func _ChangeCon($oConnectionObj, $username = "", $password = "", $database = "", $driver = "", $server = "", $iPort = 0)
 	Local $constr, $db, $usn, $pwd, $svr
 	If IsObj($oConnectionObj) Then
@@ -621,6 +620,7 @@ Func _ChangeCon($oConnectionObj, $username = "", $password = "", $database = "",
 	EndIf
 EndFunc   ;==>_ChangeCon
 
+
 #cs
 	Function Name:    _MySQLUpdate
 	Description:      Send a command DML (Data Manipulation Language) to the database.
@@ -648,7 +648,7 @@ Func _MySQLUpdate($oConnectionObj, $sTable, $aFieldsAndValues, $sWhereArgs)
 		EndIf
 	Next
 
-	If ($sWhereArgs <> "") Then
+	If (StringStripWS($sWhereArgs, $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES) <> "") Then
 		$sUpdate = "UPDATE " & $sTable _
 				 & " SET " & $sSet _
 				 & " WHERE " & $sWhereArgs & ";"

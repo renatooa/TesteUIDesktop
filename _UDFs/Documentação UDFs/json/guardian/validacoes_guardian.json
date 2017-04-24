@@ -1,0 +1,40 @@
+{
+    "titulo": "ValidacoesGuardian.au3",
+    "descricao": "UDF com funções para validações de existência de mensagens de alertas e/ou informativas do Guardian.\nHerda da UDF AbstractValidacaoGuardian.au3",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "TelaCodigoNaoCadastradoExiste()",
+        "TelaProdutoBloqueadoExiste()",
+        "TelaCampoDeveSerInformadoExiste()",
+        "TelaNatOperNaoPermitidaExiste()",
+        "TelaCfopDiferenteNatOperExiste()",
+        "TelaCfopNaoLiberadoExiste()",
+        "TelaOpcoesImpressaoExiste()",
+        "TelaDesejaImprimirExiste()",
+        "TelaAtualizaPrecoExiste()",
+        "TelaDesejaGerarNFExiste($sSimOuNao = \"S\")",
+        "TelaProdutoEmOfertaExiste($sSimOuNao = \"N\")",
+        "TelaPrecoZeradoExiste()",
+        "TelaProdutoJaCadastradoNoPedidoExiste()",
+        "TelaVendaAbaixoEstoqueMinimoExiste()",
+        "TelaNumeroMaximoDeItensExiste()",
+        "TelaProdutoNaoPossuiImagemExiste()",
+        "TelaLimiteCreditoAtingidoExiste()",
+        "TelaImagemDoProdutoExiste()",
+        "TelaDescricaoDeProdutoDAVExiste()",
+        "TelaDesejaFecharSessaoExiste($sSimOuNao = \"N\")",
+        "TelaInformacoesNaoEncontradasExiste()",
+        "TelaRegistroSendoUsadoExiste()",
+        "TelaVendaNaoPermitidaExiste()",
+        "TelaAcaoAposGravarDAVExiste($iDuracaoSleep = 1000)",
+        "TelaQuantidadeMenorMinimaExiste()",
+        "TelaGravacaoConcluidaExiste($iDuracaoSleep = 500)",
+        "TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)",
+        "TelaExcecaoExiste($iDuracaoSleep = 1000)",
+        "TelaProdutoInexistenteExite($iDuracaoSleep = 500)"
+    ]
+}

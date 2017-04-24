@@ -1,0 +1,14 @@
+{
+    "titulo": "ClickBotoes.au3",
+    "descricao": "UDF com funções para realizar o procedimento de inclusão de produtos.",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "002",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)",
+        "IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)",
+        "IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost, $iCodPro = 0)"
+    ]
+}

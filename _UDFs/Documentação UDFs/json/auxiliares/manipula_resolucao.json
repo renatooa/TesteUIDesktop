@@ -1,0 +1,14 @@
+{
+    "titulo": "ManipulaResolucao.au3",
+    "descricao": "UDF Para efetuar a alteração da resolução do computador.",
+    "pasta": "_UDFs\\Auxiliares",
+    "versao": "002",
+    "autores": [
+        "Forum AutoIt Brasil",
+        "Ronildo"
+    ],
+    "funcoes": [
+        "VerificaAlteraResolucao()",
+        "VoltaResolucaoAnterior()"
+    ]
+}

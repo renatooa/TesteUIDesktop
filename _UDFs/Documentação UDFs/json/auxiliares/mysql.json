@@ -1,0 +1,31 @@
+{
+    "titulo": "MySQL.au3",
+    "descricao": "UDF com funções para manipulação de banco de dados MySQL. (MySQL OBDC 5.1 Obrigatório)",
+    "pasta": "_UDFs\\Auxiliares",
+    "versao": "",
+    "autores": [
+        "cdkid",
+        "Ronildo"
+    ],
+    "funcoes": [
+        "_MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer = \"localhost\", $sDriver = \"{MySQL ODBC 5.1 Driver}\", $iPort=3306)",
+        "_Query($oConnectionObj, $sQuery)",
+        "_MySQLEnd($oConnectionObj)",
+        "_AddRecord($oConnectionObj, $sTable, $vRow, $vValue = \"\")",
+        "_DeleteRecord ($oConnectionObj, $sTable, $sColumn, $vRecordVal, $iLimit = 1)",
+        "_CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = \"INTEGER\", $sNotNull = \"yes\", $keyautoinc = \"yes\", $sType = \"InnoDB\")",
+        "_CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = \"no\", $sDataType = \"VARCHAR(45)\", $sAutoInc = \"no\", $sUnsigned = \"no\", $vDefault = '')",
+        "_DropCol($oConnectionObj, $sTable, $sColumn)",
+        "_DropTbl($oConnectionObj, $sTable)",
+        "_CountRecords($oConnectionObj, $sTable, $sColumn, $vValue = '')",
+        "_CountTables($oConnectionObj)",
+        "_GetColNames($oConnectionObj, $sTable)",
+        "_GetTblNames($oConnectionObj)",
+        "_GetColVals($oConnectionObj, $sTable, $sColumn)",
+        "_GetColCount($oConnectionObj, $sTable)",
+        "_GetColType($oConnectionObj, $sTable, $sColumn)",
+        "_GetDBNames($conobj)",
+        "_ChangeCon($oConnectionObj, $username = \"\", $password = \"\", $database = \"\", $driver = \"\", $server = \"\", $iPort = 0)",
+        "_MySQLUpdate($oConnectionObj, $sTable, $aFieldsAndValues, $sWhereArgs)"
+    ]
+}

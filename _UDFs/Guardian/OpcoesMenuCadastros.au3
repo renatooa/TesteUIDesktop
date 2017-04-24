@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF para acesso as opções do Menu de Cadastros do Space Guardian
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF para acesso as opÃ§Ãµes do Menu de Cadastros do Space Guardian.
 	Data Inicio ....: 07/04/2016
 	Data Termino ...: 18/04/2016
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -21,7 +21,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #Region ### VARIAVEIS
 
-; O sinal de exclamação (!) equivale á tecla ALT
+; O sinal de exclamaÃ§Ã£o (!) equivale Ã¡ tecla ALT
 ;
 Local Const $sAtalhoExpandirMenuCadastros = "!c"
 Local Const $sTextoTelaConsultaCodigoPais = "Tabela Pais"
@@ -29,7 +29,7 @@ Local Const $sTextoTelaCadastroDeCEP = "Cadastro de CEP"
 
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   AbreCadastrosCliente()
 	=	AbreCadastrosFornecedor()
@@ -45,7 +45,7 @@ Local Const $sTextoTelaCadastroDeCEP = "Cadastro de CEP"
 	=	AbreCadastrosTabelasDePessoasGerarAgendaDeVisitas()
 	=	AbreCadastrosTabelasDePessoasContratoDeFornecimentoDeVerbas()
 
-		***** ENDEREÇO *****
+		***** ENDEREÃ‡O *****
 	=	AbreCadastrosEnderecoBairro()
 	=	AbreCadastrosEnderecoCidade()
 	=	AbreCadastrosEnderecoUF()
@@ -78,7 +78,7 @@ Local Const $sTextoTelaCadastroDeCEP = "Cadastro de CEP"
     =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func AbreCadastrosCliente()
 
@@ -150,7 +150,7 @@ EndFunc   ;==>AbreCadastrosTabelasDePessoasContratoDeFornecimentoDeVerbas
 
 #EndRegion ***** TABELA DE PESSOAS *****
 
-#Region ***** ENDEREÇO *****
+#Region ***** ENDEREÃ‡O *****
 
 Func AbreCadastrosEnderecoBairro()
 	
@@ -193,8 +193,8 @@ Func AbreCadastrosEnderecoCodigoDoPais()
 		Send("C{ENTER}")
 		$iResultadoWait = WinWaitActive("", $sTextoTelaConsultaCodigoPais, 1)
 		If ($iResultadoWait == 0) Then
-			MsgBox($MB_ICONWARNING, "Alerta", "Tela de Código do Pais não localizada!" & @CRLF & _
-					"O script será finalizado.")
+			MsgBox($MB_ICONWARNING, "Alerta", "Tela de CÃ³digo do Pais nÃ£o localizada!" & @CRLF & _
+					"O script serÃ¡ finalizado.")
 			Exit
 		EndIf
 	EndIf
@@ -218,15 +218,15 @@ Func AbreCadastrosEnderecoCEP()
 		Send("C{ENTER}")
 		$iResultadoWait = WinWaitActive("", $sTextoTelaCadastroDeCEP, 1)
 		If ($iResultadoWait == 0) Then
-			MsgBox($MB_ICONWARNING, "Alerta", "Tela de Cadastro de CEP não localizada!" & @CRLF & _
-					"O script será finalizado.")
+			MsgBox($MB_ICONWARNING, "Alerta", "Tela de Cadastro de CEP nÃ£o localizada!" & @CRLF & _
+					"O script serÃ¡ finalizado.")
 			Exit
 		EndIf
 	EndIf
 
 EndFunc   ;==>AbreCadastrosEnderecoCEP
 
-#EndRegion ***** ENDEREÇO *****
+#EndRegion ***** ENDEREÃ‡O *****
 
 #Region ***** LOGISTICA *****
 
@@ -338,4 +338,4 @@ EndFunc   ;==>AbreCadastrosFinanceiroCondicaoDePagamento
 
 #EndRegion **** FINANCEIRO *****
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

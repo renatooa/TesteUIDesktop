@@ -1,0 +1,16 @@
+{
+    "titulo": "ManipulaDadosBD.au3",
+    "descricao": "UDF com funções para manipulação do banco de dados do Guardian.",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "002",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = \"1\")",
+        "GetArrayCodigoEPrecoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = \"1\")",
+        "GetDataBasesInArray($sUsername, $sPassword, $sHost)",
+        "GetDataBasesInString($sUsername, $sPassword, $sHost)",
+        "GetArrayCodigoLayouts($sUsername, $sPassword, $sDatabase, $sHost, $sModeloLayout = \"'PV'\",$sCodigoFilialSelect = \"1\")"
+    ]
+}

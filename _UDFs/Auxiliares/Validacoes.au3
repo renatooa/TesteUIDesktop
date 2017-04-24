@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......:
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF com funÃ§Ãµes para validaÃ§Ãµes recorrentes em diferentes scripts.
 	Data Inicio ....:
 	Data Termino ...:
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -17,13 +17,13 @@
 #Region ### VARIAVEIS
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema, $sTextoDaTelaPrincipalDoSistema = "")
     =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema, $sTextoDaTelaPrincipalDoSistema = "")
 
@@ -31,11 +31,11 @@ Func VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema
 
 	If $iSistemaAtivo == 0 Then
 
-		MsgBox($MB_ICONWARNING, "Alerta", $sNomeDoSistema & " não foi localizado!")
+		MsgBox($MB_ICONWARNING, "Alerta", $sNomeDoSistema & " nÃ£o foi localizado!")
 		Exit
 
 	EndIf
 
 EndFunc   ;==>VerificaSistemaEstaAberto
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

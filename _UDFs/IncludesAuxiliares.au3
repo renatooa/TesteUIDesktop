@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
 	Típo de Script .: Script de Includes
-	Descrição ......: Arquivo para importar UDF's referente ao Guardian
+	Descrição ......: Arquivo para importar UDF's variadas
 	Data Inicio ....: 12/05/2016
 	Data Termino ...: ~
 	Versão .........: 001
@@ -11,13 +11,13 @@
 
 	#include-once
 	
-	#include "Auxiliares\MudarResolucao.au3"
+	#include "Auxiliares\ManipulaResolucao.au3"
 	#include "Auxiliares\GerarCPF_CNPJ.au3"
 	#include "Auxiliares\Mensagens.au3"
 	#include "Auxiliares\Validacoes.au3"
 	#include "Auxiliares\HotKeys.au3"
 	#include "Auxiliares\MySQL.au3"
-	#include "Auxiliares\GetHoras.au3"
+	#include "Auxiliares\Horas.au3"
 	; #include "Auxiliares\AssocArrays.au3"
 
 #EndRegion ###	INCLUDES

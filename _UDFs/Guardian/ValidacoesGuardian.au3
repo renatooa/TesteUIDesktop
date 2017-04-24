@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
     Típo de Script .: Script de Função - UDF
-    Descrição ......:
+    Descrição ......: UDF com funções para validações de existência de mensagens de alertas e/ou informativas do Guardian.
     Data Inicio ....: 18/04/2016
     Data Termino ...: ~
     Versão .........: 001

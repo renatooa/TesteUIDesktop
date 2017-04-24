@@ -1,0 +1,13 @@
+{
+    "titulo": "GeraCPF_CNPJ.au3",
+    "descricao": "UDF para gerar CPF e CNPJ de forma aleatória",
+    "pasta": "_UDFs\\Auxiliares",
+    "versao": "003",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "GerarCPF($bPontos = False)",
+        "GerarCNPJ($bPontos = False)"
+    ]
+}

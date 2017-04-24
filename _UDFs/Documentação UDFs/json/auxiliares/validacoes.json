@@ -1,0 +1,12 @@
+{
+    "titulo": "Validacoes.au3",
+    "descricao": "UDF com funções para validações recorrentes em diferentes scripts.",
+    "pasta": "_UDFs\\Auxiliares",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema, $sTextoDaTelaPrincipalDoSistema = \"\")"
+    ]
+}

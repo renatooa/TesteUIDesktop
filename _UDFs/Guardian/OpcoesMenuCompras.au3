@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF para acesso as opções do Menu de Compras do Space Guardian
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF para acesso as opÃ§Ãµes do Menu de Compras do Space Guardian.
 	Data Inicio ....: 18/04/2016
 	Data Termino ...: 26/04/2016
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -26,7 +26,7 @@ Local Const $sAtalhoExpandirMenuCompras = "!c{RIGHT}"
 
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   AbreComprasRequisicaoDeCompra()
 	=	AbreComprasOrdemDeCompra()
@@ -39,7 +39,7 @@ Local Const $sAtalhoExpandirMenuCompras = "!c{RIGHT}"
     =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func AbreComprasRequisicaoDeCompra()
 
@@ -89,4 +89,4 @@ Func AbreComprasEspelhoDeEntrada()
 
 EndFunc   ;==>AbreComprasEspelhoDeEntrada
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

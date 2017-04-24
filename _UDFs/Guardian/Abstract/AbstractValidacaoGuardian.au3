@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-    Típo de Script .: Script de Função - UDF
-    Descrição ......: UDF Abstract com funções comuns para validações no Space Guardian
+ï»¿#cs ===============================================================================================================================
+    TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+    DescriÃ§Ã£o ......: UDF Abstract com funÃ§Ãµes comuns para validaÃ§Ãµes no Space Guardian
     Data Inicio ....: 12/05/2016
     Data Termino ...: ~
-    Versão .........: 002
+    VersÃ£o .........: 002
     Autor(s) .......: Ronildo
     Obs.............: Adicionado parametro de titulo 10/02/2017
 #ce ===============================================================================================================================
@@ -21,13 +21,13 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #Region ### VARIAVEIS
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   TelaExiste($sTituloTela, $sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
     =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func TelaExiste($sTituloTela, $sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay = 200)
 
@@ -44,4 +44,4 @@ Func TelaExiste($sTituloTela, $sTextoTela, $sSendKey = "{ENTER}", $iSleepDelay =
 
 EndFunc   ;==>TelaExiste
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

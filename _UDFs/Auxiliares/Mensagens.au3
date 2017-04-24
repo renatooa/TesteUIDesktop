@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF para conter mensagens genericas
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF para conter mensagens genericas
 	Data Inicio ....: 07/04/2016
 	Data Termino ...: 07/04/2016
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -15,7 +15,7 @@
 
 #EndRegion ### INCLUDES / OPS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
 =
 =	ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 =
@@ -25,11 +25,11 @@
 
 #EndRegion ### VARIAVEIS
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 
-	Local Const $sMensagemExibida = "ESTÁ ROTINA IRÁ EXECUTAR O SEGUINTE TESTE " & @CR & @CR & _
+	Local Const $sMensagemExibida = "ESTÃ ROTINA IRÃ EXECUTAR O SEGUINTE TESTE " & @CR & @CR & _
 			$sTestesExecutados & @CR & _
 			$sInformacoesAdicionais & @CR & @CR & _
 			"---------------------------------------------------------------------------" & @CR & _
@@ -48,4 +48,4 @@ Func ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 
 EndFunc   ;==>ExibeMensagemPadrao
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
     Típo de Script .: Script de Função - UDF
-    Descrição ......:
+    Descrição ......: UDF com funções para manipulação do banco de dados do Guardian.
     Data Inicio ....: 21/07/2016
     Data Termino ...: ~
     Versão .........: 002

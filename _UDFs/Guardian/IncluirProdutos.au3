@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
     Típo de Script .: Script de Função - UDF
-    Descrição ......:
+    Descrição ......: UDF com funções para realizar o procedimento de inclusão de produtos.
     Data Inicio ....: 11/05/2016
     Data Termino ...: ~
     Versão .........: 002

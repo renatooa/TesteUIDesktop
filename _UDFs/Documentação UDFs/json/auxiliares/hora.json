@@ -1,0 +1,12 @@
+{
+    "titulo": "Horas.au3",
+    "descricao": "UDF com funções para tratamento de horas.",
+    "pasta": "_UDFs\\Auxiliares",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "GetHorasAtualEmSegundos()"
+    ]
+}

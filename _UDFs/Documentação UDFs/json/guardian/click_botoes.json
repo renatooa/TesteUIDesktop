@@ -1,0 +1,26 @@
+{
+    "titulo": "ClickBotoes.au3",
+    "descricao": "UDF com funções para acionar os botões que possuem teclas de atalho no Guardian.",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "ClickBotaoIncluir()",
+        "ClickBotaoAlterar()",
+        "ClickBotaoCancelar()",
+        "ClickBotaoImprimir()",
+        "ClickBotaoVisualizar()",
+        "ClickBotaoLiberar()",
+        "ClickBotaoReprovar()",
+        "ClickBotaoSeparar()",
+        "ClickBotaoAnularSeparacao()",
+        "ClickBotaoStatusDAV()",
+        "ClickBotaoExportaCupom()",
+        "ClickBotaoNotas()",
+        "ClickBotaoFinanceiro()",
+        "ClickBotaoDocRec()",
+        "ClickBotaoDadosEntrega()"
+    ]
+}

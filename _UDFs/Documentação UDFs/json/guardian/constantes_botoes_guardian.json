@@ -1,0 +1,29 @@
+{
+    "titulo": "ConstantesBotoesGuardian.au3",
+    "descricao": "UDF com constantes de atalho dos botões do Guardian.",
+    "pasta": "_UDFs\\Guardian\\Constantes",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "***** BOTÕES COMUNS *****",
+        "$BTN_INCLUIR = \"{F2}\"",
+        "$BTN_ALTERAR = \"{F3}\"",
+        "$BTN_CANCELAR = \"{F4}\"",
+        "$BTN_IMPRIMIR = \"{F5}\"",
+        "$BTN_VISUALIZAR = \"{F6}\"",
+        "***** BOTÕES COMPRAS *****",
+        "$BTN_CP_LIBERAR = \"{F7}\"",
+        "$BTN_CP_REPROVAR = \"{F8}\"",
+        "***** BOTÕES VENDAS *****",
+        "$BTN_VD_SEPARAR = \"{F12}\"",
+        "$BTN_VD_ANULAR_SEPARACAO = \"{F12}\"",
+        "$BTN_VD_STATUS = \"{F9}\"",
+        "$BTN_VD_EXP_CUPOM = \"^{F2}\"",
+        "$BTN_VD_NOTAS = \"{F7}\"",
+        "$BTN_VD_FINANCEIRO = \"{F8}\"",
+        "$BTN_VD_DOC_REC = \"^d\"",
+        "$BTN_VD_DADOS_ENTREGA = \"^e\""
+    ]
+}

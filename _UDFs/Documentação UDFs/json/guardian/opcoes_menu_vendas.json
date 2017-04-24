@@ -1,0 +1,22 @@
+{
+    "titulo": "OpcoesMenuVendas.au3",
+    "descricao": "UDF para acesso as opções do Menu de Vendas do Space Guardian.\nHerda da UDF AbstractAbreMenuGuardian.au3",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "AbreVendasDAV()",
+        "AbreVendasDevolucaoDeVenda()",
+        "AbreVendasOutrasSaidas()",
+        "***** FATURAMENTO *****",
+        "AbreVendasFaturamentoIndividual()",
+        "AbreVendasFaturamentoPorCarga()",
+        "",
+        "AbreVendasSparacaoDePedido()",
+        "AbreVendasOrcamento()",
+        "***** RELATÓRIOS / CONSULTAS / GRAFICOS *****",
+        "AbreVendasRelatoriosRelDAV()"
+    ]
+}

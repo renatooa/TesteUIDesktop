@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
 	Típo de Script .: Script de Constantes
-	Descrição ......:
+	Descrição ......: UDF com constantes dos textos das telas do Guardian.
 	Data Inicio ....: 12/05/2016
 	Data Termino ...: ~
 	Versão .........: 001

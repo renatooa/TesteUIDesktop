@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF Abstract com funções comuns para acesso as opções de menus do Space Guardian
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF Abstract com funÃ§Ãµes comuns para acesso as opÃ§Ãµes de menus do Space Guardian
 	Data Inicio ....: 12/05/2016
 	Data Termino ...: ~
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -16,13 +16,13 @@
 #Region ### VARIAVEIS
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
 =	
 =	AbreMenu($sAtalhoExpandir, $sTeclaDeAtalho, $sTeclaDeAcao, $sTextoWinActive)
 =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func AbreMenu($sAtalhoExpandir, $sTeclaDeAtalho, $sTeclaDeAcao, $sTextoWinActive)
 
@@ -32,4 +32,4 @@ Func AbreMenu($sAtalhoExpandir, $sTeclaDeAtalho, $sTeclaDeAcao, $sTextoWinActive
 
 EndFunc   ;==>AbreMenu
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

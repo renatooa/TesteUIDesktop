@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF para gerar CPF e CNPJ de forma aleatória
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF para gerar CPF e CNPJ de forma aleatÃ³ria
 	Data Inicio ....: 01/09/2015
 	Data Termino ...: 02/09/2015	
-	Versão .........: 003
+	VersÃ£o .........: 003
 	Autor(s) .......: Ronildo
 	Obs.............: Realizado refatoramento da UDF na data 07/02/2017
 #ce ===============================================================================================================================
@@ -18,7 +18,7 @@ Opt("TrayIconDebug", 0)
 ;			 -----------  FIM INCLUDES / OPS ----------
 
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   GerarCPF($bPontos = False)
     =   GerarCNPJ($bPontos = False)
@@ -26,7 +26,7 @@ Opt("TrayIconDebug", 0)
 #ce ===============================================================================================================================
 
 
-;************************* FUNÇÕES *****************************
+;************************* FUNÃ‡Ã•ES *****************************
 
 Func GerarCPF($bPontos = False)
 	;http://www.geradorcpf.com/algoritmo_do_cpf.htm
@@ -65,7 +65,7 @@ Func GerarCPF($bPontos = False)
 	$sNumeroCPF = $sNumeroCPF & $iCpfPrimeiroDigito & $iCpfSegundoDigito
 
 	; 27/10/2016 - v002
-	; Validação adicionada para gerar CPF com pontuação
+	; ValidaÃ§Ã£o adicionada para gerar CPF com pontuaÃ§Ã£o
 	If ($bPontos) Then
 
 		$n = StringSplit($sNumeroCPF, "", $STR_NOCOUNT)
@@ -128,7 +128,7 @@ Func GerarCNPJ($bPontos = False)
 	$sNumeroCNPJ = $sNumeroCNPJ & $iCnpjPrimeiroDigito & $iCnpjSegundoDigito
 
 	; 27/10/2016 - v002
-	; Validação adicionada para gerar CNPJ com pontuação
+	; ValidaÃ§Ã£o adicionada para gerar CNPJ com pontuaÃ§Ã£o
 	If ($bPontos) Then
 
 		$n = StringSplit($sNumeroCNPJ, "", $STR_NOCOUNT)
@@ -151,7 +151,7 @@ Func GerarCNPJ($bPontos = False)
 
 EndFunc   ;==>GerarCNPJ
 
-#Region ### FUNÇÕES PRIVADAS
+#Region ### FUNÃ‡Ã•ES PRIVADAS
 
 Func _GetDigitoVerificador($iSomaDigitos)
 
@@ -167,7 +167,7 @@ Func _GetDigitoVerificador($iSomaDigitos)
 EndFunc   ;==>_GetDigitoVerificador
 
 ; Caso o array passado como parametro esteja vazio
-; será gerado os nove digitos do CPF aleatoriamente
+; serÃ¡ gerado os nove digitos do CPF aleatoriamente
 Func _GetSomaNoveDigitosCPF(ByRef $aNoveDigitos)
 
 	Local Const $oPrimeiroItemArray = $aNoveDigitos[0]
@@ -197,7 +197,7 @@ Func _GetSomaNoveDigitosCPF(ByRef $aNoveDigitos)
 EndFunc   ;==>_GetSomaNoveDigitosCPF
 
 ; Caso o array passado como parametro esteja vazio
-; será gerado os doze digitos do CNPJ aleatoriamente
+; serÃ¡ gerado os doze digitos do CNPJ aleatoriamente
 Func _GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
 
 	Local Const $oPrimeiroItemArray = $aDozeDigitos[0]
@@ -213,7 +213,7 @@ Func _GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
 			$iCnpjDigitoAleatorio = Random(0, 9, 1)
 
 			; 27/10/2016 - v002
-			; Validação adicionada para gerar CNPJ com "mil" contra
+			; ValidaÃ§Ã£o adicionada para gerar CNPJ com "mil" contra
 			If ($iIndiceArrayDozeDigitos < 8) Then
 				$aDozeDigitos[$iIndiceArrayDozeDigitos] = $iCnpjDigitoAleatorio
 			Else
@@ -244,7 +244,7 @@ Func _GetSomaDozeDigitosCNPJ(ByRef $aDozeDigitos)
 
 EndFunc   ;==>_GetSomaDozeDigitosCNPJ
 
-#EndRegion ### FUNÇÕES PRIVADAS
+#EndRegion ### FUNÃ‡Ã•ES PRIVADAS
 
 ;F_Fim *************************************************** F_Fim
 

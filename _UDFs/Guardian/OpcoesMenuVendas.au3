@@ -1,9 +1,9 @@
-#cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF para acesso as opções do Menu de Vendas do Space Guardian
+ï»¿#cs ===============================================================================================================================
+	TÃ­po de Script .: Script de FunÃ§Ã£o - UDF
+	DescriÃ§Ã£o ......: UDF para acesso as opÃ§Ãµes do Menu de Vendas do Space Guardian.
 	Data Inicio ....: 26/04/2016
 	Data Termino ...: 26/04/2016
-	Versão .........: 001
+	VersÃ£o .........: 001
 	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
@@ -25,7 +25,7 @@ Local Const $sAtalhoExpandirMenuVendas = "!v"
 
 #EndRegion ### VARIAVEIS
 
-#cs FUNÇÕES DA UDF ================================================================================================================
+#cs FUNÃ‡Ã•ES DA UDF ================================================================================================================
     =
     =   AbreVendasDAV()
     =   AbreVendasDevolucaoDeVenda()
@@ -38,12 +38,12 @@ Local Const $sAtalhoExpandirMenuVendas = "!v"
 	=	AbreVendasSparacaoDePedido()
 	=	AbreVendasOrcamento()
 
-		***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+		***** RELATÃ“RIOS / CONSULTAS / GRAFICOS *****
 	=	AbreVendasRelatoriosRelDAV()
     =
 #ce ===============================================================================================================================
 
-#Region ### FUNÇÕES
+#Region ### FUNÃ‡Ã•ES
 
 Func AbreVendasDAV()
 
@@ -90,7 +90,7 @@ Func AbreVendasOrcamento()
 
 EndFunc   ;==>AbreVendasOrcamento
 
-#Region ***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+#Region ***** RELATÃ“RIOS / CONSULTAS / GRAFICOS *****
 
 	Func AbreVendasRelatoriosRelDAV()
 
@@ -98,7 +98,7 @@ EndFunc   ;==>AbreVendasOrcamento
 
 	EndFunc   ;==>AbreVendasRelatoriosRelDAV
 
-#EndRegion ***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
+#EndRegion ***** RELATÃ“RIOS / CONSULTAS / GRAFICOS *****
 
 
-#EndRegion ### FUNÇÕES
+#EndRegion ### FUNÃ‡Ã•ES

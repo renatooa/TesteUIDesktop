@@ -1,0 +1,19 @@
+{
+    "titulo": "OpcoesMenuCompras.au3",
+    "descricao": "UDF para acesso as opções do Menu de Compras do Space Guardian.\nHerda da UDF AbstractAbreMenuGuardian.au3",
+    "pasta": "_UDFs\\Guardian",
+    "versao": "001",
+    "autores": [
+        "Ronildo"
+    ],
+    "funcoes": [
+        "AbreComprasRequisicaoDeCompra()",
+        "AbreComprasOrdemDeCompra()",
+        "AbreComprasManutencaoOrdemDeCompra()",
+        "AbreComprasChegadaDeMercardoria()",
+        "AbreComprasRecebimentoDaMercadoria()",
+        "AbreComprasConferenciaDeRecebimento()",
+        "AbreComprasControleRecebimentoDeMercadoria()",
+        "AbreComprasEspelhoDeEntrada()"
+    ]
+}

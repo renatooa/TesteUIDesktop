@@ -1,6 +1,6 @@
 #cs ===============================================================================================================================
 	Típo de Script .: Script de Função - UDF
-	Descrição ......: 
+	Descrição ......: UDF com funções para tratamento de horas.
 	Data Inicio ....: 27/07/2016
 	Data Termino ...: 27/07/2016
 	Versão .........: 001

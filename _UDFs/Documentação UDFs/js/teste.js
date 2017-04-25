@@ -1,10 +1,12 @@
-// function carregaJson() {
-//     var j = JSON.parse(hora);
-//     alert(j);
-// }
+function carregaJson() {
+    var j = JSON.parse(udf_auxiliares);
+    var str = '';
 
-// $.getJSON("json/auxiliares/hora.json", function(data) {
-//     console.log(data);
-//     // data is a JavaScript object now. Handle it as such
+    for (var index = 0; index < j.length; index++) {
+        str += j[index].titulo + '\n';        
+    }
 
-// });
+    alert(str);
+}
+
+carregaJson();

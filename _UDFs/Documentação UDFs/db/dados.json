@@ -1,0 +1,373 @@
+udfs_auxiliares = '['+
+    '{'+
+        '"titulo": "GeraCPF_CNPJ.au3",'+
+        '"descricao": "UDF para gerar CPF e CNPJ de forma aleatória",'+
+        '"pasta": "_UDFs\Auxiliares",'+
+        '"versao": "003",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"GerarCPF($bPontos = False)",'+
+            '"GerarCNPJ($bPontos = False)"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "Horas.au3",'+
+        '"descricao": "UDF com funções para tratamento de horas.",'+
+        '"pasta": "_UDFs\Auxiliares",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"GetHorasAtualEmSegundos()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "ManipulaResolucao.au3",'+
+        '"descricao": "UDF Para efetuar a alteração da resolução do computador.",'+
+        '"pasta": "_UDFs\Auxiliares",'+
+        '"versao": "002",'+
+        '"autores": ['+
+            '"Forum AutoIt Brasil",'+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"VerificaAlteraResolucao()",'+
+            '"VoltaResolucaoAnterior()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "MySQL.au3",'+
+        '"descricao": "UDF com funções para manipulação de banco de dados MySQL. (MySQL OBDC 5.1 Obrigatório)",'+
+        '"pasta": "_UDFs\Auxiliares",'+
+        '"versao": "",'+
+        '"autores": ['+
+            '"cdkid",'+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"_MySQLConnect($sUsername, $sPassword, $sDatabase, $sServer = \'localhost\', $sDriver = \'{MySQL ODBC 5.1 Driver}\', $iPort=3306)",'+
+            '"_Query($oConnectionObj, $sQuery)",'+
+            '"_MySQLEnd($oConnectionObj)",'+
+            '"_AddRecord($oConnectionObj, $sTable, $vRow, $vValue = \'\')",'+
+            '"_DeleteRecord ($oConnectionObj, $sTable, $sColumn, $vRecordVal, $iLimit = 1)",'+
+            '"_CreateTable($oConnectionObj, $sTbl, $sPrimeKey, $keytype = \'INTEGER\', $sNotNull = \'yes\', $keyautoinc = \'yes\', $sType = \'InnoDB\')",'+
+            '"_CreateColumn($oConnectionObj, $sTable, $sColumn, $sAllowNull = \'no\', $sDataType = \'VARCHAR(45)\', $sAutoInc = \'no\', $sUnsigned = \'no\', $vDefault = \'\')",'+
+            '"_DropCol($oConnectionObj, $sTable, $sColumn)",'+
+            '"_DropTbl($oConnectionObj, $sTable)",'+
+            '"_CountRecords($oConnectionObj, $sTable, $sColumn, $vValue = \'\')",'+
+            '"_CountTables($oConnectionObj)",'+
+            '"_GetColNames($oConnectionObj, $sTable)",'+
+            '"_GetTblNames($oConnectionObj)",'+
+            '"_GetColVals($oConnectionObj, $sTable, $sColumn)",'+
+            '"_GetColCount($oConnectionObj, $sTable)",'+
+            '"_GetColType($oConnectionObj, $sTable, $sColumn)",'+
+            '"_GetDBNames($conobj)",'+
+            '"_ChangeCon($oConnectionObj, $username = \'\', $password = \'\', $database = \'\', $driver = \'\', $server = \'\', $iPort = 0)",'+
+            '"_MySQLUpdate($oConnectionObj, $sTable, $aFieldsAndValues, $sWhereArgs)"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "Validacoes.au3",'+
+        '"descricao": "UDF com funções para validações recorrentes em diferentes scripts.",'+
+        '"pasta": "_UDFs\Auxiliares",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"VerificaSistemaEstaAberto($sNomeDoSistema, $sTituloDaTelaPrincipalDoSistema, $sTextoDaTelaPrincipalDoSistema = \'\')"'+
+        ']'+
+    '}'+
+']';
+
+udfs_guardian = '['+
+    '{'+
+        '"titulo": "ClickBotoes.au3",'+
+        '"descricao": "UDF com funções para acionar os botões que possuem teclas de atalho no Guardian.",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"ClickBotaoIncluir()",'+
+            '"ClickBotaoAlterar()",'+
+            '"ClickBotaoAlterar()",'+
+            '"ClickBotaoCancelar()",'+
+            '"ClickBotaoImprimir()",'+
+            '"ClickBotaoVisualizar()",'+
+            '"ClickBotaoLiberar()",'+
+            '"ClickBotaoReprovar()",'+
+            '"ClickBotaoSeparar()",'+
+            '"ClickBotaoAnularSeparacao()",'+
+            '"ClickBotaoStatusDAV()",'+
+            '"ClickBotaoExportaCupom()",'+
+            '"ClickBotaoNotas()",'+
+            '"ClickBotaoFinanceiro()",'+
+            '"ClickBotaoDocRec()",'+
+            '"ClickBotaoDadosEntrega()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "ConstantesBotoesGuardian.au3",'+
+        '"descricao": "UDF com constantes de atalho dos botões do Guardian.",'+
+        '"pasta": "_UDFs\Guardian\Constantes",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"***** BOTÕES COMUNS *****",'+
+            '"$BTN_INCLUIR = \'{F2}\'",'+
+            '"$BTN_ALTERAR = \'{F3}\'",'+
+            '"$BTN_CANCELAR = \'{F4}\'",'+
+            '"$BTN_IMPRIMIR = \'{F5}\'",'+
+            '"$BTN_VISUALIZAR = \'{F6}\'",'+
+            '"***** BOTÕES COMPRAS *****",'+
+            '"$BTN_CP_LIBERAR = \'{F7}\'",'+
+            '"$BTN_CP_REPROVAR = \'{F8}\'",'+
+            '"***** BOTÕES VENDAS *****",'+
+            '"$BTN_VD_SEPARAR = \'{F12}\'",'+
+            '"$BTN_VD_ANULAR_SEPARACAO = \'{F12}\'",'+
+            '"$BTN_VD_STATUS = \'{F9}\'",'+
+            '"$BTN_VD_EXP_CUPOM = \'^{F2}\'",'+
+            '"$BTN_VD_NOTAS = \'{F7}\'",'+
+            '"$BTN_VD_FINANCEIRO = \'{F8}\'",'+
+            '"$BTN_VD_DOC_REC = \'^d\'",'+
+            '"$BTN_VD_DADOS_ENTREGA = \'^e\'"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "ConstantesTextosGuardian.au3",'+
+        '"descricao": "UDF com constantes dos textos das telas do Guardian.",'+
+        '"pasta": "_UDFs\Guardian\Constantes",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"***** TEXTOS E TITULOS TELA PRINCIPAL *****",'+
+            '"$TITULO_TELA_PRINCIPAL_GUARDIAN = \'Space Guardian - Versão\'",'+
+            '"$NOME_SPACE_GUARDIAN = \'Space Guardian\'",'+
+            '"***** TEXTOS E TITULOS TELAS MENU CADASTROS *****",'+
+            '"$TEXTO_CADASTRO_CLIENTES = \'Clientes\'",'+
+            '"$TEXTO_CADASTRO_FORNECEDORES = \'Fornecedores\'",'+
+            '"$TEXTO_CADASTRO_TRANSPORTADORES = \'Transportadores\'",'+
+            '"$TEXTO_CARTEIRA_DE_CLIENTES = \'Carteira De Clientes\'",'+
+            '"$TEXTO_GRUPO_DE_CLIENTES = \'Grupo De Clientes\'",'+
+            '"$TEXTO_ATIVIDADES = \'Atividades\'",'+
+            '"$TEXTO_CLASSIFICACAO_DE_PESSOA = \'Classificação De Pessoa\'",'+
+            '"$TEXTO_OPCAO_ESPECIAL = \'Opcao Especial\'",'+
+            '"$TEXTO_SEGMENTO = \'Segmento\'",'+
+            '"$TEXTO_AGENDA_DE_VISITAS = \'Gerar Agenda de Visitas / Telemarketing\'",'+
+            '"$TEXTO_CONTRATOS_FORNEC_VERBA = \'Cadastro de Contratos de Fornecimento de Verba\'",'+
+            '"$TEXTO_BAIRRO = \'Bairros\'",'+
+            '"$TEXTO_CIDADE = \'Cidades\'",'+
+            '"$TEXTO_ESTADO = \'Estados\'",'+
+            '"$TEXTO_CLASS_ENDERECO = \'Classificação De Endereços\'",'+
+            '"$TEXTO_CONSULTA_IBGE = \'Tabela De Cidades Ibge\'",'+
+            '"$TEXTO_AGRUPA_CAD_CIDADES = \'Transferência de Cadastro de Cidades\'",'+
+            '"$TEXTO_REGIAO = \'Regiões\'",'+
+            '"$TEXTO_ROTA_ENTREGA = \'Rotas De Entrega\'",'+
+            '"$TEXTO_CLASS_PRODUTO = \'Classificação Do Produto\'",'+
+            '"$TEXTO_TIPO_VEICULO = \'Tipo De Veículos\'",'+
+            '"$TEXTO_MOTIVO_NAO_ENTREGA = \'Motivo Nao Entrega Canhotos\'",'+
+            '"$TEXTO_TIPO_DESPESA_FROTA = \'Tipo De Despesas Da Frota\'",'+
+            '"$TEXTO_TIPO_ENTREGA = \'Tipo De Entrega\'",'+
+            '"$TEXTO_GRUPO_DE_ENTREGA = \'Grupo De Entrega\'",'+
+            '"$TEXTO_TURNO_DE_ENTREGA = \'Turno De Entrega\'",'+
+            '"$TEXTO_EMBALAGEM = \'Embalagem\'",'+
+            '"$TEXTO_FAIXA_DE_FRETE = \'Faixas De Frete\'",'+
+            '"$TEXTO_TABELA_DE_FRETE = \'Frete\'",'+
+            '"$TEXTO_CADASTRO_PRODUTOS = \'Tabela De Produtos\'",'+
+            '"$TEXTO_CADASTRO_COLABORADOR = \'Colaboradores\'",'+
+            '"$TEXTO_CADASTRO_VENDEDOR = \'Vendedores\'",'+
+            '"$TEXTO_FORMA_PAGTO = \'Formas De Pagamento\'",'+
+            '"$TEXTO_CONDICAO_PAGTO = \'Condições De Pagamento\'",'+
+            '"***** TEXTOS E TITULOS TELAS MENU COMPRAS *****",'+
+            '"$TEXTO_ORDEM_DE_COMPRA = \'Ordem De Compra\'",'+
+            '"$TEXTO_REQUISICAO_DE_COMPRA = \'Requisição De Compra\'",'+
+            '"$TEXTO_MANUTENCAO_DE_COMPRA = \'Manutenção Ordem de Compra\'",'+
+            '"$TEXTO_CHEGADA_DE_MERCADORIA = \'Chegada de Mercardoria\'",'+
+            '"$TEXTO_RECEBIMENTO_DE_MERCADORIA = \'Recebimento das Mercadorias\'",'+
+            '"$TEXTO_CONTROLE_RECEBIMENTO_DE_MERCADORIA = \'Recebimento De Mercadoria\'",'+
+            '"$TEXTO_CONFERENCIA_DE_MERCADORIA = \'Recebimento De Mercadoria\'",'+
+            '"$TEXTO_ESPELHO_DE_ENTRADA = \'Espelho Entrada\'",'+
+            '"***** TEXTOS E TITULOS TELAS MENU VENDAS *****",'+
+            '"$TEXTO_CONSULTA_DAV = \'Consulta de Pedidos - Documento Auxiliar de vendas\'",'+
+            '"$TEXTO_DAV = \'Documento Auxiliar de Venda\'",'+
+            '"$TEXTO_DEVOLUCAO_VENDA = \'Consulta de Pedidos - Devoluções de vendas\'",'+
+            '"$TEXTO_OUTRAS_SAIDAS = \'Consulta de Pedidos - Outras Saidas\'",'+
+            '"$TEXTO_FATURAMENTO_INDIVIDUAL = \'Consulta Notas Fiscais de Saída\'",'+
+            '"$TEXTO_FATURAMENTO_CARGA = \'Notas / Carga\'",'+
+            '"$TEXTO_SEPARACAO_PEDIDOS = \'Separação de Pedidos\'",'+
+            '"$TEXTO_ORCAMENTO_VENDA = \'Consulta Orçamento\'",'+
+            '"$TEXTO_RELATORIO_DAV = \'Relatório de Documento Auxiliar de Venda\'"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "IncluirProdutos.au3",'+
+        '"descricao": "UDF com funções para realizar o procedimento de inclusão de produtos.",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "002",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)",'+
+            '"IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)",'+
+            '"IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost, $iCodPro = 0)"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "ManipulaDadosBD.au3",'+
+        '"descricao": "UDF com funções para manipulação do banco de dados do Guardian.",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "002",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = \'1\')",'+
+            '"GetArrayCodigoEPrecoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = \'1\')",'+
+            '"GetDataBasesInArray($sUsername, $sPassword, $sHost)",'+
+            '"GetDataBasesInString($sUsername, $sPassword, $sHost)",'+
+            '"GetArrayCodigoLayouts($sUsername, $sPassword, $sDatabase, $sHost, $sModeloLayout = \'PV\',$sCodigoFilialSelect = \'1\')"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "OpcoesMenuCadastros.au3",'+
+        '"descricao": "UDF para acesso as opções do Menu de Cadastros do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"AbreCadastrosCliente()",'+
+            '"AbreCadastrosFornecedor()",'+
+            '"AbreCadastrosTransportadora()",'+
+            '"***** TABELA DE PESSOAS *****",'+
+            '"AbreCadastrosTabelasDePessoasCarteiraDeClientes()",'+
+            '"AbreCadastrosTabelasDePessoasGrupoDeCliente()",'+
+            '"AbreCadastrosTabelasDePessoasAtividade()",'+
+            '"AbreCadastrosTabelasDePessoasClassificacaoDePessoa()",'+
+            '"AbreCadastrosTabelasDePessoasOpcaoEspecial()",'+
+            '"AbreCadastrosTabelasDePessoasSegmento()",'+
+            '"AbreCadastrosTabelasDePessoasGerarAgendaDeVisitas()",'+
+            '"AbreCadastrosTabelasDePessoasContratoDeFornecimentoDeVerbas()",'+
+            '"***** ENDEREÇO *****",'+
+            '"AbreCadastrosEnderecoBairro()",'+
+            '"AbreCadastrosEnderecoCidade()",'+
+            '"AbreCadastrosEnderecoUF()",'+
+            '"AbreCadastrosEnderecoClassificacaoDeEndereco()",'+
+            '"AbreCadastrosEnderecoConsultaCidadeIBGE()",'+
+            '"AbreCadastrosEnderecoCodigoDoPais()",'+
+            '"AbreCadastrosEnderecoAgruparCadastroDeCidades()",'+
+            '"AbreCadastrosEnderecoCEP()",'+
+            '"***** LOGISTICA *****",'+
+            '"AbreCadastrosLogisticaRegiao()",'+
+            '"AbreCadastrosLogisticaRotaDeEntrega()",'+
+            '"AbreCadastrosLogisticaClassificacaoDoProduto()",'+
+            '"AbreCadastrosLogisticaTipoDeVeiculo()",'+
+            '"AbreCadastrosLogisticaMotivoNaoEntregaDeCanhotos()",'+
+            '"AbreCadastrosLogisticaTipoDeDespesasDeFrota()",'+
+            '"AbreCadastrosLogisticaTipoDeEntrega()",'+
+            '"AbreCadastrosLogisticaGrupoDeEntrega()",'+
+            '"AbreCadastrosLogisticaTurnoDeEntrega()",'+
+            '"AbreCadastrosLogisticaEmbalagem()",'+
+            '"AbreCadastrosLogisticaFaixasDeFretePorPeso()",'+
+            '"AbreCadastrosLogisticaTabelaDeFreteInterestadual()",'+
+            '"AbreCadastrosProduto()",'+
+            '"AbreCadastrosColaborador()",'+
+            '"AbreCadastrosVendedor()",'+
+            '"***** FINANCEIRO *****",'+
+            '"AbreCadastrosFinanceiroFormaDePagamento()",'+
+            '"AbreCadastrosFinanceiroCondicaoDePagamento()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "OpcoesMenuCompras.au3",'+
+        '"descricao": "UDF para acesso as opções do Menu de Compras do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"AbreComprasRequisicaoDeCompra()",'+
+            '"AbreComprasOrdemDeCompra()",'+
+            '"AbreComprasManutencaoOrdemDeCompra()",'+
+            '"AbreComprasChegadaDeMercardoria()",'+
+            '"AbreComprasRecebimentoDaMercadoria()",'+
+            '"AbreComprasConferenciaDeRecebimento()",'+
+            '"AbreComprasControleRecebimentoDeMercadoria()",'+
+            '"AbreComprasEspelhoDeEntrada()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "OpcoesMenuVendas.au3",'+
+        '"descricao": "UDF para acesso as opções do Menu de Vendas do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"AbreVendasDAV()",'+
+            '"AbreVendasDevolucaoDeVenda()",'+
+            '"AbreVendasOutrasSaidas()",'+
+            '"***** FATURAMENTO *****",'+
+            '"AbreVendasFaturamentoIndividual()",'+
+            '"AbreVendasFaturamentoPorCarga()",'+
+            '"",'+
+            '"AbreVendasSparacaoDePedido()",'+
+            '"AbreVendasOrcamento()",'+
+            '"***** RELATÓRIOS / CONSULTAS / GRAFICOS *****",'+
+            '"AbreVendasRelatoriosRelDAV()"'+
+        ']'+
+    '},'+
+    '{'+
+        '"titulo": "ValidacoesGuardian.au3",'+
+        '"descricao": "UDF com funções para validações de existência de mensagens de alertas e/ou informativas do Guardian.\\nHerda da UDF AbstractValidacaoGuardian.au3",'+
+        '"pasta": "_UDFs\Guardian",'+
+        '"versao": "001",'+
+        '"autores": ['+
+            '"Ronildo"'+
+        '],'+
+        '"funcoes": ['+
+            '"TelaCodigoNaoCadastradoExiste()",'+
+            '"TelaProdutoBloqueadoExiste()",'+
+            '"TelaCampoDeveSerInformadoExiste()",'+
+            '"TelaNatOperNaoPermitidaExiste()",'+
+            '"TelaCfopDiferenteNatOperExiste()",'+
+            '"TelaCfopNaoLiberadoExiste()",'+
+            '"TelaOpcoesImpressaoExiste()",'+
+            '"TelaDesejaImprimirExiste()",'+
+            '"TelaAtualizaPrecoExiste()",'+
+            '"TelaDesejaGerarNFExiste($sSimOuNao = \'S\')",'+
+            '"TelaProdutoEmOfertaExiste($sSimOuNao = \'N\')",'+
+            '"TelaPrecoZeradoExiste()",'+
+            '"TelaProdutoJaCadastradoNoPedidoExiste()",'+
+            '"TelaVendaAbaixoEstoqueMinimoExiste()",'+
+            '"TelaNumeroMaximoDeItensExiste()",'+
+            '"TelaProdutoNaoPossuiImagemExiste()",'+
+            '"TelaLimiteCreditoAtingidoExiste()",'+
+            '"TelaImagemDoProdutoExiste()",'+
+            '"TelaDescricaoDeProdutoDAVExiste()",'+
+            '"TelaDesejaFecharSessaoExiste($sSimOuNao = \'N\')",'+
+            '"TelaInformacoesNaoEncontradasExiste()",'+
+            '"TelaRegistroSendoUsadoExiste()",'+
+            '"TelaVendaNaoPermitidaExiste()",'+
+            '"TelaAcaoAposGravarDAVExiste($iDuracaoSleep = 1000)",'+
+            '"TelaQuantidadeMenorMinimaExiste()",'+
+            '"TelaGravacaoConcluidaExiste($iDuracaoSleep = 500)",'+
+            '"TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)",'+
+            '"TelaExcecaoExiste($iDuracaoSleep = 1000)",'+
+            '"TelaProdutoInexistenteExite($iDuracaoSleep = 500)"'+
+        ']'+
+    '}'+
+']';

@@ -1,4 +1,4 @@
-function getDadosComoObjeto(strJsonUdf) {    
+function getJsonDadosComoObjeto(strJsonUdf) {    
     if(strJsonUdf){
         try{
             var objJsonParse = JSON.parse(strJsonUdf); 
@@ -11,10 +11,10 @@ function getDadosComoObjeto(strJsonUdf) {
 }
 
 function montaTabela(strJsonUdf){
-    var dados = getDadosComoObjeto(strJsonUdf);
+    var JsonObjDados = getJsonDadosComoObjeto(strJsonUdf);
     var tbody = document.getElementById("tbody");    
 
-    if(dados && tbody){
+    if(JsonObjDados && tbody){
         
         if(tbody && tbody.childNodes.length > 0){
             tbody.remove();
@@ -24,33 +24,32 @@ function montaTabela(strJsonUdf){
             document.getElementById("table").appendChild(tbody);
         }
 
-        for (var i = 0; i < dados.length; i++) {
+        for (var i = 0; i < JsonObjDados.length; i++) {
             var tr1 = document.createElement("tr");
-            var arrayTexto = [dados[i].titulo, dados[i].pasta, dados[i].versao]
+            var arrayTexto = [JsonObjDados[i].titulo, JsonObjDados[i].pasta, JsonObjDados[i].versao]
 
-            var tr = criaLinhaColuna(arrayTexto, dados[i]);
+            var tr = criaLinhaColuna(arrayTexto, JsonObjDados[i]);
             tbody.appendChild(tr);
 
-            // for (var j = 0; j < dados[i].funcoes.length; j++) {
-            //     var tr = criaLinhaColuna([dados[i].funcoes[j]], 'colspan', 3);
+            // for (var j = 0; j < JsonObjDados[i].funcoes.length; j++) {
+            //     var tr = criaLinhaColuna([JsonObjDados[i].funcoes[j]], 'colspan', 3);
             //     tbody.appendChild(tr);
             // }        
         }
     }
 }
 
-function criaLinhaColuna(arrayTextNode, obj, tdAttr = 'align', tdAttrValue = 'center') {
+function criaLinhaColuna(arrayTextNode, JsonObj, tdAttr = 'align', tdAttrValue = 'center') {
+    var jsonToStr = JSON.stringify(JsonObj);
     var tr = document.createElement("tr");
 
     for (var i = 0; i < arrayTextNode.length; i++) {
         var a = document.createElement("a");    
         var td = document.createElement("td");    
         td.setAttribute(tdAttr, tdAttrValue);
-        var txt1 = document.createTextNode(arrayTextNode[i]);
+        var txt1 = document.createTextNode(arrayTextNode[i]); 
         
-        console.log(obj.titulo);
-
-        a.setAttribute('onclick', "teste("+obj+")");
+        a.setAttribute('onclick', "teste("+ jsonToStr +")");
 
         a.appendChild(txt1);
         td.appendChild(a); 
@@ -61,5 +60,6 @@ function criaLinhaColuna(arrayTextNode, obj, tdAttr = 'align', tdAttrValue = 'ce
 
 function teste(a){ 
     // alert(a);
-    console.debug(a.versao);
+    document.open("pages/auxiliares.html");
+    console.debug(a);
 }

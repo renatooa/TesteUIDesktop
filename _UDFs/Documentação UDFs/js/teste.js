@@ -42,12 +42,18 @@ function montaTabela(strJsonUdf){
 function criaLinhaColuna(arrayTextNode, obj, tdAttr = 'align', tdAttrValue = 'center') {
     var tr = document.createElement("tr");
 
-    for (var i = 0; i < arrayTextNode.length; i++) {  
+    for (var i = 0; i < arrayTextNode.length; i++) {
+        var a = document.createElement("a");    
         var td = document.createElement("td");    
         td.setAttribute(tdAttr, tdAttrValue);
         var txt1 = document.createTextNode(arrayTextNode[i]);
+        
+        console.log(obj.titulo);
 
-        td.appendChild(txt1); 
+        a.setAttribute('onclick', "teste("+obj+")");
+
+        a.appendChild(txt1);
+        td.appendChild(a); 
         tr.appendChild(td);     
     }
     return tr;

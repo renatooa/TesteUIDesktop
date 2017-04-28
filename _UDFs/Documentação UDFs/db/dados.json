@@ -2,7 +2,7 @@ udfs_auxiliares = '['+
     '{'+
         '"titulo": "GeraCPF_CNPJ.au3",'+
         '"descricao": "UDF para gerar CPF e CNPJ de forma aleatória",'+
-        '"pasta": "_UDFs\Auxiliares",'+
+        '"pasta": "_UDFs/Auxiliares",'+
         '"versao": "003",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -15,7 +15,7 @@ udfs_auxiliares = '['+
     '{'+
         '"titulo": "Horas.au3",'+
         '"descricao": "UDF com funções para tratamento de horas.",'+
-        '"pasta": "_UDFs\Auxiliares",'+
+        '"pasta": "_UDFs/Auxiliares",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -27,7 +27,7 @@ udfs_auxiliares = '['+
     '{'+
         '"titulo": "ManipulaResolucao.au3",'+
         '"descricao": "UDF Para efetuar a alteração da resolução do computador.",'+
-        '"pasta": "_UDFs\Auxiliares",'+
+        '"pasta": "_UDFs/Auxiliares",'+
         '"versao": "002",'+
         '"autores": ['+
             '"Forum AutoIt Brasil",'+
@@ -41,7 +41,7 @@ udfs_auxiliares = '['+
     '{'+
         '"titulo": "MySQL.au3",'+
         '"descricao": "UDF com funções para manipulação de banco de dados MySQL. (MySQL OBDC 5.1 Obrigatório)",'+
-        '"pasta": "_UDFs\Auxiliares",'+
+        '"pasta": "_UDFs/Auxiliares",'+
         '"versao": "",'+
         '"autores": ['+
             '"cdkid",'+
@@ -72,7 +72,7 @@ udfs_auxiliares = '['+
     '{'+
         '"titulo": "Validacoes.au3",'+
         '"descricao": "UDF com funções para validações recorrentes em diferentes scripts.",'+
-        '"pasta": "_UDFs\Auxiliares",'+
+        '"pasta": "_UDFs/Auxiliares",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -87,7 +87,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "ClickBotoes.au3",'+
         '"descricao": "UDF com funções para acionar os botões que possuem teclas de atalho no Guardian.",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -114,7 +114,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "ConstantesBotoesGuardian.au3",'+
         '"descricao": "UDF com constantes de atalho dos botões do Guardian.",'+
-        '"pasta": "_UDFs\Guardian\Constantes",'+
+        '"pasta": "_UDFs/Guardian/Constantes",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -143,7 +143,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "ConstantesTextosGuardian.au3",'+
         '"descricao": "UDF com constantes dos textos das telas do Guardian.",'+
-        '"pasta": "_UDFs\Guardian\Constantes",'+
+        '"pasta": "_UDFs/Guardian/Constantes",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -211,7 +211,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "IncluirProdutos.au3",'+
         '"descricao": "UDF com funções para realizar o procedimento de inclusão de produtos.",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "002",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -225,7 +225,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "ManipulaDadosBD.au3",'+
         '"descricao": "UDF com funções para manipulação do banco de dados do Guardian.",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "002",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -241,7 +241,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "OpcoesMenuCadastros.au3",'+
         '"descricao": "UDF para acesso as opções do Menu de Cadastros do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -292,7 +292,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "OpcoesMenuCompras.au3",'+
         '"descricao": "UDF para acesso as opções do Menu de Compras do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -311,7 +311,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "OpcoesMenuVendas.au3",'+
         '"descricao": "UDF para acesso as opções do Menu de Vendas do Space Guardian.\\nHerda da UDF AbstractAbreMenuGuardian.au3",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+
@@ -333,7 +333,7 @@ udfs_guardian = '['+
     '{'+
         '"titulo": "ValidacoesGuardian.au3",'+
         '"descricao": "UDF com funções para validações de existência de mensagens de alertas e/ou informativas do Guardian.\\nHerda da UDF AbstractValidacaoGuardian.au3",'+
-        '"pasta": "_UDFs\Guardian",'+
+        '"pasta": "_UDFs/Guardian",'+
         '"versao": "001",'+
         '"autores": ['+
             '"Ronildo"'+

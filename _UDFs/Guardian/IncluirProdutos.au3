@@ -11,7 +11,7 @@
 #Region ### INCLUDES / OPS
 
 Opt("TrayIconDebug", 1) ; Debug na caixa de dica do icone da bandeja.
-Opt("SendKeyDelay", 200) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
+Opt("SendKeyDelay", 150) ; Alterna o tamanho da pausa breve entre o envio de pressionamentos de teclas.
 ;Opt("SendKeyDelay", 1000) ;SLEEP PARA PC LENTO
 
 #include-once
@@ -182,7 +182,7 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
         If ($iQtdeDeProdutos > $iTotalDeProdutos) Then
             
-            $sPluralize = ( $iTotalDeProdutos == 1 ) ? "item diponível" : "itens diponiveis"
+            $sPluralize = ( $iTotalDeProdutos == 1 ) ? "item diponível" : "itens diponíveis"
             MsgBox($MB_ICONWARNING, "Atenção", "Quantidade informada maior que a " & @CR & _
                     "quantidade de itens disponível " & @CR & _
                     "para venda (" & $iTotalDeProdutos & " " & $sPluralize & ")" & @CR & @CR & _
@@ -196,9 +196,12 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
     MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
     Local $iIndex = 0
 
+    ;;; INICIO DE INCLUSÃO DOS ITENS
     For $i = 1 To $iQtdeDeProdutos Step +1
     
         Local $iQuantidade = Random(1, 3, 1)
+
+        WinWaitActive("", $TEXTO_DAV)
 
         Do
             ; Ternario para possibilitar informar um código de produto fixo
@@ -229,6 +232,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
             
         Until Not ($bResultadoProdutoExisteNoPedido)
         
+        WinWaitActive("", $TEXTO_DAV)
+
         ; Clique no campo Quantidade e informar a mesma
         Sleep(500)
         MouseClick("LEFT", $iCampoQtdeEixoX, $iCampoQtdeEixoY, 3)
@@ -245,7 +250,9 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         Else
              ; Clique no Botão Gravar
              MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
-        EndIf       
+        EndIf 
+        
+        WinWaitActive("", $TEXTO_DAV)    
 
         ;Sleep(2000) ;SLEEP PARA PC LENTO
         TelaDescricaoDeProdutoDAVExiste()
@@ -257,8 +264,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
         ;;; Condicional para cancelar a inclusão do item é efetuar a inclusão de outro.
         If (TelaCampoDeveSerInformadoExiste() _
-            Or TelaPrecoZeradoExiste() Or $bResultadoVendaAbaixoEstoqueMinimoExiste _
-            Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then            
+                Or TelaPrecoZeradoExiste() Or $bResultadoVendaAbaixoEstoqueMinimoExiste _
+                Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then            
             
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)

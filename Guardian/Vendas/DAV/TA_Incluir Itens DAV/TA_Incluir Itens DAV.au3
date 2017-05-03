@@ -36,6 +36,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 #ce ===============================================================================================================================
 Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
 Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
+Local Const $sCtrlMaisT = "^t"
 
 $iQtdeDeProdutos = 1
 $sUsername = ""
@@ -98,7 +99,14 @@ If (WinExists("", $TEXTO_DAV)) Then
 				If ($sDatabase <> "") Then
 					$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
 					
-					IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
+					If (WinExists("", $TEXTO_DAV)) Then
+						Send($sCtrlMaisT)					
+						IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
+					Else
+						MsgBox($MB_ICONWARNING, "Atenção", "Tela de DAV não localizada!" & @CR & @CR & _
+							"O script de teste será finalizado")
+						ExitLoop							
+					EndIf 
 					
 					If (Not @error) Then
 						$iHoraEmSegundosFim = GetHorasAtualEmSegundos()

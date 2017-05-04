@@ -82,6 +82,7 @@ Const $NOME_SPACE_GUARDIAN = "Space Guardian"
 	Const $TEXTO_SEPARACAO_PEDIDOS = "Separação de Pedidos"
 	Const $TEXTO_ORCAMENTO_VENDA = "Consulta Orçamento"
 	Const $TEXTO_RELATORIO_DAV = "Relatório de Documento Auxiliar de Venda"
+	Const $TEXTO_RELATORIO_SAIDA_PRODUTO = "Relatório de Saída de Produtos"	
 
 #EndRegion ### TEXTOS E TITULOS TELAS MENU VENDAS
 

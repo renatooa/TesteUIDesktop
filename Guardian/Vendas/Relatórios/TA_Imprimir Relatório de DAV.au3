@@ -35,6 +35,7 @@ Opt("SendKeyDelay", $_iSendKeyDelay) ; Alterna o tamanho da pausa breve entre o 
 Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
 Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 
+Local Const $sInicioTituloTelaReport = "Report Designer - frxpedsaidamod"
 Local $sTituloTelaReport
 Local $iModeloAtual = 1
 Local $iQtdeModelos = 27
@@ -61,14 +62,13 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 
 AbreVendasRelatoriosRelDAV()
 
-;;; Realiza pesquisa de ordem de compra por periodo
+;;; Realiza pesquisa de DAV por periodo
 MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
 Local $_iMesInicio = ( @MON >= 12 ) ? (@MON - 2) : 0 & (@MON - 2)
 Send("01" & $_iMesInicio & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
 
 ;;; Loop para imprimir os modelos disponiveis ($iQtdeModelos)
 For $iContador = 1 To $iQtdeModelos Step +1
-
 	;;;[DEBUG]
 	ConsoleWrite("*************** LOOP * " & $iContador & " ***************" & @CRLF)
 	ConsoleWrite("1 - ModeloAtual -> " & $iModeloAtual & @CRLF)
@@ -90,7 +90,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 
 	_AcessaAbaOpcoesModelos()
 
-	$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iModeloAtual
+	$sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
 
 	Switch ($iModeloAtual)
 		Case 1
@@ -170,7 +170,6 @@ For $iContador = 1 To $iQtdeModelos Step +1
 	If ($iModeloAtual <> 7) Then
 		_RelatorioImprimiu()
 	EndIf
-
 Next
 
 
@@ -236,7 +235,7 @@ Func _QualModeloFoiImpresso()
 
 			$iModeloAtual = $iModeloAtual + 1
 			$iQtdeModelos = $iQtdeModelos - 1
-			$sTituloTelaReport = "Report Designer - frxpedsaidamod" & $iModeloAtual
+			$sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
 
 			;;; [DEBUG]
 			ConsoleWrite("3 - ModeloAtual -> " & $iModeloAtual & @CRLF)

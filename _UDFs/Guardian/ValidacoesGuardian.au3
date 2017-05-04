@@ -309,4 +309,12 @@ Func TelaProdutoInexistenteExite($iDuracaoSleep = 500)
 
 EndFunc   ;==>TelaProdutoInexistenteExite 
 
+Func TelaDesejaAbandonarExiste($sSimOuNao = "S")
+    
+    Local Const $TextoTelaDesejaAbandonar = "Deseja Abandonar"
+
+    Return TelaExiste("", $TextoTelaDesejaAbandonar, $sSimOuNao)
+
+EndFunc   ;==>TelaDesejaAbandonarExiste
+
 #EndRegion ### FUNÇÕES

@@ -98,6 +98,12 @@ EndFunc   ;==>AbreVendasOrcamento
 
 	EndFunc   ;==>AbreVendasRelatoriosRelDAV
 
+	Func AbreVendasRelatoriosRelSaidaProdutos()
+
+		AbreMenu($sAtalhoExpandirMenuVendas, "R{DOWN}", "{ENTER}", $TEXTO_RELATORIO_SAIDA_PRODUTO)
+
+	EndFunc   ;==>AbreVendasRelatoriosRelSaidaProdutos
+
 #EndRegion ***** RELATÓRIOS / CONSULTAS / GRAFICOS *****
 
 

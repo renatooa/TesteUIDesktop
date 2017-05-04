@@ -37,7 +37,7 @@ Func ExibeMensagemPadrao($sTestesExecutados, $sInformacoesAdicionais = "")
 			"---------------------------------------------------------------------------"
 
 	; Exibe MsgBox
-	$iBotaoClicado = MsgBox($MB_ICONINFORMATION + $MB_OKCANCEL, "Rotina de Teste Automatizado", $sMensagemExibida)
+	$iBotaoClicado = MsgBox($MB_ICONINFORMATION + $MB_OKCANCEL, "Rotina de Teste Automatizado", $sMensagemExibida, 10)
 
 	If $iBotaoClicado == $IDCANCEL Then
 

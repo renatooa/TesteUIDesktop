@@ -1,11 +1,11 @@
 #cs ===============================================================================================================================
-	Típo de Script .: Script de Função - UDF
-	Descrição ......: UDF com funções para manipulação do banco de dados do Guardian.
-	Data Inicio ....: 21/07/2016
-	Data Termino ...: ~
-	Versão .........: 002
-	Autor(s) .......: Ronildo
-	Obs.............: Abstraido o tratamento para recuperar valores de um unico campo da tabela (_GetArrayValoresUmCampo). 09/02/2017
+    Típo de Script .: Script de Função - UDF
+    Descrição ......: UDF com funções para manipulação do banco de dados do Guardian.
+    Data Inicio ....: 21/07/2016
+    Data Termino ...: ~
+    Versão .........: 002
+    Autor(s) .......: Ronildo
+    Obs.............: Abstraido o tratamento para recuperar valores de um unico campo da tabela (_GetArrayValoresUmCampo). 09/02/2017
 #ce ===============================================================================================================================
 
 #Region ### INCLUDES / OPS
@@ -22,104 +22,104 @@
 #EndRegion ### VARIAVEIS
 
 #cs FUNÇÕES DA UDF ================================================================================================================
-	=
-	=   GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
-	=   GetArrayCodigoEPrecoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
-	=   GetDataBasesInArray($sUsername, $sPassword, $sHost)
-	=   GetDataBasesInString($sUsername, $sPassword, $sHost)
-	=   GetArrayCodigoLayouts($sUsername, $sPassword, $sDatabase, $sHost, $sModeloLayout = "'PV'",$sCodigoFilialSelect = "1")
-	=
+    =
+    =   GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
+    =   GetArrayCodigoEPrecoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
+    =   GetDataBasesInArray($sUsername, $sPassword, $sHost)
+    =   GetDataBasesInString($sUsername, $sPassword, $sHost)
+    =   GetArrayCodigoLayouts($sUsername, $sPassword, $sDatabase, $sHost, $sModeloLayout = "'PV'",$sCodigoFilialSelect = "1")
+    =
 #ce ===============================================================================================================================
 
 #Region ### FUNÇÕES
 
 Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
 
-	$sSelect = _GetStringSelectProdutosParaVenda("pro_codigo", $sCodigoFilialSelect)
+    $sSelect = _GetStringSelectProdutosParaVenda("pro_codigo", $sCodigoFilialSelect)
 
-	$aCodigosProdutos = _GetArrayValoresUmCampo($sUsername, $sPassword, $sDatabase, $sHost, $sSelect, "pro_codigo")
+    $aCodigosProdutos = _GetArrayValoresUmCampo($sUsername, $sPassword, $sDatabase, $sHost, $sSelect, "pro_codigo")
 
-	Return $aCodigosProdutos
+    Return $aCodigosProdutos
 
 EndFunc   ;==>GetArrayCodigoProdutosParaVenda
 
 #cs
-	Retornar uma array de string com o código do produto e o preço separados por ponto e virgula (;)
+    Retornar uma array de string com o código do produto e o preço separados por ponto e virgula (;)
 #ce
 Func GetArrayCodigoEPrecoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
 
-	$sCodigoEPrecoProduto = ""
-	$oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
+    $sCodigoEPrecoProduto = ""
+    $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
 
-	$sSelect = _GetStringSelectProdutosParaVenda("pro_codigo, ppr_precovenda", $sCodigoFilialSelect)
+    $sSelect = _GetStringSelectProdutosParaVenda("pro_codigo, ppr_precovenda", $sCodigoFilialSelect)
 
-	$oResultQuery = _Query($oMySqlConn, $sSelect)
+    $oResultQuery = _Query($oMySqlConn, $sSelect)
 
-	If (IsObj($oResultQuery)) Then
-		With $oResultQuery
-			While Not .EOF
-				$sCodigoEPrecoProduto &= .Fields("pro_codigo").Value & ";" & .Fields("ppr_precovenda").Value & "|"
-				.MoveNext
-			WEnd
-		EndWith
-	EndIf
+    If (IsObj($oResultQuery)) Then
+        With $oResultQuery
+            While Not .EOF
+                $sCodigoEPrecoProduto &= .Fields("pro_codigo").Value & ";" & .Fields("ppr_precovenda").Value & "|"
+                .MoveNext
+            WEnd
+        EndWith
+    EndIf
 
-	_MySQLEnd($oMySqlConn)
+    _MySQLEnd($oMySqlConn)
 
-	#cs
-		StringReplace remove ultimo Pipe para não gerar indice com
-		valor em branco ao fazer o StringSplit
-	#ce
-	$sCodigoEPrecoProduto = StringReplace($sCodigoEPrecoProduto, "|", "", -1)
-	$aCodigoEPrecoProdutos = StringSplit($sCodigoEPrecoProduto, "|", $STR_NOCOUNT)
+    #cs
+        StringReplace remove ultimo Pipe para não gerar indice com
+        valor em branco ao fazer o StringSplit
+    #ce
+    $sCodigoEPrecoProduto = StringReplace($sCodigoEPrecoProduto, "|", "", -1)
+    $aCodigoEPrecoProdutos = StringSplit($sCodigoEPrecoProduto, "|", $STR_NOCOUNT)
 
-	_ArrayShuffle($aCodigoEPrecoProdutos)
+    _ArrayShuffle($aCodigoEPrecoProdutos)
 
-	Return $aCodigoEPrecoProdutos
+    Return $aCodigoEPrecoProdutos
 
 EndFunc   ;==>GetArrayCodigoEPrecoProdutosParaVenda
 
 Func GetDataBasesInArray($sUsername, $sPassword, $sHost)
 
-	Local Const $sDatabase = ""
-	$oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
-	$aDataBases = _GetDBNames($oMySqlConn)
-	_MySQLEnd($oMySqlConn)
+    Local Const $sDatabase = ""
+    $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
+    $aDataBases = _GetDBNames($oMySqlConn)
+    _MySQLEnd($oMySqlConn)
 
-	Return $aDataBases
+    Return $aDataBases
 
 EndFunc   ;==>GetDataBasesInArray
 
 Func GetDataBasesInString($sUsername, $sPassword, $sHost)
 
-	$sDataBases = ""
-	$aDataBases = GetDataBasesInArray($sUsername, $sPassword, $sHost)
+    $sDataBases = ""
+    $aDataBases = GetDataBasesInArray($sUsername, $sPassword, $sHost)
 
-	For $sDatabase In $aDataBases
-		If (VarGetType($sDatabase) == "String") Then
-			$sDataBases = $sDataBases & $sDatabase & "|"
-		EndIf
-	Next
+    For $sDatabase In $aDataBases
+        If (VarGetType($sDatabase) == "String") Then
+            $sDataBases = $sDataBases & $sDatabase & "|"
+        EndIf
+    Next
 
-	Return $sDataBases
+    Return $sDataBases
 
 EndFunc   ;==>GetDataBasesInString
 
 Func GetArrayCodigoLayouts($sUsername, $sPassword, $sDatabase, $sHost, $sModeloLayout = "'PV'", $sCodigoFilialSelect = "1")
 
-	$sSelect = "SELECT lay_codigo FROM layoutrelat " _
-			 & "WHERE lay_modelo = " & $sModeloLayout _
-			 & " AND lay_filcodigo IN (0, " & $sCodigoFilialSelect & ")" _
-			 & " AND lay_tipoimpress = 'M'" _
-			 & " ORDER BY lay_codigo;"
+    $sSelect = "SELECT lay_codigo FROM layoutrelat " _
+             & "WHERE lay_modelo = " & $sModeloLayout _
+             & " AND lay_filcodigo IN (0, " & $sCodigoFilialSelect & ")" _
+             & " AND lay_tipoimpress = 'M'" _
+             & " ORDER BY lay_codigo;"
             ; & " GROUP BY lay_namereport" _
             ; & " AND lay_namereport like 'relpd%'" _
             ; & " AND lay_codigo <> 63" _
             ; & " AND lay_sql like '%pedidos%'" _
 
-	$aCodigoLayouts = _GetArrayValoresUmCampo($sUsername, $sPassword, $sDatabase, $sHost, $sSelect, "lay_codigo", False)
+    $aCodigoLayouts = _GetArrayValoresUmCampo($sUsername, $sPassword, $sDatabase, $sHost, $sSelect, "lay_codigo", False)
 
-	Return $aCodigoLayouts
+    Return $aCodigoLayouts
 
 EndFunc   ;==>GetArrayCodigoLayouts
 
@@ -134,67 +134,67 @@ EndFunc   ;==>GetArrayCodigoLayouts
 ; EndFunc   ;==>Update
 
 #cs ===============================================================================================================================
-	↓↓↓↓↓ FUNÇÕES PRIVADAS ↓↓↓↓↓
+    ↓↓↓↓↓ FUNÇÕES PRIVADAS ↓↓↓↓↓
 #ce ===============================================================================================================================
 
 Func _GetStringSelectProdutosParaVenda($sCamposDeRetorno, $sCodigoFilialSelect)
 
-	$sSelect = "SELECT " & $sCamposDeRetorno & " FROM produto " _
-			 & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo " _
-			 & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo " _
-			 & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo " _
-			 & "INNER JOIN unidadepro ON unp_procodigo = ppr_procodigo " _
-			 & "WHERE pfi_filcodigo = " & $sCodigoFilialSelect & " AND pro_ativo = 1 " _
-			 & "AND (pfi_estoque - pfi_estpenentre) > 3 " _
-			 & "AND lpd_estfisico > lpd_estpenentre " _
-			 & "AND (pfi_inativo <> 1 OR pfi_inativo IS NULL) AND pfi_libvenda = 1 " _
-			 & "AND unp_libvenda = 1 AND unp_padvenda = 1 " _
-			 & "AND ppr_precovenda <> 0 AND ppr_prbcodigo = 1 " _
-			 & "AND unp_fracminima IN (0.000, 0.001, 0.002, 0.005, 0.00, 0.01, 0.02, 0.05, 0, 0.1, 0.2, 0.5, 1) " _
-			 & "AND unp_qminvenda IN (0, 1) " _
-			 & "GROUP BY pro_codigo;"
+    $sSelect = "SELECT " & $sCamposDeRetorno & " FROM produto " _
+             & "INNER JOIN  produtofilial ON pro_codigo = pfi_procodigo " _
+             & "INNER JOIN localprod ON pfi_procodigo = lpd_procodigo " _
+             & "INNER JOIN produtopreco ON lpd_procodigo = ppr_procodigo " _
+             & "INNER JOIN unidadepro ON unp_procodigo = ppr_procodigo " _
+             & "WHERE pfi_filcodigo = " & $sCodigoFilialSelect & " AND pro_ativo = 1 " _
+             & "AND (pfi_estoque - pfi_estpenentre) > 3 " _
+             & "AND lpd_estfisico > lpd_estpenentre " _
+             & "AND (pfi_inativo <> 1 OR pfi_inativo IS NULL) AND pfi_libvenda = 1 " _
+             & "AND unp_libvenda = 1 AND unp_padvenda = 1 " _
+             & "AND ppr_precovenda <> 0 AND ppr_prbcodigo = 1 " _
+             & "AND unp_fracminima IN (0.000, 0.001, 0.002, 0.005, 0.00, 0.01, 0.02, 0.05, 0, 0.1, 0.2, 0.5, 1) " _
+             & "AND unp_qminvenda IN (0, 1) " _
+             & "GROUP BY pro_codigo;"
             ;~  & "AND MOD(1, ROUND(unp_fracminima, 1)) <= 0 " _
             ;~  & "AND pfi_estoque > pfi_estpenentre " _
             ;~  & "AND lpd_lcecodigo = 1001 " _
 
-	Return $sSelect
+    Return $sSelect
 
 EndFunc   ;==>_GetStringSelectProdutosParaVenda
 
 Func _GetArrayValoresUmCampo($sUsername, $sPassword, $sDatabase, $sHost, $sSelect, $sCampo, $bArrayShuffle = True)
 
-	$sValorDoCampo = ""
-	$oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
-	$oResultQuery = _Query($oMySqlConn, $sSelect)
+    $sValorDoCampo = ""
+    $oMySqlConn = _MySQLConnect($sUsername, $sPassword, $sDatabase, $sHost)
+    $oResultQuery = _Query($oMySqlConn, $sSelect)
 
-	If (IsObj($oResultQuery)) Then
-		With $oResultQuery
-			While Not .EOF
-				$sValorDoCampo &= .Fields($sCampo).Value & "|"
-				.MoveNext
-			WEnd
-		EndWith
-	EndIf
+    If (IsObj($oResultQuery)) Then
+        With $oResultQuery
+            While Not .EOF
+                $sValorDoCampo &= .Fields($sCampo).Value & "|"
+                .MoveNext
+            WEnd
+        EndWith
+    EndIf
 
-	_MySQLEnd($oMySqlConn)
+    _MySQLEnd($oMySqlConn)
 
-	#cs
-		StringReplace remove ultimo Pipe para não gerar indice com
-		valor em branco ao fazer o StringSplit
-	#ce
-	$sValorDoCampo = StringReplace($sValorDoCampo, "|", "", -1)
-	$aValoresDoCampo = StringSplit($sValorDoCampo, "|", $STR_NOCOUNT)
+    #cs
+        StringReplace remove ultimo Pipe para não gerar indice com
+        valor em branco ao fazer o StringSplit
+    #ce
+    $sValorDoCampo = StringReplace($sValorDoCampo, "|", "", -1)
+    $aValoresDoCampo = StringSplit($sValorDoCampo, "|", $STR_NOCOUNT)
 
-	If ($bArrayShuffle) Then
-		_ArrayShuffle($aValoresDoCampo)
-	EndIf
+    If ($bArrayShuffle) Then
+        _ArrayShuffle($aValoresDoCampo)
+    EndIf
 
-	Return $aValoresDoCampo
+    Return $aValoresDoCampo
 
 EndFunc   ;==>_GetArrayValoresUmCampo
 
 #cs ===============================================================================================================================
-	↑↑↑↑↑ FUNÇÕES PRIVADAS ↑↑↑↑↑
+    ↑↑↑↑↑ FUNÇÕES PRIVADAS ↑↑↑↑↑
 #ce ===============================================================================================================================
 
 #EndRegion ### FUNÇÕES

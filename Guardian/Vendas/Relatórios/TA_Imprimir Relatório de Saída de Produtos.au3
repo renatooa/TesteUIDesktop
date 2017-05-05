@@ -1,10 +1,10 @@
 #cs ===============================================================================================================================
-    Típo de Script .: Script Execução de Teste
-    Descrição ......: Efetuar a impressão de todos os modelos do Relatório de Saída de Produtos
-    Data Inicio ....: 04/05/2017
-    Data Termino ...: ~
-    Versão .........: 001
-    Autor(s) .......: Ronildo
+	Típo de Script .: Script Execução de Teste
+	Descrição ......: Efetuar a impressão de todos os modelos do Relatório de Saída de Produtos
+	Data Inicio ....: 04/05/2017
+	Data Termino ...: 05/05/2017
+	Versão .........: 001
+	Autor(s) .......: Ronildo
 #ce ===============================================================================================================================
 
 #Region ### INCLUDES / OPT'S
@@ -29,15 +29,15 @@ Opt("SendKeyDelay", $_iSendKeyDelay) ; Alterna o tamanho da pausa breve entre o 
 
 #Region ### VARIAVEIS
 #cs ===============================================================================================================================
-    $sTituloDaTelaPrincipalDoSistema -> Informar o valor obtido pelo Autoit Window Info do campo 'title'.
-    $sNomeDoSistema -> Nome do sistema a ser testado pelo script.
+	$sTituloDaTelaPrincipalDoSistema -> Informar o valor obtido pelo Autoit Window Info do campo 'title'.
+	$sNomeDoSistema -> Nome do sistema a ser testado pelo script.
 #ce ===============================================================================================================================
 Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_GUARDIAN
 Local Const $sNomeDoSistema = $NOME_SPACE_GUARDIAN
 
 Local Const $sInicioTituloTelaReport = "Report Designer - frxsaidaprodutomod"
 Local $sTituloTelaReport
-Local $iModeloAtual = 5
+Local $iModeloAtual = 1
 Local $iQtdeModelos = 17
 
 ;;; VARIAVEIS COM EIXO X, Y UTILIZADAS NA FUNÇÃO MouseClick()
@@ -45,8 +45,8 @@ Local Const $iDataEmissaoEixoX = 421
 Local Const $iDataEmissaoEixoY = 174
 Local Const $iMaximixarReportEixoX = 569
 Local Const $iMaximixarReportEixoY = 61
-Local Const $iAbaOptModEixoX = 421
-Local Const $iAbaOptModEixoY = 121
+Local Const $iAbaOpcModEixoX = 421
+Local Const $iAbaOpcModEixoY = 121
 
 #EndRegion ### VARIAVEIS
 
@@ -65,87 +65,89 @@ WinActivate($sTituloDaTelaPrincipalDoSistema)
 AbreVendasRelatoriosRelSaidaProdutos()
 
 ;;; Realiza pesquisa de Saída de Produtos por periodo
-;~ MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
-;~ Local $_iMesInicio = ( @MON >= 12 ) ? (@MON - 2) : 0 & (@MON - 2)
-;~ Send("01" & $_iMesInicio & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
+MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
+Local $_iMesInicio = ( @MON >= 12 ) ? (@MON - 2) : 0 & (@MON - 2)
+Send("01" & $_iMesInicio & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
 
 ;;; Loop para imprimir os modelos disponiveis ($iQtdeModelos)
-For $iContador = 5 To $iQtdeModelos Step +1
-    ;;;[DEBUG]
-    ConsoleWrite("*************** LOOP * " & $iContador & " ***************" & @CRLF)
-    ConsoleWrite("1 - ModeloAtual -> " & $iModeloAtual & @CRLF)
+For $iContador = 1 To $iQtdeModelos Step +1
+	;;;[DEBUG]
+	ConsoleWrite("*************** LOOP * " & $iContador & " ***************" & @CRLF)
+	ConsoleWrite("1 - ModeloAtual -> " & $iModeloAtual & @CRLF)
 
-    If ($iContador == 16 And $iModeloAtual == 17) Then
+	If ($iContador == 16 And $iModeloAtual == 17) Then
 		ExitLoop
 	EndIf
 
-    $iModeloAtual = ($iModeloAtual <= $iContador) ? $iContador : $iModeloAtual + 1
+	$iModeloAtual = ($iModeloAtual <= $iContador) ? $iContador : $iModeloAtual + 1
 
-    ;;;[DEBUG]
-    ConsoleWrite("Contador -> " & $iContador & @CRLF)
-    ConsoleWrite("2 - ModeloAtual -> " & $iModeloAtual & @CRLF)
-    ConsoleWrite("1 - QtdeModelos -> " & $iQtdeModelos & @CRLF)
+	;;;[DEBUG]
+	ConsoleWrite("Contador -> " & $iContador & @CRLF)
+	ConsoleWrite("2 - ModeloAtual -> " & $iModeloAtual & @CRLF)
+	ConsoleWrite("1 - QtdeModelos -> " & $iQtdeModelos & @CRLF)
 
-    If ($iModeloAtual == 14 And $iModeloAtual > $iContador) Then
-    	$iContador = $iModeloAtual - 1
-    EndIf
+	;;; Tratamento necessário devido os modelos 5 e 6 poderem estar desabilitados
+	If ($iModeloAtual == 14 And $iModeloAtual > $iContador) Then
+		$iContador = $iModeloAtual - 2
+	EndIf
 
-    _AcessaAbaOpcoesModelos()
+	_AcessaAbaOpcoesModelos()
 
-    $sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
+	$sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
 
-    Switch ($iModeloAtual)
-        Case 1
-            ;;; Ação realizada se for o Modelo 1
-            Send("{TAB 3}{ENTER}")
+	;;;[DEBUG]
+	ConsoleWrite("Switch - Contador -> " & $iContador & @CRLF)
+	ConsoleWrite("Switch - ModeloAtual -> " & $iModeloAtual & @CRLF)
+	Switch ($iModeloAtual)
+		Case 1
+			;;; Ação realizada se for o Modelo 1
+			Send("{TAB 3}{ENTER}")
 
-        Case 3
-            ;;; Ação realizada se for o Modelo 3
-            For $i = 1 To 2 Step +1                
-                Switch ($i)
-                    Case 1
-                        _ImprimirModelo($iContador, "{TAB 3}")
-                        _RelatorioImprimiu()
-                    Case 2
-                        _AcessaAbaOpcoesModelos()
-                        _ImprimirModelo($iContador, "{TAB}{DOWN}{SPACE}{TAB 2}")
-                        _RelatorioImprimiu()
-                EndSwitch                
-            Next
-            ;~ $iModeloAtual = 3
+		Case 3
+			;;; Ação realizada se for o Modelo 3
+			For $i = 1 To 2 Step +1
+				Switch ($i)
+					Case 1
+						_ImprimirModelo($iContador, "{TAB 3}")
+						_RelatorioImprimiu()
+					Case 2
+						_AcessaAbaOpcoesModelos()
+						_ImprimirModelo($iContador, "{TAB}{DOWN}{SPACE}{TAB 2}")
+						_RelatorioImprimiu()
+				EndSwitch
+			Next
 
-        Case 14
-            ;;; Ação realizada se for o Modelo 14
-            For $i = 1 To 2 Step +1                
-                Switch ($i)
-                    Case 1
-                        _ImprimirModelo($iContador, "{TAB 3}")
-                        _RelatorioMatricialImprimiu()
-                    Case 2
-                        _AcessaAbaOpcoesModelos()
-                        _ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB 2}")
-                        _RelatorioMatricialImprimiu()
-                EndSwitch                
-            Next
-            ;~ $iModeloAtual = 14
+		Case 14
+			;;; Ação realizada se for o Modelo 14
+			For $i = 1 To 2 Step +1
+				Switch ($i)
+					Case 1
+						_ImprimirModelo($iContador, "{TAB 3}")
+						_RelatorioMatricialImprimiu()
+					Case 2
+						_AcessaAbaOpcoesModelos()
+						_ImprimirModelo($iContador, "{TAB}{RIGHT}{SPACE}{TAB 2}")
+						_RelatorioMatricialImprimiu()
+				EndSwitch
+			Next
 
-        Case Else
-            If ($iModeloAtual == 5 Or $iModeloAtual == 6 Or $iModeloAtual == 7) Then
-                MouseClick("LEFT", $iAbaOptModEixoX, $iAbaOptModEixoY)
-            EndIf
+		Case 15 To 17
+			;;; Ação realizada se for o Modelo 15, 16, 17
+			_ImprimirModelo($iContador, "{TAB 3}")
 
-            ;;; Ação realizada demais modelos
-            _ImprimirModelo($iContador, "{TAB 2}")
-            TelaDesejaFecharSessaoExiste()
-    EndSwitch
+		Case Else
+			;;; Ação realizada demais modelos
+			_ImprimirModelo($iContador, "{TAB 2}")
+			;~ TelaDesejaFecharSessaoExiste()
+	EndSwitch
 
-    If ( TelaInformacoesNaoEncontradasExiste() ) Then
-        ContinueLoop
-    EndIf
+	If ( TelaInformacoesNaoEncontradasExiste()) Then
+		ContinueLoop
+	EndIf
 
-    If Not ($iModeloAtual == 3 Or $iModeloAtual == 14) Then
-        _RelatorioImprimiu()
-    EndIf
+	If Not ($iModeloAtual == 3 Or $iModeloAtual == 14) Then
+		_RelatorioImprimiu()
+	EndIf
 Next
 
 
@@ -161,59 +163,62 @@ VoltaResolucaoAnterior() ;;; Altera a resolução do monitor caso a mesma tenha 
 #Region ### FUNÇÕES
 
 Func _AcessaAbaOpcoesModelos()
-
-    Send("^b") ;CTRL + B
-
+	;~ Send("^b") ;CTRL + B
+	Send("^{TAB}") ;CTRL + TAB
 EndFunc   ;==>_AcessaAbaOpcoesModelos
 
 Func _ImprimirModelo($iNumeroModelo, $sSendTab, $sSendSpace = "SPACE")
 
-    $sCliquesParaBaixo = "DOWN " & $iNumeroModelo
-    Opt("SendKeyDelay", 80) ;;; Diminui o delay da função de Send() para selecionar o modelo mais rápido.
-    Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}" & $sSendTab & "{ENTER}")
-    Opt("SendKeyDelay", $_iSendKeyDelay) ;;; Volta o delay ao normal
+	$sCliquesParaBaixo = "DOWN " & $iNumeroModelo
+	Opt("SendKeyDelay", 100) ;;; Diminui o delay da função de Send() para selecionar o modelo mais rápido.
+	Send("{" & $sCliquesParaBaixo & "}{" & $sSendSpace & "}" & $sSendTab & "{ENTER}")
+	Opt("SendKeyDelay", $_iSendKeyDelay) ;;; Volta o delay ao normal
 
 EndFunc   ;==>_ImprimirModelo
 
 Func _RelatorioImprimiu()
 
-    Local $_sTextoTelaOpcaoImpressao = "Opções de Impressão"
+	Local $_sTextoTelaOpcaoImpressao = "Opções de Impressão"
 
-    $iResultadoWinOpcaoImpressao = WinWaitActive("", $_sTextoTelaOpcaoImpressao)
-    If ($iResultadoWinOpcaoImpressao) Then
-        Send("{TAB 2}{ENTER}")
-    EndIf
+	If (Not TelaInformacoesNaoEncontradasExiste()) Then
+		$iResultadoWinOpcaoImpressao = WinWaitActive("", $_sTextoTelaOpcaoImpressao)
+		If ($iResultadoWinOpcaoImpressao) Then
+			Send("{TAB 2}{ENTER}")
+		EndIf
 
-    $iResultado = _QualModeloFoiImpresso()
+		$iResultado = _QualModeloFoiImpresso()
 
-    If ($iResultado) Then
-        MsgBox($MB_ICONINFORMATION, "MODELO", "[" & StringUpper($sTituloTelaReport) & "] impresso com sucesso.", 1)
-        WinActivate($sTituloTelaReport)
-        Send("{ESC}")
-        Sleep(300)
-    EndIf
+		If ($iResultado) Then
+			MsgBox($MB_ICONINFORMATION, "MODELO", "[" & StringUpper($sTituloTelaReport) & "] impresso com sucesso.", 1)
+			WinActivate($sTituloTelaReport)
+			Send("{ESC}")
+			Sleep(300)
+		EndIf
+	EndIf
 
 EndFunc   ;==>_RelatorioImprimiu
 
 Func _RelatorioMatricialImprimiu()
 
-    Local $_sTextoTelaImprimir = "Imprimir"
+	Local $_sTextoTelaImprimir = "Imprimir"
 
-    $iResultadoWinImprimir = WinWaitActive("", $_sTextoTelaImprimir)
-    If ($iResultadoWinImprimir) Then
-        Send("{ENTER}")
-    EndIf
+	If (Not TelaInformacoesNaoEncontradasExiste()) Then
+		$iResultadoWinImprimir = WinWaitActive("", $_sTextoTelaImprimir)
+		If ($iResultadoWinImprimir) Then
+			Send("{ENTER}")
+		EndIf
 
-    Const $sTituloTelaReportMatricial = "Visualizador de impressão"
-    $iResultado = WinWaitActive("", $sTituloTelaReportMatricial)
+		Const $sTituloTelaReportMatricial = "Visualizador de impressão"
+		$iResultado = WinWaitActive("", $sTituloTelaReportMatricial)
 
-    If ($iResultado) Then
-        MsgBox($MB_ICONINFORMATION, "MODELO", "[MODELO 14] impresso com sucesso.", 1)
-        WinActivate("", $sTituloTelaReportMatricial)
-        Send("{ESC}")
-        Sleep(300)
-        TelaDesejaAbandonarExiste()
-    EndIf
+		If ($iResultado) Then
+			MsgBox($MB_ICONINFORMATION, "MODELO", "[MODELO 14] impresso com sucesso.", 1)
+			WinActivate("", $sTituloTelaReportMatricial)
+			Send("{ESC}")
+			Sleep(300)
+			TelaDesejaAbandonarExiste()
+		EndIf
+	EndIf
 
 EndFunc   ;==>_RelatorioMatricialImprimiu
 
@@ -225,33 +230,33 @@ EndFunc   ;==>_RelatorioMatricialImprimiu
 ;;; Retorno --->> Resutldado da função WinActivate().
 Func _QualModeloFoiImpresso()
 
-    $bBooleano = true
-    While ($bBooleano)
-        
-        While (Not WinActive("", $sTituloTelaReport))
+	$bBooleano = True
+	While ($bBooleano)
 
-            $iModeloAtual = $iModeloAtual + 1
-            $iQtdeModelos = $iQtdeModelos - 1
-            $sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
+		While (Not WinActive("", $sTituloTelaReport))
 
-            ;;; [DEBUG]
-            ConsoleWrite("3 - ModeloAtual -> " & $iModeloAtual & @CRLF)
-            ConsoleWrite("2 - QtdeModelos(-) -> " & $iQtdeModelos & @CRLF)
+			$iModeloAtual = $iModeloAtual + 1
+			$iQtdeModelos = $iQtdeModelos - 1
+			$sTituloTelaReport = $sInicioTituloTelaReport & $iModeloAtual
 
-        WEnd
+			;;; [DEBUG]
+			ConsoleWrite("3 - ModeloAtual -> " & $iModeloAtual & @CRLF)
+			ConsoleWrite("2 - QtdeModelos(-) -> " & $iQtdeModelos & @CRLF)
 
-        WinWaitActive("", $sTituloTelaReport)
-        $iResultadoWinReport = WinActivate($sTituloTelaReport)
-        Sleep(300)
+		WEnd
 
-        If ($iResultadoWinReport) Then
-            $bBooleano = False
-        Else
-            MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
-        EndIf
-    WEnd
+		WinWaitActive("", $sTituloTelaReport)
+		$iResultadoWinReport = WinActivate($sTituloTelaReport)
+		Sleep(300)
 
-    Return $iResultadoWinReport
+		If ($iResultadoWinReport) Then
+			$bBooleano = False
+		Else
+			MouseClick("LEFT", $iMaximixarReportEixoX, $iMaximixarReportEixoY)
+		EndIf
+	WEnd
+
+	Return $iResultadoWinReport
 
 EndFunc   ;==>_QualModeloFoiImpresso
 

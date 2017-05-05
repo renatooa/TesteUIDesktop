@@ -48,6 +48,7 @@
     =   TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)
     =   TelaExcecaoExiste($iDuracaoSleep = 1000)
     =   TelaProdutoInexistenteExite($iDuracaoSleep = 500)
+    =   TelaDesejaAbandonarExiste($sSimOuNao = "S")
     =
 #ce ===============================================================================================================================
 
@@ -240,7 +241,7 @@ Func TelaInformacoesNaoEncontradasExiste()
     ;Local Const $TextoTelaDescricaoDeProdutoDAV = "Informações não encontradas para impressão do relatório."
     Local Const $TextoTelaInformacoesNaoEncontradas = "Informações não encontradas"
 
-    Return TelaExiste("", $TextoTelaInformacoesNaoEncontradas)
+    Return TelaExiste("", $TextoTelaInformacoesNaoEncontradas, "{ENTER}", 500)
 
 EndFunc   ;==>TelaInformacoesNaoEncontradasExiste
 

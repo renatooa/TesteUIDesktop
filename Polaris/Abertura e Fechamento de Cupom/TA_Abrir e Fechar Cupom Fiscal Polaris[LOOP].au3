@@ -26,6 +26,7 @@ Opt("SendKeyDelay", 300) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesPolaris.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -34,8 +35,8 @@ Opt("SendKeyDelay", 300) ; Alterna o tamanho da pausa breve entre o envio de pre
 	$sTituloDaTelaPrincipalDoSistema -> Informar o valor obtido pelo Autoit Window Info do campo 'title'.
 	$sNomeDoSistema -> Nome do sistema a ser testado pelo script.
 #ce ===============================================================================================================================
-Local Const $sTituloDaTelaPrincipalDoSistema = "Space Polaris"
-Local Const $sNomeDoSistema = $sTituloDaTelaPrincipalDoSistema
+Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_POLARIS
+Local Const $sNomeDoSistema = $NOME_SPACE_POLARIS
 Local Const $iQuantidadeProdutosParaIncluir = 10
 Local Const $iIntervaloDoLoop = 60000
 Local $dValorPago
@@ -97,13 +98,13 @@ If (Not @error And UBound($aDadosConexaoBD) == 4) Then
 				Send($iCodigoProduto & "{ENTER}")
 
 				Sleep(1000)
-				VerificaTelaErroExiste()
+				TelaErroExiste()
 
 				If (WinExists("Pesquisa de Produto") Or WinExists("Confirmação")) Then
 					
 					Send("{ENTER}")
 					Sleep(1000)
-					VerificaTelaErroExiste()
+					TelaErroExiste()
 					
 				EndIf
 
@@ -139,15 +140,4 @@ Exit
 #EndRegion ### EXECUÇÃO DO SCRIPT
 
 #Region ### FUNÇÕES
-
-Func VerificaTelaErroExiste()
-	
-	If (WinExists("Erro")) Then
-		
-		Send("{ENTER}")
-		
-	EndIf
-
-EndFunc   ;==>VerificaTelaErroExiste
-
 #EndRegion ### FUNÇÕES

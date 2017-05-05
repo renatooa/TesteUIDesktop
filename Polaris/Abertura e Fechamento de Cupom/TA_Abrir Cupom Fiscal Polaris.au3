@@ -26,6 +26,7 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesAuxiliares.au3"
 #include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesGuardian.au3"
+#include "D:\Testes-Automatizados\TesteUIDesktop\_UDFs\IncludesPolaris.au3"
 
 #EndRegion ### INCLUDES / OPS
 
@@ -34,8 +35,8 @@ Opt("SendKeyDelay", 100) ; Alterna o tamanho da pausa breve entre o envio de pre
 	$sTituloDaTelaPrincipalDoSistema -> Informar o valor obtido pelo Autoit Window Info do campo 'title'.
 	$sNomeDoSistema -> Nome do sistema a ser testado pelo script.
 #ce ===============================================================================================================================
-Local Const $sTituloDaTelaPrincipalDoSistema = "Space Polaris"
-Local Const $sNomeDoSistema = $sTituloDaTelaPrincipalDoSistema
+Local Const $sTituloDaTelaPrincipalDoSistema = $TITULO_TELA_PRINCIPAL_POLARIS
+Local Const $sNomeDoSistema = $NOME_SPACE_POLARIS
 Local $iQuantidadeProdutosParaIncluir
 Local $sUsername
 Local $sPassword
@@ -86,6 +87,9 @@ If (Not @error And UBound($aDadosConexaoBD) == 4) Then
 			
 			For $iIndice = 0 To $iQuantidadeProdutosParaIncluir - 1 Step +1
 
+				;; Continua o loop apenas se a tela do sistema estiver ativa.
+				WinWaitActive($sTituloDaTelaPrincipalDoSistema)
+
 				Send($aCodigoProdutos[$iIndice] & "{ENTER}")				
 				Sleep(1000)
 				VerificaTelaErroExiste()
@@ -122,14 +126,12 @@ Exit
 
 Func VerificaTelaErroExiste()
 	
-	If (WinExists("Erro")) Then
-	
-		Send("{ENTER}")
+	$iResultado = TelaErroExiste()
+	If ($iResultado) Then
 		$iQuantidadeProdutosParaIncluir += 1
 		; MsgBox($MB_ICONWARNING + $MB_OK, "", "Falha na execução do script!" _
 		; 	& @CRLF & "Script será finalizado!")
-		; ExitLoop
-	
+		; ExitLoop	
 	EndIf
 
 EndFunc

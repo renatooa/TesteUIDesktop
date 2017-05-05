@@ -64,7 +64,7 @@ AbreVendasRelatoriosRelDAV()
 
 ;;; Realiza pesquisa de DAV por periodo
 MouseClick("LEFT", $iDataEmissaoEixoX, $iDataEmissaoEixoY, 3)
-Local $_iMesInicio = (@MON >= 12) ? (@MON - 2) : 0 & (@MON - 2)
+Local $_iMesInicio = ( @MON >= 12 ) ? (@MON - 2) : 0 & (@MON - 2)
 Send("01" & $_iMesInicio & @YEAR & "{TAB}" & @MDAY & @MON & @YEAR)
 
 ;;; Loop para imprimir os modelos disponiveis ($iQtdeModelos)
@@ -163,7 +163,7 @@ For $iContador = 1 To $iQtdeModelos Step +1
 			TelaDesejaFecharSessaoExiste()
 	EndSwitch
 
-	If ( TelaInformacoesNaoEncontradasExiste()) Then
+	If ( TelaInformacoesNaoEncontradasExiste() ) Then
 		ContinueLoop
 	EndIf
 
@@ -228,7 +228,7 @@ EndFunc   ;==>_RelatorioImprimiu
 ;;; Retorno --->> Resutldado da função WinActivate().
 Func _QualModeloFoiImpresso()
 
-	$bBooleano = True
+	$bBooleano = true
 	While ($bBooleano)
 		
 		While (Not WinActive("", $sTituloTelaReport))

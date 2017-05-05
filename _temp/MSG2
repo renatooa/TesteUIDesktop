@@ -1,0 +1,31 @@
+Novo executável do script 'TA_Incluir Itens DAV.au3'.
+
+\\192.168.0.14\novo\EXE ROTINA DE TESTE\Guardian
+
+ChangeLog:
+
+* Realizado ajustes no comando DML.
+
+* Adicionado WinExists e WinWaitActive antes de incluir produto, WinWaitActive antes de informar quantidade do item e de gravar o item. 
+
+* Script já utilizado com a base dos seguintes clientes:
+    - DENTAL
+    - ARCOS
+    - 2RL
+    - MADSOL
+    - CESTAS MAIS
+    - COMERCIAL MILHO BRASIL
+    - BH CABINES
+    - DEP ARTHUSO
+    - ESR ATACADISTA
+
+* Execute o executável como administrador.
+
+Links para o fonte -->
+    https://github.com/SpaceQA/TesteUIDesktop/tree/master/Guardian/Vendas/DAV/TA_Incluir%20Itens%20DAV
+    https://github.com/SpaceQA/TesteUIDesktop/blob/master/_UDFs/Guardian/IncluirProdutos.au3
+    https://github.com/SpaceQA/TesteUIDesktop/blob/master/_UDFs/Guardian/ManipulaDadosBD.au3
+
+Observações:
+
+* Obrigatório a instalação do MySQL CONNECTOR ODBC 5.1.x.    

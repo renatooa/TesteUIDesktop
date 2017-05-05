@@ -1,0 +1,27 @@
+Executável do script 'TA_Incluir Itens DAV.au3' anexado.
+
+Observações:
+
+* Obrigatório a instalação do MySQL CONNECTOR ODBC 5.1.x.
+
+* Na execução do script informe a quantidade de itens para a inclusão, os dados de conexão ao servidor MySql e o database.
+
+    OBS.:
+        1 - O campo DataBase só serão habilitado após selecionar uma senha pois o mesmo e preenchido dinamicamente. 
+        2 - Caso a conexão ao servidor MySql falhe o script será encerrado.
+
+* Execute o executável como administrador.
+
+* Script já utilizado com a base dos seguintes clientes:
+    - DENTAL
+    - ARCOS
+    - 2RL
+    - MADSOL
+    - CESTAS MAIS
+
+Links para o fonte -->
+    https://github.com/SpaceQA/TesteUIDesktop/tree/master/Guardian/Vendas/DAV/TA_Incluir%20Itens%20DAV
+    https://github.com/SpaceQA/TesteUIDesktop/blob/master/_UDFs/Guardian/IncluirProdutos.au3
+    https://github.com/SpaceQA/TesteUIDesktop/blob/master/_UDFs/Guardian/ManipulaDadosBD.au3
+
+DUVIDAS OU FALHAS RELACIONADO A EXECUÇÃO DO SCRIPT ME REPORTEM!

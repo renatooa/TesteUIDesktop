@@ -241,6 +241,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
 		TelaSelecaoPromocaoVendaExiste()
 
+        $bResultadoProdutoExisteNoPedido = TelaProdutoJaCadastradoNoPedidoExiste()
+
         $bResultadoQuantidadeMenorMinimaExiste = TelaQuantidadeMenorMinimaExiste()
 
         $bResultadoVendaAbaixoEstoqueMinimoExiste = TelaVendaAbaixoEstoqueMinimoExiste()
@@ -267,7 +269,8 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         ;;; Condicional para cancelar a inclusão do item é efetuar a inclusão de outro.
         If (TelaCampoDeveSerInformadoExiste() _
                 Or TelaPrecoZeradoExiste() Or $bResultadoVendaAbaixoEstoqueMinimoExiste _
-                Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then
+                Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite _
+				Or $bResultadoProdutoExisteNoPedido) Then
 
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)

@@ -98,16 +98,16 @@ If (WinExists("", $TEXTO_DAV)) Then
 
 				If ($sDatabase <> "") Then
 					$iHoraEmSegundosInicio = GetHorasAtualEmSegundos() ; Função da UDF GetHoras.au3
-					
+
 					If (WinExists("", $TEXTO_DAV)) Then
-						Send($sCtrlMaisT)					
+						Send($sCtrlMaisT)
 						IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF IncluirProdutos.au3
 					Else
 						MsgBox($MB_ICONWARNING, "Atenção", "Tela de DAV não localizada!" & @CR & @CR & _
 							"O script de teste será finalizado")
-						ExitLoop							
-					EndIf 
-					
+						ExitLoop
+					EndIf
+
 					If (Not @error) Then
 						$iHoraEmSegundosFim = GetHorasAtualEmSegundos()
 						MsgBox($MB_ICONINFORMATION, "Fim Execução Script", "TEMPO GASTO.: " _

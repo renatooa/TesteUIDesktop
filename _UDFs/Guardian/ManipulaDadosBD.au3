@@ -33,7 +33,7 @@
 
 #Region ### FUNÇÕES
 
-Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "1")
+Func GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost, $sCodigoFilialSelect = "5")
 
     $sSelect = _GetStringSelectProdutosParaVenda("pro_codigo", $sCodigoFilialSelect)
 
@@ -152,10 +152,12 @@ Func _GetStringSelectProdutosParaVenda($sCamposDeRetorno, $sCodigoFilialSelect)
              & "AND ppr_precovenda <> 0 AND ppr_prbcodigo = 1 " _
              & "AND unp_fracminima IN (0.000, 0.001, 0.002, 0.005, 0.00, 0.01, 0.02, 0.05, 0, 0.1, 0.2, 0.5, 1) " _
              & "AND unp_qminvenda IN (0, 1) " _
+			 & "AND lpd_lcecodigo = 5 " _
              & "GROUP BY pro_codigo;"
+
             ;~  & "AND MOD(1, ROUND(unp_fracminima, 1)) <= 0 " _
             ;~  & "AND pfi_estoque > pfi_estpenentre " _
-            ;~  & "AND lpd_lcecodigo = 1001 " _
+
 
     Return $sSelect
 

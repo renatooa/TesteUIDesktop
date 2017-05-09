@@ -49,13 +49,14 @@
     =   TelaExcecaoExiste($iDuracaoSleep = 1000)
     =   TelaProdutoInexistenteExite($iDuracaoSleep = 500)
     =   TelaDesejaAbandonarExiste($sSimOuNao = "S")
+	=	TelaSelecaoPromocaoVendaExiste()
     =
 #ce ===============================================================================================================================
 
 #Region ### FUNÇÕES
 
 Func TelaCodigoNaoCadastradoExiste()
-    
+
     ;Local Const $sTextoTelaCodigoNao = "Código não cadastrado"
     Local Const $sTextoTelaCodigoNao = "Código não"
 
@@ -64,7 +65,7 @@ Func TelaCodigoNaoCadastradoExiste()
 EndFunc   ;==>TelaCodigoNaoCadastradoExiste
 
 Func TelaProdutoBloqueadoExiste()
-    
+
     Local Const $sTextoTelaProdutoBloqueado = "Produto bloqueado"
 
     Return TelaExiste("", $sTextoTelaProdutoBloqueado)
@@ -72,7 +73,7 @@ Func TelaProdutoBloqueadoExiste()
 EndFunc   ;==>TelaProdutoBloqueadoExiste
 
 Func TelaCampoDeveSerInformadoExiste()
-    
+
     Local Const $sTextoTelaCampoObrigatorio = "O campo deve ser informado"
 
     Return TelaExiste("", $sTextoTelaCampoObrigatorio)
@@ -80,7 +81,7 @@ Func TelaCampoDeveSerInformadoExiste()
 EndFunc   ;==>TelaCampoDeveSerInformadoExiste
 
 Func TelaNatOperNaoPermitidaExiste()
-    
+
     ;"Natureza de Operações não permite lançamento de espelho."
     Local Const $sTextoTelaNatOperNaoPermite = "Natureza de Operações não permite"
 
@@ -89,7 +90,7 @@ Func TelaNatOperNaoPermitidaExiste()
 EndFunc   ;==>TelaNatOperNaoPermitidaExiste
 
 Func TelaCfopDiferenteNatOperExiste()
-    
+
     Local Const $sTextoTelaCodigoFiscalDiferente = "Código fiscal diferente do configurado na Natureza de Operações."
 
     Return TelaExiste("", $sTextoTelaCodigoFiscalDiferente)
@@ -97,7 +98,7 @@ Func TelaCfopDiferenteNatOperExiste()
 EndFunc   ;==>TelaCfopDiferenteNatOperExiste
 
 Func TelaCfopNaoLiberadoExiste()
-    
+
     Local Const $sTextoTelaCfopNaoLiberado = " NATOP: COM não liberada para o CFOP"
 
     Return TelaExiste("", $sTextoTelaCfopNaoLiberado)
@@ -105,7 +106,7 @@ Func TelaCfopNaoLiberadoExiste()
 EndFunc   ;==>TelaCfopNaoLiberadoExiste
 
 Func TelaCodigoReferenciaProdFornecExiste()
-    
+
     Local Const $sTextoTelaCodigoReferenciaFornecedor = "Código de Referência do produto no Fornecedor"
 
     Return TelaExiste("", $sTextoTelaCodigoReferenciaFornecedor, "{TAB 3}{ENTER}")
@@ -113,7 +114,7 @@ Func TelaCodigoReferenciaProdFornecExiste()
 EndFunc   ;==>TelaCodigoReferenciaProdFornecExiste
 
 Func TelaOpcoesImpressaoExiste()
-    
+
     Local Const $TextoTelaOpcoesImpressaoExiste = "Opções de Impressão"
 
     Return TelaExiste("", $TextoTelaOpcoesImpressaoExiste, "{TAB 3}{ENTER}")
@@ -121,7 +122,7 @@ Func TelaOpcoesImpressaoExiste()
 EndFunc   ;==>TelaOpcoesImpressaoExiste
 
 Func TelaDesejaImprimirExiste()
-    
+
     Local Const $TextoTelaDesejaImprimir = "Deseja imprimir"
 
     Return TelaExiste("", $TextoTelaDesejaImprimir, "N")
@@ -129,7 +130,7 @@ Func TelaDesejaImprimirExiste()
 EndFunc   ;==>TelaDesejaImprimirExiste
 
 Func TelaAtualizaPrecoExiste()
-    
+
     Local Const $TextoTelaAtualizaPreco = "Atualiza Preços"
 
     Return TelaExiste("", $TextoTelaAtualizaPreco, "N")
@@ -137,7 +138,7 @@ Func TelaAtualizaPrecoExiste()
 EndFunc   ;==>TelaAtualizaPrecoExiste
 
 Func TelaDesejaGerarNFExiste($sSimOuNao = "S")
-    
+
     Local Const $TextoTelaDesejaGerarNF = "Deseja Gerar NF"
 
     Return TelaExiste("", $TextoTelaDesejaGerarNF, $sSimOuNao)
@@ -145,7 +146,7 @@ Func TelaDesejaGerarNFExiste($sSimOuNao = "S")
 EndFunc   ;==>TelaDesejaGerarNFExiste
 
 Func TelaProdutoEmOfertaExiste($sSimOuNao = "N")
-    
+
     Local Const $TextoTelaProdutoEmOferta = "Produto em Oferta"
 
     Return TelaExiste("", $TextoTelaProdutoEmOferta, $sSimOuNao)
@@ -153,7 +154,7 @@ Func TelaProdutoEmOfertaExiste($sSimOuNao = "N")
 EndFunc   ;==>TelaProdutoEmOfertaExiste
 
 Func TelaPrecoZeradoExiste()
-    
+
     Local Const $TextoTelaPrecoZerado = "Preço zerado"
 
     Return TelaExiste("", $TextoTelaPrecoZerado)
@@ -161,7 +162,7 @@ Func TelaPrecoZeradoExiste()
 EndFunc   ;==>TelaPrecoZeradoExiste
 
 Func TelaProdutoJaCadastradoNoPedidoExiste()
-    
+
     Local Const $TextoTelaProdutoJaCadastradoNoPedido = "Este Produto já está cadatrado no Pedido"
 
     Return TelaExiste("", $TextoTelaProdutoJaCadastradoNoPedido)
@@ -169,7 +170,7 @@ Func TelaProdutoJaCadastradoNoPedidoExiste()
 EndFunc   ;==>TelaPrecoZeradoExiste
 
 Func TelaVendaAbaixoEstoqueMinimoExiste()
-    
+
     Local Const $TextoTelaVendaAbaixoEstoqueMinimo = "Venda abaixo do Estoque Minimo"
 
     Return TelaExiste("", $TextoTelaVendaAbaixoEstoqueMinimo)
@@ -177,7 +178,7 @@ Func TelaVendaAbaixoEstoqueMinimoExiste()
 EndFunc   ;==>TelaVendaAbaixoEstoqueMinimoExiste
 
 Func TelaNumeroMaximoDeItensExiste()
-    
+
     Local Const $TextoTelaNumeroMaximoDeItens = "Número máximo de Itens Atingido"
 
     Return TelaExiste("", $TextoTelaNumeroMaximoDeItens)
@@ -185,7 +186,7 @@ Func TelaNumeroMaximoDeItensExiste()
 EndFunc   ;==>TelaNumeroMaximoDeItensExiste
 
 Func TelaProdutoNaoPossuiImagemExiste()
-    
+
     Local Const $TextoTelaProdutoNaoPossuiImagem = "Produto não possui Imagem"
 
     Return TelaExiste("", $TextoTelaProdutoNaoPossuiImagem)
@@ -193,7 +194,7 @@ Func TelaProdutoNaoPossuiImagemExiste()
 EndFunc   ;==>TelaProdutoNaoPossuiImagemExiste
 
 Func TelaLimiteCreditoAtingidoExiste()
-    
+
     Local Const $TextoTelaLimiteCreditoAtingido = "Limite de crédito atingido. Verifique"
 
     Return TelaExiste("", $TextoTelaLimiteCreditoAtingido)
@@ -201,7 +202,7 @@ Func TelaLimiteCreditoAtingidoExiste()
 EndFunc   ;==>TelaLimiteCreditoAtingidoExiste
 
 Func TelaImagemDoProdutoExiste()
-    
+
     Local Const $TextoTelaImagemDoProduto = "Imagem do Produto"
 
     Return TelaExiste("", $TextoTelaImagemDoProduto)
@@ -209,7 +210,7 @@ Func TelaImagemDoProdutoExiste()
 EndFunc   ;==>TelaImagemDoProdutoExiste
 
 Func TelaDescricaoDeProdutoDAVExiste()
-    
+
     Local Const $TextoTelaDescricaoDeProdutoDAV = "Descrição de Produto para Documento Auxilia de Venda"
 
     Return TelaExiste("", $TextoTelaDescricaoDeProdutoDAV, "{TAB 5}{ENTER}")
@@ -217,27 +218,27 @@ Func TelaDescricaoDeProdutoDAVExiste()
 EndFunc   ;==>TelaDescricaoDeProdutoDAVExiste
 
 Func TelaDesejaFecharSessaoExiste($sSimOuNao = "N")
-    
+
     Local Const $TextoTelaDesejaFecharSessao = "Deseja fechar a sessão"
-    
+
     If ( $sSimOuNao <> "N" ) Then
-        While (WinWaitNotActive("", $TextoTelaDesejaFecharSessao))    
+        While (WinWaitNotActive("", $TextoTelaDesejaFecharSessao))
             Sleep(1000)
             Send("{ESC}")
 
             ;WinWait(title, "[text]", [timeout])  ;WinActive("", $TextoTelaDesejaFecharSessao)
-            If (WinActive("", $TextoTelaDesejaFecharSessao)) Then            
-                ExitLoop         
-            EndIf            
+            If (WinActive("", $TextoTelaDesejaFecharSessao)) Then
+                ExitLoop
+            EndIf
         WEnd
-    EndIf   
+    EndIf
 
     Return TelaExiste("", $TextoTelaDesejaFecharSessao, $sSimOuNao)
 
 EndFunc   ;==>TelaDesejaFecharSessaoExiste
 
 Func TelaInformacoesNaoEncontradasExiste()
-    
+
     ;Local Const $TextoTelaDescricaoDeProdutoDAV = "Informações não encontradas para impressão do relatório."
     Local Const $TextoTelaInformacoesNaoEncontradas = "Informações não encontradas"
 
@@ -275,7 +276,7 @@ Func TelaQuantidadeMenorMinimaExiste()
 
     Return TelaExiste("", $TextoTelaQtdeMenoMinimaDAV)
 
-EndFunc   ;==>TelaQuantidadeMenorMinimaExiste 
+EndFunc   ;==>TelaQuantidadeMenorMinimaExiste
 
 Func TelaGravacaoConcluidaExiste($iDuracaoSleep = 500)
 
@@ -283,7 +284,7 @@ Func TelaGravacaoConcluidaExiste($iDuracaoSleep = 500)
 
     Return TelaExiste("", $TextoTelaGravacaoConcluidDAV, "{ENTER}", $iDuracaoSleep)
 
-EndFunc   ;==>TelaGravacaoConcluidaExiste 
+EndFunc   ;==>TelaGravacaoConcluidaExiste
 
 Func TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)
 
@@ -291,7 +292,7 @@ Func TelaIDispatchExceptionExiste($iDuracaoSleep = 1000)
 
     Return TelaExiste("", $TextoTelaIDispatchException, "{ENTER}", $iDuracaoSleep)
 
-EndFunc   ;==>TelaIDispatchExceptionExiste 
+EndFunc   ;==>TelaIDispatchExceptionExiste
 
 Func TelaExcecaoExiste($iDuracaoSleep = 1000)
 
@@ -308,14 +309,23 @@ Func TelaProdutoInexistenteExite($iDuracaoSleep = 500)
 
     Return TelaExiste("", $TextoTelaProdutoInexistente, "{ENTER}", $iDuracaoSleep)
 
-EndFunc   ;==>TelaProdutoInexistenteExite 
+EndFunc   ;==>TelaProdutoInexistenteExite
 
 Func TelaDesejaAbandonarExiste($sSimOuNao = "S")
-    
+
     Local Const $TextoTelaDesejaAbandonar = "Deseja Abandonar"
 
     Return TelaExiste("", $TextoTelaDesejaAbandonar, $sSimOuNao)
 
 EndFunc   ;==>TelaDesejaAbandonarExiste
+
+Func TelaSelecaoPromocaoVendaExiste()
+
+    Local Const $TextoTelaSelecaoPromocaoVenda = "Seleção de Promoção de Venda"
+
+    Return TelaExiste("", $TextoTelaSelecaoPromocaoVenda)
+
+EndFunc   ;==>TelaSelecaoPromocaoVendaExiste
+
 
 #EndRegion ### FUNÇÕES

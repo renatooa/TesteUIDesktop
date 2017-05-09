@@ -56,11 +56,11 @@ Func IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)
     Local Const $iBotaoCancelarItemEixoY = 602
 
     For $i = 1 To $iQtdeDeProdutos Step +1
-        
+
         Do
 
             MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
-            
+
             $iCodigoProduto = SolicitaCodigoProduto()
             Send($iCodigoProduto & "{TAB}")
 
@@ -68,12 +68,12 @@ Func IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)
             $bResultadoProdutoBloqueado = TelaProdutoBloqueadoExiste() ; Função da UDF ValidacoesGuardian.au3
 
             If ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado) Then
-                
+
                 Send("^a{DEL}")
                 MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
-                
+
             EndIf
-            
+
         Until Not ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado)
 
         ; Clique no campo Quantidade
@@ -91,10 +91,10 @@ Func IncluirProdutoOrdemDeCompra($iQtdeDeProdutos)
         $bResultadoInformarCampo = TelaCampoDeveSerInformadoExiste() ; Função da UDF ValidacoesGuardian.au3
 
         If ($bResultadoInformarCampo) Then
-            
+
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             $i -= 1
-            
+
         EndIf
 
     Next
@@ -116,11 +116,11 @@ Func IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)
     Local Const $iBotaoCancelarItemEixoY = 580
 
     ;For $i = 1 To $iQtdeDeProdutos Step +1
-    
+
     Do
 
         MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
-        
+
         ;$iCodigoProduto = SolicitaCodigoProduto()
         Send($iCodigoProduto & "{ENTER}")
 
@@ -128,19 +128,19 @@ Func IncluirProdutoEspelhoDeEntrada($iCodigoProduto, $sCustoProduto)
         $bResultadoProdutoBloqueado = TelaProdutoBloqueadoExiste() ; Função da UDF ValidacoesGuardian.au3
 
         If ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado) Then
-            
+
             Send("^a{DEL}")
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
-            
+
         EndIf
-        
+
     Until Not ($bResultadoCodigoNaoCadastrado Or $bResultadoProdutoBloqueado)
 
     ; Clique no campo Quantidade
     MouseClick("LEFT", $iCampoQtdeEixoX, $iCampoQtdeEixoY, 3)
     Send("1{ENTER}")
     Send($sCustoProduto & "{ENTER}")
-    
+
     ; Clique no Botão Gravar
     MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
 
@@ -174,23 +174,23 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
     Local Const $iBotaoCancelarItemEixoY = 480
 
     Local $aCodigoProdutosParaVenda = [0, 0, 0, 0]
-    
+
     If ($iPCodigoProduto == 0) Then
-    
+
         $aCodigoProdutosParaVenda = GetArrayCodigoProdutosParaVenda($sUsername, $sPassword, $sDatabase, $sHost) ; Função da UDF ManipulaDadosBD.au3
         Local $iTotalDeProdutos = (UBound($aCodigoProdutosParaVenda) - 1)
 
         If ($iQtdeDeProdutos > $iTotalDeProdutos) Then
-            
+
             $sPluralize = ( $iTotalDeProdutos == 1 ) ? "item diponível" : "itens diponíveis"
             MsgBox($MB_ICONWARNING, "Atenção", "Quantidade informada maior que a " & @CR & _
                     "quantidade de itens disponível " & @CR & _
                     "para venda (" & $iTotalDeProdutos & " " & $sPluralize & ")" & @CR & @CR & _
                     "O script de teste será finalizado")
             Return SetError(1)
-            
+
         EndIf
-    
+
     EndIf
 
     MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
@@ -198,7 +198,7 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
     ;;; INICIO DE INCLUSÃO DOS ITENS
     For $i = 1 To $iQtdeDeProdutos Step +1
-    
+
         Local $iQuantidade = Random(1, 3, 1)
 
         WinWaitActive("", $TEXTO_DAV)
@@ -214,7 +214,7 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
 
             If ( TelaProdutoNaoPossuiImagemExiste() Or TelaImagemDoProdutoExiste() ) Then
                 Send("{TAB}")
-                Send("{ENTER}")            
+                Send("{ENTER}")
             EndIf
 
             ; Função da UDF ValidacoesGuardian.au3
@@ -222,22 +222,24 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
             $bResultadoVendaNaoPermitida = TelaVendaNaoPermitidaExiste()
 
             If ($bResultadoProdutoExisteNoPedido Or  $bResultadoVendaNaoPermitida) Then
-                
+
                 MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
                 MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
                 $i -= 1
                 $iIndex += 1
-                
+
             EndIf
-            
+
         Until Not ($bResultadoProdutoExisteNoPedido)
-        
+
         WinWaitActive("", $TEXTO_DAV)
 
         ; Clique no campo Quantidade e informar a mesma
         Sleep(500)
         MouseClick("LEFT", $iCampoQtdeEixoX, $iCampoQtdeEixoY, 3)
         Send($iQuantidade & "{TAB}")
+
+		TelaSelecaoPromocaoVendaExiste()
 
         $bResultadoQuantidadeMenorMinimaExiste = TelaQuantidadeMenorMinimaExiste()
 
@@ -246,18 +248,18 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         $bResultadoTelaProdutoInexistenteExite = TelaProdutoInexistenteExite()
 
         If ( $bResultadoTelaProdutoInexistenteExite ) Then
-            Send("1")  
+            Send("1")
         Else
              ; Clique no Botão Gravar
              MouseClick("LEFT", $iBotaoGravarItemEixoX, $iBotaoGravarItemEixoY)
-        EndIf 
-        
-        WinWaitActive("", $TEXTO_DAV)    
+        EndIf
+
+        WinWaitActive("", $TEXTO_DAV)
 
         ;Sleep(2000) ;SLEEP PARA PC LENTO
         TelaDescricaoDeProdutoDAVExiste()
 
-        If ( TelaNumeroMaximoDeItensExiste() Or TelaLimiteCreditoAtingidoExiste() ) Then        
+        If ( TelaNumeroMaximoDeItensExiste() Or TelaLimiteCreditoAtingidoExiste() ) Then
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             Return
         EndIf
@@ -265,12 +267,12 @@ Func IncluirProdutosDAV($iQtdeDeProdutos, $sUsername, $sPassword, $sDatabase, $s
         ;;; Condicional para cancelar a inclusão do item é efetuar a inclusão de outro.
         If (TelaCampoDeveSerInformadoExiste() _
                 Or TelaPrecoZeradoExiste() Or $bResultadoVendaAbaixoEstoqueMinimoExiste _
-                Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then            
-            
+                Or $bResultadoQuantidadeMenorMinimaExiste Or $bResultadoTelaProdutoInexistenteExite) Then
+
             MouseClick("LEFT", $iBotaoCancelarItemEixoX, $iBotaoCancelarItemEixoY)
             MouseClick("LEFT", $iBotaoIncluirItemEixoX, $iBotaoIncluirItemEixoY)
             $i -= 1
-            
+
         EndIf
 
         $iIndex += 1
